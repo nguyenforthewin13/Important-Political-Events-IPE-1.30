@@ -1,0 +1,46 @@
+country_decisions = {
+	morale_aspect = {
+		potential = {
+			religion = anglican
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = anglican_holy_war
+			}
+			church_power = 100
+		}
+		effect = {
+			add_church_power = -100
+			add_country_modifier = {
+				name = anglican_holy_war
+				duration = 9125
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 100
+				is_at_war = yes
+			}
+		}
+	}
+
+	colonial_aspect = {
+		potential = {
+			religion = anglican
+		}
+		allow = {
+			NOT = {
+				has_country_modifier = anglican_colonization
+			}
+			church_power = 100
+		}
+		effect = {
+			add_church_power = -100
+			add_country_modifier = {
+				name = anglican_colonization
+				duration = 9125
+			}
+		}
+	}
+}

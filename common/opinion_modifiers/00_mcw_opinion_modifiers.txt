@@ -1,0 +1,19 @@
+kaz_angered_qasim_sovereignty = {
+	opinion = -25
+	yearly_decay = 2.5
+}
+
+restarted_muscovite_civil_war = {
+	opinion = -200
+	yearly_decay = 1
+}
+
+aid_muscovite_civil_war = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+loyal_to_muscovy = {
+	opinion = 50
+	yearly_decay = 1
+}

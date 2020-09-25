@@ -1,0 +1,22 @@
+name = "Fourth War in Lombardy"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 107
+}
+
+1438.9.1 = {
+	add_attacker = MLO
+	add_defender = VEN
+	add_defender = NAX
+	add_defender = LAN
+	add_defender = PAP
+	add_defender = URB
+	add_defender = ANC
+	add_defender = BLG
+	add_defender = PGA
+}
+
+1441.9.20 = {
+	rem_attacker = MLO
+}

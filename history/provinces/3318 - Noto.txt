@@ -1,0 +1,20 @@
+#3318 - Noto
+
+owner = HTK
+controller = HTK
+culture = japanese
+religion = shinto
+capital = "Nanao"
+trade_goods = grain
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 3
+is_city = yes
+add_core = HTK
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = ANU

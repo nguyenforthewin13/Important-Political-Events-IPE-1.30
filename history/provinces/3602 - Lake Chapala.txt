@@ -1,0 +1,6 @@
+#3602 - Lake Chapala
+
+discovered_by = AZT
+discovered_by = MAY
+discovered_by = ZAP
+discovered_by = mesoamerican

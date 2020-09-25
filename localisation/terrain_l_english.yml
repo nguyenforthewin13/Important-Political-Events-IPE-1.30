@@ -1,0 +1,974 @@
+﻿l_english:
+ urban_mediteran: "Mediterranean Harbor City"
+ urban_mediteran_desc: "The city in this province serves as a major Mediterranean port, trafficking in goods from all across the region."
+ 
+ urban_paris: "Paris"
+ urban_paris_desc: "Originally arising from the Roman colony of Lutetia, Paris is the historic capital of France. Having originally been founded on an island, the city of Paris has gradually expanded outward, quarrying limestone from beneath the city outskirts in order to construct countless many buildings, including the magnificent cathedral of Notre Dame."
+ 
+ urban_rome: "Rome"
+ urban_rome_desc: "In antiquity, all roads led to Rome, the center of the Mediterranean world. Although Rome has declined greatly in population since the heyday of the Roman Empire, it is still a substantial metropolis that carries great religious authority thanks to the Popes who reside within."
+ 
+ urban_venice: "Venice"
+ urban_venice_desc: "Venice is known as the \"Queen of the Adriatic,\" having been founded on an island in a marshy lagoon after the fall of the Roman Empire. The city's position off the coast defended it first from the Lombards, and then the armies of the Holy Roman Emperor, facilitating Venice's rise to becoming one of the most important naval powers in the entire Mediterranean. Now, centuries of development on the flooded marshlands have given rise to a fantastically complex series of canals and bridges, which link together all of Venice."
+ 
+ urban_constantinople: "Constantinople"
+ urban_constantinople_desc: "Constantinople sits on one of the most strategically important geographical features in the entire world, the Bosporan Strait, which not only links the Black Sea to the Mediterranean, but separates the great continents of Europe and Asia. Constantinople prospered greatly from its extremely unique and advantageous position, becoming the later capital of the Roman Empire, fending off all manner of invaders. Whoever controls Constantinople and the Bosporan Strait will have the potential to form a truly mighty empire."
+ 
+ urban_jerusalem: "Jerusalem"
+ urban_jerusalem_desc: "Jerusalem is one of the most sacred cities in the entire world, deeply revered by the three Abrahamic faiths of Judaism, Christianity, and Islam. As the historical capital of the Jewish state, the resting place of Jesus of Nazareth, and the final earthly respite of the Prophet Muhammad, Jerusalem is of incredible spiritual and theological significance. In the aftermath of the Crusades however, Jerusalem has now been reduced to a relatively insignificant town in the center of Palestine."
+ 
+ urban_arabic: "Gibraltar"
+ urban_arabic_desc: ""
+ 
+ urban_arabic_2: "Arabic City"
+ urban_arabic_2_desc: ""
+ 
+ urban_hanseatic: "Hanseatic City"
+ urban_hanseatic_desc: "A Hanseatic City is a settlement that is a member of the Hansa, a commercial and defensive federation of guilds and market towns which has long dominated commerce across the English Channel, the North Sea, and the Baltic. The most famous of the Hanseatic Cities are Hamburg, Bremen, and Lübeck, whose combined prosperity and strength frequently provoked the ire of powerful sovereigns, including the King of Denmark."
+ 
+ urban_mecca: "Mecca"
+ urban_mecca_desc: "Mecca is the holiest city of the Islamic faith, having been captured by the Prophet Muhammad after his migration from Medina. Traditionally, the Sharif of Mecca has governed the city with potent religious authority, serving as not only the custodian of that city, but also Medina and the entire Hejaz."
+ 
+ urban_firenze: "Florence"
+ urban_firenze_desc: "Located on the River Arno in the center of Tuscany, Florence is among the most notable and influential of the Italian cities. Through shrewd methods of war and diplomacy, Florence has come to dominate its neighbors, including Pisa and Arezzo, becoming the most powerful force in the former March of Tuscany." 
+   
+ urban_tenochtitlan: "Tenochtitlan"
+ urban_tenochtitlan_desc: "Tenochtitlan is one of the most remarkable cities in the entire American world, situated on an island at the center of Lake Texcoco, connected to its surroundings and the allied cities of Texcoco and Tlatelolco by means of an extensive system of canals and bridges. As the largest city in the Americas, Tenochtitlan has the potential to serve as the capital of great and glorious empire."
+  
+ urban_hamburg: "Hamburg"
+ urban_hamburg_desc: "At the mouth of the River Elbe, Hamburg is one of the most important trade centers in all of Germany, facilitating the flow of goods between inland Germany and the ports beyond the Atlantic. In order to protect its interests, Hamburg associated itself with the Hanseatic League, joining forces with other German cities to defend its independence from foreign threats." 
+ 
+ urban_genoa: "Genoa"
+ urban_genoa_desc: "Historically the greatest rival of Venice, Genoa is the largest city in all of Liguria, dominating the West Mediterranean trade. While the city was prosperous, it was not able to compete with Venice following the Battle of Chioggia, and gradually became weakened by the internal crises of its nobles, who turned over control of the Republic to France multiple times. However, the emergence of Genovese banking, often to the benefit of the Spanish, radically changed the later fortunes of the city."
+ 
+ pyramids: "Giza Necropolis"
+ pyramids_desc: "The Pyramids of Giza have long been the tallest manmade structures in the entire world, having endured for thousands of years, seemingly beyond human memory. Contrary to popular belief of the time, the Pyramids were not hollow, nor were they used to ever store grain; instead, the complex serves as a gigantic tomb of the pharaohs, representing emphatically the inevitable union between life and death."
+
+ coast_baltic_sea: "Baltic Coast"
+ coast_baltic_sea_desc: "Several fishing villages and smaller port cities take advantage of the gifts provided by the Baltic Sea in order to make their living."
+ 
+ urban_london: "London"
+ urban_london_desc: "Founded by the Romans as Londinium, the city of London has served as the political capital of England for many centuries. While deeply ravaged by the Black Death of the 14th century, with proper management the city of London can grow mightier than it ever was." 
+  
+ arctic_ice: "Arctic Icescape"
+ arctic_ice_desc: "The blinding reflection of the sun glances off the ice flows and glaciers throughout this stretch of the Artic, creating a glaring phantasmagoria of water and light in the midst of the frozen oceans."
+ 
+ urban_naples: "Naples"
+ urban_naples_desc: "Having grown prosperous at the foothills of Mount Vesuvius, Naples thrives off its agriculture, taking great advantage of the volcanic soils. However, should Mount Vesuvius ever erupt with vigor, it could bring absolute catastrophe upon one of the most important cities in Europe."
+ 
+ urban_sevilla: "Sevilla"
+ urban_sevilla_desc: "Once the location of the Bay of Tartessos, the coastline has since pushed outward with the gradual deposition of sediment, allowing for the establishment of the city of Sevilla inland on the Guadalquivir River. While it still has a distinctly Moorish character, Sevilla is one of the most important ports in all of Iberia."
+ 
+ urban_vienna: "Vienna"
+ urban_vienna_desc: "Vienna has risen from obscurity into becoming one of the most promising cities of the Holy Roman Empire, serving as the capital of the Duchy of Austria and therefore a key political center in the realms of the nascent Habsburg dynasty. Whoever controls Vienna could potentially control the fate of the entire Empire."
+ 
+ urban_toledo: "Toledo"
+ urban_toledo_desc: "Toledo was reclaimed for Christianity by Alfonso VI of Castile in 1085, eventually becoming the capital of his increasingly powerful kingdom. Long past the days of Moorish domination on the Iberian Peninsula, the city of Toledo has the potential to become the capital of one of the world's most influential states."
+
+ coast_north_sea: "Atlantic Coast"
+ coast_north_sea_desc: "The Atlantic coast here is home to a number of small port towns and fishing villages."
+ 
+ urban_dresden: "Dresden"
+ urban_dresden_desc: "Known as the \"Jewel Box\" for its buildings of splendid and ornate architectural design, Dresden is one of the most important cities in the entire region of Saxony. Resting on the banks of the Elbe River, the city sits on the linguistic frontier between the ethnic Germans to the west and the local Sorbians to the east."
+ 
+ urban_breslau: "Breslau"
+ urban_breslau_desc: "Breslau is the largest city in the Duchies of Silesia, one of the wealthier and more populated parts of Europe. The city has an extremely cosmopolitan character, being the site of extensive intermingling between Czech, German, and Polish cultures."
+ 
+ terrain_brandenburg: "Brandenburg"
+ terrain_brandenburg_desc: ""
+ 
+ very_drylands: "Extreme Drylands"
+ very_drylands_desc: ""
+
+ urban_athens: "Athens"
+ urban_athens_desc: ""
+ 
+ urban_kilwa: "Kilwa"
+ urban_kilwa_desc: ""
+ 
+ urban_cracow: "Krakow"
+ urban_cracow_desc: ""
+ 
+ urban_oxford: "Oxford"
+ urban_oxford_desc: ""
+ 
+ urban_edinborough: "Edinburgh"
+ urban_edinborough_desc: ""
+ 
+ urban_danzig: "Danzig"
+ urban_danzig_desc: ""
+ 
+ urban_siena: "Siena"
+ urban_siena_desc: ""
+ 
+ urban_brugge: "Bruges"
+ urban_brugge_desc: ""
+ 
+ urban_carcassonne: "Carcassonne"
+ urban_carcassonne_desc: ""
+ 
+ urban_praga: "Prague"
+ urban_praga_desc: ""
+ 
+ urban_york: "York"
+ urban_york_desc: ""
+ 
+ urban_lincoln: "Lincoln"
+ urban_lincoln_desc: ""
+ 
+ urban_berlin: "Berlin"
+ urban_berlin_desc: ""
+ 
+ urban_newcastle: "Newcastle"
+ urban_newcastle_desc: ""
+ 
+ urban_moscow: "Moscow"
+ urban_moscow_desc: ""
+  
+ urban_nottingham: "Nottingham"
+ urban_nottingham_desc: ""
+ 
+ urban_thessaloniki: "Thessaloniki"
+ urban_thessaloniki_desc: ""
+ 
+ urban_milano: "Milan"
+ urban_milano_desc: ""
+ 
+ urban_mantua: "Mantua"
+ urban_mantua_desc: ""
+ 
+ urban_copenhagen: "Copenhagen"
+ urban_copenhagen_desc: ""
+ 
+ lombardy_lake: "Lakes of Lombardy"
+ lombardy_lake_desc: "Left behind when the glaciers of the Ice Age receded, the lakes of Lombardy are among the largest freshwater bodies in all of Europe. They are among the deepest lakes in Europe, with Lake Como reaching a staggering depth of 500 meters. Since the Roman era, these beautiful and pristine lakes have been the site of vacationing and tourism by wealthy nobles and aristocrats."
+ 
+ urban_stockholm: "Stockholm"
+ urban_stockholm_desc: ""
+ 
+ urban_antwerp: "Antwerp"
+ urban_antwerp_desc: ""
+ 
+ urban_vilna: "Vilnius"
+ urban_vilna_desc: ""
+ 
+ urban_kent: "Canterbury"
+ urban_kent_desc: ""
+ 
+ urban_trakai: "Trakai"
+ urban_trakai_desc: ""
+ 
+ urban_amsterdam: "Amsterdam"
+ urban_amsterdam_desc: ""
+ 
+ urban_denbosch: "Den Bosch"
+ urban_denbosch_desc: ""
+ 
+ urban_gelre: "Geldern"
+ urban_gelre_desc: ""
+ 
+ urban_warsaw: "Warsaw"
+ urban_warsaw_desc: ""
+ 
+ urban_lyon: "Lyon"
+ urban_lyon_desc: ""
+ 
+ urban_marienburg: "Marienburg"
+ urban_marienburg_desc: ""
+ 
+ urban_gondar: "Gondar"
+ urban_gondar_desc: ""
+ 
+ urban_theodoro: "Theodoro"
+ urban_theodoro_desc: ""
+ 
+ urban_utrecht: "Utrecht"
+ urban_utrecht_desc: ""
+ 
+ urban_ani: "Ani"
+ urban_ani_desc: ""
+ 
+ urban_kars: "Kars"
+ urban_kars_desc: ""
+ 
+ terrain_orderland: "Trento"
+ terrain_orderland_desc: ""
+ 
+ urban_smyrna: "Smyrna"
+ urban_smyrna_desc: ""
+ 
+ coast_america: "American Coast"
+ coast_america_desc: ""
+ 
+ urban_munich: "Münich"
+ urban_munich_desc: ""
+ 
+ urban_lisboa: "Lisbon"
+ urban_lisboa_desc: ""
+ 
+ urban_havanna: "Havana"
+ urban_havanna_desc: ""
+ 
+ urban_nassau: "Nassau"
+ urban_nassau_desc: ""
+ 
+ urban_new_orleans: "New Orleans"
+ urban_new_orleans_desc: ""
+ 
+ urban_akkon: "Acre"
+ urban_akkon_desc: ""
+ 
+ mountains_himalaya: "Himalayan Mountains"
+ mountains_himalaya_desc: "The Himalayas are the tallest mountain range on Earth, located at the edge of the Tibetan Plateau, where the Indian Subcontinent has collided with Asia. Nine of the world's ten tallest mountains reside in the Himalayas, which have long been a sight of spiritual and naturalistic fascination. Perhaps one day, daring and intrepid explorers will be able to summit to the tops of the world."
+ 
+ urban_new_york: "New York"
+ urban_new_york_desc: ""
+   
+ urban_boston: "Boston"
+ urban_boston_desc: ""
+ 
+ urban_lhasa: "Lhasa"
+ urban_lhasa_desc: ""
+ 
+ generic_isle: "Caribbean Islands"
+ generic_isle_desc: ""
+ 
+ generic_isle2: "Caribbean Islands"
+ generic_isle2_desc: ""
+ 
+ mountains_rocky_mountains: "Rocky Mountains"
+ mountains_rocky_mountains_desc: ""
+ 
+ mountains_appalachian: "Appalachian Mountains"
+ mountains_appalachian_desc: ""
+ 
+ mountains_appalachian_hills: "Appalachian Mountains"
+ mountains_appalachian_hills_desc: ""
+ 
+ urban_koenigsberg: "Königsberg"
+ urban_koenigsberg_desc: ""
+ 
+ urban_salzburg: "Salzburg"
+ urban_salzburg_desc: ""
+ 
+ urban_ragusa: "Ragusa"
+ urban_ragusa_desc: ""
+ 
+ urban_nicosia: "Nicosia"
+ urban_nicosia_desc: ""
+ 
+ urban_rhodos: "Rhodos"
+ urban_rhodos_desc: ""
+ 
+ urban_cairo: "Cairo"
+ urban_cairo_desc: ""
+ 
+ urban_dublin: "Dublin"
+ urban_dublin_desc: ""
+ 
+ urban_kyoto: "Kyoto"
+ urban_kyoto_desc: ""
+ 
+ mount_fuji: "Mount Fuji"
+ mount_fuji_desc: ""
+ 
+ easter_egg: "Easter Egg"
+ easter_egg_desc: "Smile!"
+ 
+ japanese_hills: "Japanese Hills"
+ japanese_hills_desc: ""
+ 
+ japanese_farmland: "Japanese Farmland"
+ japanese_farmland_desc: ""
+  
+ urban_bursa: "Bursa"
+ urban_bursa_desc: ""
+ 
+ urban_cadiz: "Cádiz"
+ urban_cadiz_desc: ""
+ 
+ urban_granada: "Granada"
+ urban_granada_desc: ""
+ 
+ urban_trebizond: "Trebizond"
+ urban_trebizond_desc: ""
+ 
+ urban_madrid: "Madrid"
+ urban_madrid_desc: ""
+ 
+ urban_budapest: "Budapest"
+ urban_budapest_desc: ""
+   
+ urban_nice: "Nice"
+ urban_nice_desc: ""
+ 
+ mountains_ural: "Ural Mountains"
+ mountains_ural_desc: ""
+ 
+ urban_heidelberg: "Heidelberg"
+ urban_heidelberg_desc: ""
+ 
+ urban_vladimir: "Vladimir"
+ urban_vladimir_desc: ""
+ 
+ urban_novgorod: "Novgorod"
+ urban_novgorod_desc: ""
+ 
+ urban_mozhaisk: "Mozhaisk"
+ urban_mozhaisk_desc: ""
+ 
+ urban_rostov: "Rostov"
+ urban_rostov_desc: ""
+ 
+ urban_suzdal: "Suzdal"
+ urban_suzdal_desc: ""
+ 
+ urban_tver: "Tver"
+ urban_tver_desc: ""
+ 
+ urban_nizhny_novgorod: "Nizhny Novgorod"
+ urban_nizhny_novgorod_desc: ""
+ 
+ urban_kazan: "Kazan"
+ urban_kazan_desc: ""
+ 
+ urban_yaroslavl: "Yaroslavl"
+ urban_yaroslavl_desc: ""
+ 
+ urban_rzhev: "Rzhev"
+ urban_rzhev_desc: ""
+ 
+ urban_grodno: "Grodno"
+ urban_grodno_desc: ""
+ 
+ urban_kiev: "Kiev"
+ urban_kiev_desc: ""
+ 
+ urban_kolomna: "Kolomna"
+ urban_kolomna_desc: ""
+ 
+ urban_kostroma: "Kostroma"
+ urban_kostroma_desc: ""
+ 
+ urban_tula: "Tula"
+ urban_tula_desc: ""
+ 
+ urban_vitebsk: "Vitebsk"
+ urban_vitebsk_desc: ""
+ 
+ urban_kasimov: "Kasimov"
+ urban_kasimov_desc: ""
+ 
+ urban_ustjug: "Ustyug"
+ urban_ustjug_desc: ""
+ 
+ urban_minsk: "Minsk"
+ urban_minsk_desc: ""
+ 
+ urban_smolensk: "Smolensk"
+ urban_smolensk_desc: ""
+ 
+ urban_polotsk: "Polotsk"
+ urban_polotsk_desc: ""
+ 
+ urban_lwow: "Lviv"
+ urban_lwow_desc: ""
+ 
+ urban_kursk: "Kursk"
+ urban_kursk_desc: ""
+ 
+ urban_vologda: "Vologda"
+ urban_vologda_desc: ""
+ 
+ urban_galich: "Galich"
+ urban_galich_desc: ""
+ 
+ urban_ryasan: "Ryazan"
+ urban_ryasan_desc: ""
+ 
+ urban_saint_petersburg: "Saint Petersburg"
+ urban_saint_petersburg_desc: ""
+ 
+ urban_pleskau: "Pskov"
+ urban_pleskau_desc: ""
+ 
+ urban_baloozero: "Beloozero"
+ urban_baloozero_desc: ""
+ 
+ urban_cherdyn: "Cherdyn"
+ urban_cherdyn_desc: ""
+ 
+ urban_marseille: "Marseille"
+ urban_marseille_desc: ""
+ 
+ urban_tunis: "Tunis"
+ urban_tunis_desc: ""
+ 
+ urban_lublin: "Lublin"
+ urban_lublin_desc: ""
+ 
+ urban_beijing: "Beijing"
+ urban_beijing_desc: "Home to 600,000 people in the year 1450, Beijing was the largest city of its time and the center of the Ming dynasty after the movement of its court from Nanjing. Home to the imperial bureaucracy, Beijing is a pivotal focus of economy and administration."
+ 
+ urban_nanjing: "Nanjing"
+ urban_nanjing_desc: ""
+ 
+ urban_canton: "Canton"
+ urban_canton_desc: ""
+ 
+ urban_valencia: "Valencia"
+ urban_valencia_desc: ""
+ 
+ urban_palermo: "Palermo"
+ urban_palermo_desc: ""
+ 
+ urban_verona: "Verona"
+ urban_verona_desc: "" 
+ 
+ urban_hajitarkhan: "Astrakhan"
+ urban_hajitarkhan_desc: ""
+ 
+ urban_alexandria: "Alexandria"
+ urban_alexandria_desc: ""
+ 
+ urban_angkor_wat: "Angkor Wat"
+ urban_angkor_wat_desc: ""
+ 
+ urban_pyeongyang: "Pyeongyang"
+ urban_pyeongyang_desc: ""
+ 
+ urban_hangzhou: "Hangzhou"
+ urban_hangzhou_desc: ""
+  
+ urban_yangzhou: "Yangzhou"
+ urban_yangzhou_desc: ""
+ 
+ urban_chengdu: "Chengdu"
+ urban_chengdu_desc: ""
+ 
+ chinese_mountains: "Chinese Mountains"
+ chinese_mountains_desc: ""
+ 
+ urban_cotbus: "Cottbus"
+ urban_cotbus_desc: ""
+ 
+ bohemian_forest: "Bohemian Forest"
+ bohemian_forest_desc: ""
+ 
+ bohemian_highlands: "Bohemian Highlands"
+ bohemian_highlands_desc: ""
+ 
+ bohemian_grasland: "Moravian Grassland"
+ bohemian_grasland_desc: ""
+ 
+ thuringian_woods: "Thuringian Forest"
+ thuringian_woods_desc: ""
+ 
+ bohemian_mountains: "Ore Mountains"
+ bohemian_mountains_desc: ""
+ 
+ urban_barcelona: "Barcelona"
+ urban_barcelona_desc: ""
+ 
+ urban_litomerice: "Litomerice"
+ urban_litomerice_desc: ""
+ 
+ urban_pilsen: "Plzen"
+ urban_pilsen_desc: ""
+ 
+ urban_budweis: "Budejovice"
+ urban_budweis_desc: ""
+ 
+ urban_tiflis: "T'bilisi"
+ urban_tiflis_desc: "Once the political center of Queen Tamar's mighty Kingdom of Georgia, T'bilisi came into hard times when Georgia was invaded by the forces of the Mongols, the Timurids, and the Turkmens. The grievous damage inflicted upon Georgia threatens to ruin the nation and cast it back into obscurity, but a wise ruler could yet again make T'bilisi the heart of a new empire."
+ 
+ urban_amberg: "Amberg"
+ urban_amberg_desc: ""
+ 
+ urban_bamberg: "Bamberg"
+ urban_bamberg_desc: ""
+ 
+ urban_augsburg: "Augsburg"
+ urban_augsburg_desc: ""
+ 
+ urban_baden: "Baden"
+ urban_baden_desc: ""
+ 
+ urban_freiburg: "Freiburg im Breisgau"
+ urban_freiburg_desc: ""
+  
+ urban_ravensburg: "Ravensburg"
+ urban_ravensburg_desc: ""
+ 
+ urban_regensburg: "Regensburg"
+ urban_regensburg_desc: ""
+  
+ urban_landshut: "Landshut"
+ urban_landshut_desc: ""
+ 
+ urban_mainz: "Mainz"
+ urban_mainz_desc: ""
+ 
+ urban_swabian_hall: "Hall"
+ urban_swabian_hall_desc: ""
+ 
+ urban_ingolstadt: "Ingolstadt"
+ urban_ingolstadt_desc: ""
+ 
+ urban_nuernberg: "Nuremberg"
+ urban_nuernberg_desc: ""
+ 
+ urban_wuerzburg: "Würzburg"
+ urban_wuerzburg_desc: ""
+ 
+ urban_straubing: "Straubing"
+ urban_straubing_desc: ""
+ 
+ urban_worms: "Worms"
+ urban_worms_desc: ""
+ 
+ urban_stuttgart: "Stuttgart"
+ urban_stuttgart_desc: ""
+ 
+ urban_samarkand: "Samarkand"
+ urban_samarkand_desc: ""
+  
+ chinese_wall: "Great Wall"
+ chinese_wall_desc: ""
+ 
+ urban_datong: "Datong"
+ urban_datong_desc: ""
+ 
+ urban_hanseong: "Hanseong"
+ urban_hanseong_desc: "Hanseong is the historic capital of Korea, which first became the \"Southern Capital\" and the location of a summer palace under the Kingdom of Goryeo. Even after the Joseon dynasty supplanted Goryeo, Hanseong remained a settlement of critical importance, having become home to hundreds of thousands of people, and therefore one of the largest cities in the entire world."
+ 
+ urban_girin: "Girin"
+ urban_girin_desc: ""
+ 
+ urban_gyeongju: "Gyeongju"
+ urban_gyeongju_desc: ""
+ 
+ urban_mogilyov: "Mogilev"
+ urban_mogilyov_desc: ""
+ 
+ urban_shenyang: "Shenyang"
+ urban_shenyang_desc: ""
+ 
+ urban_wuchang: "Wuchang"
+ urban_wuchang_desc: ""
+ 
+ mountain_paektusan: "Paektu Mountain"
+ mountain_paektusan_desc: "Paketu Mountain is an active stratovolcano on the northern edge of the Korean Peninsula, and is the highest mountain in the entire region. Considered by the Koreans to be their spiritual home, a gigantic caldera rests at the summit of Mount Paektu. Fortunately for the people of the Far East, no major settlements are in the vicinity of the mountain, which had an eruption of legendary scale in 946, whose explosion was reported in Kyoto as having the \"sound of drums.\""
+ 
+ urban_yunnan: "Yunnan"
+ urban_yunnan_desc: ""
+ 
+ urban_yumen: "Yumen"
+ urban_yumen_desc: ""
+ 
+ urban_luoyang: "Luoyang"
+ urban_luoyang_desc: ""
+  
+ urban_xiangyang: "Xiangyang"
+ urban_xiangyang_desc: ""
+ 
+ urban_braganca: "Bragança"
+ urban_braganca_desc: ""
+ 
+ urban_porto: "Porto"
+ urban_porto_desc: ""
+ 
+ urban_coimbra: "Coimbra"
+ urban_coimbra_desc: ""
+ 
+ urban_viseu: "Viseu"
+ urban_viseu_desc: "" 
+ 
+ urban_strassburg: "Straßburg"
+ urban_strassburg_desc: ""
+ 
+ urban_memmingen: "Memmingen"
+ urban_memmingen_desc: ""
+ 
+ urban_schwerin: "Schwerin"
+ urban_schwerin_desc: ""
+
+ urban_trondheim: "Trondheim"
+ urban_trondheim_desc: ""
+ urban_bergen: "Bergen"
+ urban_bergen_desc: ""
+ urban_christiania: "Oslo"
+ urban_christiania_desc: "Since the reign of Norwegian monarch Haakon V, Oslo has been the capital of Norway, partaking extensively in regional commerce, dealing frequently with Hanseatic traders. While the city is not exceptionally large, it certainly could become a great center of shipbuilding and trade within Scandinavia."
+ 
+ urban_aachen: "Aachen"
+ urban_aachen_desc: ""
+ urban_brunswik: "Brunswick"
+ urban_brunswik_desc: ""
+ urban_dessau: "Dessau"
+ urban_dessau_desc: ""
+ urban_duesseldorf: "Düsseldorf"
+ urban_duesseldorf_desc: ""
+ urban_greifswald: "Greifswald"
+ urban_greifswald_desc: ""
+ urban_hannover: "Hannover"
+ urban_hannover_desc: ""
+ urban_hoya: "Hoya"
+ urban_hoya_desc: ""
+ urban_kassel: "Kassel"
+ urban_kassel_desc: ""
+ urban_kleve: "Kleve"
+ urban_kleve_desc: ""
+ urban_koblenz: "Koblenz"
+ urban_koblenz_desc: ""
+ urban_kolberg: "Kolberg"
+ urban_kolberg_desc: ""
+ urban_leipzig: "Leipzig"
+ urban_leipzig_desc: ""
+ urban_marburg: "Marburg"
+ urban_marburg_desc: ""
+ urban_meppen: "Meppen"
+ urban_meppen_desc: ""
+ urban_muenster: "Münster"
+ urban_muenster_desc: ""
+ urban_potsdam: "Potsdam"
+ urban_potsdam_desc: ""
+ urban_rostock: "Rostock"
+ urban_rostock_desc: ""
+ urban_stetin: "Stetin"
+ urban_stetin_desc: ""
+ urban_stolp: "Stolp"
+ urban_stolp_desc: ""
+ urban_stralsund: "Stralsund"
+ urban_stralsund_desc: ""
+ urban_trier: "Trier"
+ urban_trier_desc: ""
+ urban_wiesbaden: "Wiesbaden"
+ urban_wiesbaden_desc: ""
+ urban_wismar: "Wismar"
+ urban_wismar_desc: ""
+ urban_paderborn: "Paderborn"
+ urban_paderborn_desc: ""
+ urban_arnsberg: "Arnsberg"
+ urban_arnsberg_desc: ""
+ urban_magdeburg: "Magdeburg"
+ urban_magdeburg_desc: ""
+ urban_bremen: "Bremen"
+ urban_bremen_desc: ""
+ urban_frankfurt: "Frankfurt"
+ urban_frankfurt_desc: ""
+ urban_koeln: "Cologne"
+ urban_koeln_desc: ""
+ urban_luxemburg: "Luxemburg"
+ urban_luxemburg_desc: ""
+ urban_ulm: "Ulm"
+ urban_ulm_desc: ""
+ urban_luebeck: "Lübeck"
+ urban_luebeck_desc: ""
+ 
+ urban_pisa: "Pisa"
+ urban_pisa_desc: ""
+ urban_sogn: "Sogn"
+ urban_sogn_desc: ""
+ urban_agder: "Stavanger"
+ urban_agder_desc: ""
+ urban_besancon: "Besançon"
+ urban_besancon_desc: ""
+ urban_halogaland: "Halogaland"
+ urban_halogaland_desc: ""
+ easter_island: "Easter Island"
+ easter_island_desc: ""
+ urban_bangkok: "Bangkok"
+ urban_bangkok_desc: ""
+ urban_medina: "Medina"
+ urban_medina_desc: ""
+ 
+ urban_iverness: "Inverness"
+ urban_iverness_desc: ""
+ scottish_highlands: "Scottish Highlands"
+ scottish_highlands_desc: ""
+ urban_hebrids: "Hebrides"
+ urban_hebrids_desc: ""
+ urban_fife: "Fife"
+ urban_fife_desc: ""
+ urban_orkney: "Orkney"
+ urban_orkney_desc: ""
+ urban_ayr_glasgow: "Ayrshire"
+ urban_ayr_glasgow_desc: ""
+ urban_fyn: "Fyn"
+ urban_fyn_desc: ""
+ urban_ostjylland: "Aarhus"
+ urban_ostjylland_desc: ""
+ urban_vestjylland: "Westjylland"
+ urban_vestjylland_desc: ""
+ urban_nordjylland: "Nordjylland"
+ urban_nordjylland_desc: ""
+ urban_kolding: "Kolding"
+ urban_kolding_desc: ""
+ urban_hordaland: "Hordaland"
+ urban_hordaland_desc: "" 
+ urban_bornholm: "Bornholm"
+ urban_bornholm_desc: ""
+ urban_kulm: "Kulm"
+ urban_kulm_desc: ""
+ urban_memel: "Memel"
+ urban_memel_desc: ""
+ urban_tirol: "Tirol"
+ urban_tirol_desc: ""
+ urban_linz: "Linz"
+ urban_linz_desc: ""
+ urban_steiermark: "Steiermark"
+ urban_steiermark_desc: ""
+ urban_bern: "Bern"
+ urban_bern_desc: ""
+ urban_carlisle: "Carlisle"
+ urban_carlisle_desc: ""
+ urban_bristol: "Bristol"
+ urban_bristol_desc: ""
+ urban_salisbury: "Salisbury"
+ urban_salisbury_desc: ""
+ urban_chester: "Chester"
+ urban_chester_desc: ""
+ urban_exeter: "Exeter"
+ urban_exeter_desc: ""
+ urban_coventry: "Coventry"
+ urban_coventry_desc: ""
+ urban_kalmar: "Kalmar"
+ urban_kalmar_desc: ""
+ urban_oesel: "Ösel"
+ urban_oesel_desc: ""
+ urban_reval: "Reval"
+ urban_reval_desc: ""
+ urban_bilbao: "Bilbao"
+ urban_bilbao_desc: ""
+ urban_malta: "Malta"
+ urban_malta_desc: ""
+ urban_corfu: "Corfu"
+ urban_corfu_desc: ""
+ urban_larissa: "Larissa"
+ urban_larissa_desc: ""
+ urban_nafplio: "Nafplio"
+ urban_nafplio_desc: ""
+ urban_stendal: "Stendal"
+ urban_stendal_desc: ""
+ urban_wittenberg: "Wittenberg"
+ urban_wittenberg_desc: ""
+ urban_landsberg: "Landsberg an der Warthe"
+ urban_landsberg_desc: ""
+ urban_prenzlau: "Prenzlau"
+ urban_prenzlau_desc: ""
+ 
+ 
+ urban_brussel: "Brussels"
+ urban_brussel_desc: ""
+ urban_den_haag: "Den Haag"
+ urban_den_haag_desc: ""
+ urban_groeningen: "Groningen"
+ urban_groeningen_desc: ""
+ urban_gotland: "Gotland"
+ urban_gotland_desc: ""
+ finnmark_forest: "Finnmark"
+ finnmark_forest_desc: ""
+ 
+ sweden_forest: "Swedish Forest"
+ sweden_forest_desc: ""
+ 
+ keine_zuordnung: "NO Attribution"
+ keine_zuordnung_desc: "Please contact the Mod maker of BETTER URBAN TERRAIN PICTURES and report this bug"
+ 
+ DongKinh: "Dông Kinh"
+ DongKinh_desc: "Situated on rich and fertile lands of the Red River Delta, Dông Kinh has been inhabited since 3000 BC, and served as an imperial capital for millennia. Dông Kinh's name means \"Western Capital,\" in contrast with Thanh Hóa, the \"Eastern Capital.\" The capital of Dông Kinh has lent its name to the surrounding seas, hence known as the Gulf of Tonkin."
+
+ Ayutthaya: "Ayutthaya"
+ Ayutthaya_desc: "Known widely as the \"Venice of the East,\" Ayutthaya is the magnificent capital of the Ayutthaya Kingdom, founded in 1351 by U Thong, the country's first king. It would eventually become the second capital of Siam after Sukhothai, and so by 1600, Ayutthaya had a population of 300,000 people, ranking it among the very greatest cities in the entire world."
+ 
+ Balikul: "Balikul"
+ Balikul_desc: "Balikul is the \"County of Ten Thousand Camels,\" famed for the quality of breeding in its horses and its camels, well-noted for being an equestrian capital of the world."
+ 
+ Hami: "Hami"
+ Hami_desc: "Situated upon a fertile oasis, Hami was once vigorously contested by the Xiongnu tribes and the Han dynasty, the latter of which often set up military agricultural colonies in the region to grow melons, raisins, and wine. Hami since then has served as the capital of the Khanate of Kara Del."
+
+ Hotan: "Hotan"
+ Hotan_desc: "Hotan is one of the many oasis towns located in the Tarim Basin, positioned at the southern and most ancient branch of the Silk Road, which long connected the West to China. As a result of its position on the routes linking China to the rest of the world, Hotan is a city of high strategic importance."
+
+ Nedong: "Nedong"
+ Nedong_desc: "The majestic city of Nedong is hidden among the steep cliffs of the Himalayas in the Yarlung Valley, at an altitude well above 10,000 feet. This city of the sky served as the capital of Tibet's Phagmodrupa dynasty from 1354 to 1618."
+
+ Palembang: "Palembang"
+ Palembang_desc: "Palembang is among the oldest cities in Southeast Asia, having once served as the capital of the mighty Kingdom of Srivijaya, a powerful Buddhist state that was among the first to dominate the trade routes of the Indonesian Archipelago. Centuries after the fall of Srivijaya, the city became a center of not only trade, but also piracy on the Straits of Malacca."
+
+ Tsaidam: "Tsaidam"
+ Tsaidam_desc: "Tsaidam is a hyperarid basin, covering 120,000 square kilometers in saline lakes. One-third of the basin is a desert, and its incredible dryness and diurnal temperature swings make it seem like the setting of an alien world."
+
+ Urumqi: "Urumqi"
+ Urumqi_desc: "Urumqi developed as a major hub of the Silk Road during the Tang dynasty, thereafter becoming an important home of the Dzungar people, a branch of the Oirat tribes. Until the rise of the Qing dynasty, Urumqi was a city that existed solely in obscurity, with scant records existing about the region."
+
+ Yarkant: "Yarkand"
+ Yarkant_desc: "Yarkand thrives off a luscious oasis fed by the Yarkand River, from which irrigated farmland produces cotton, wheat, and fruits, with yaks and sheep grazing in the surrounding highlands. As a major transit point along the Silk Road, Yarkand would experience the mixing of many cultures and faiths, becoming a center of both Nestorian Christianity and Islam."
+
+ urban_osnabrueck: "Osnabrück"
+ urban_osnabrueck_desc: ""
+ 
+ urban_heide: "Heide"
+ urban_heide_desc: ""
+
+ urban_bremervoerde: "Bremervörde"
+ urban_bremervoerde_desc: ""
+ 
+ urban_lueneburg: "Lüneburg"
+ urban_lueneburg_desc: ""
+
+ urban_lauenburg: "Lauenburg"
+ urban_lauenburg_desc: ""
+
+ urban_slesvig: "Slesvig"
+ urban_slesvig_desc: ""
+
+ urban_kiel: "Kiel"
+ urban_kiel_desc: ""
+
+ urban_neuruppin: "Neuruppin"
+ urban_neuruppin_desc: ""
+
+ urban_sternberg: "Sternberg"
+ urban_sternberg_desc: ""
+
+ akita: "Akita"
+ akita_desc: ""
+
+ sannohe: "Sannohe"
+ sannohe_desc: ""
+
+ yamagata: "Yamagata"
+ yamagata_desc: ""
+
+ aizu: "Aizu"
+ aizu_desc: ""
+
+ naoetsu: "Naoetsu"
+ naoetsu_desc: ""
+
+ utsunomiya: "Utsunomiya"
+ utsunomiya_desc: ""
+
+ ota: "Ota"
+ ota_desc: ""
+
+ mayabashi: "Mayabashi"
+ mayabashi_desc: "Mayabashi"
+
+ kawagoe: "Kawagoe"
+ kawagoe_desc: ""
+
+ sakura: "Sakura"
+ sakura_desc: ""
+
+ nagano: "Nagano"
+ nagano_desc: ""
+
+ kofu: "Kofu"
+ kofu_desc: ""
+
+ kamakura: "Kamakura"
+ kamakura_desc: ""
+
+ sunpu: "Sunpu"
+ sunpu_desc: ""
+
+ kanazawa: "Kanazawa"
+ kanazawa_desc: ""
+
+ inabayama: "Inabayama"
+ inabayama_desc: ""
+
+ takefu: "Takefu"
+ takefu_desc: ""
+
+ okazaki: "Okazaki"
+ okazaki_desc: ""
+
+ kiyosu: "Kiyosu"
+ kiyosu_desc: ""
+
+ kiriyama: "Kiriyama"
+ kiriyama_desc: ""
+
+ nara: "Nara"
+ nara_desc: ""
+
+ wakayama: "Wakayama"
+ wakayama_desc: ""
+
+ naniwa: "Naniwa"
+ naniwa_desc: ""
+
+ miyazu: "Miyazu"
+ miyazu_desc: ""
+
+ tottori: "Tottori"
+ tottori_desc: ""
+
+ himeji: "Himeji"
+ himeji_desc: ""
+
+ okayama: "Okayama"
+ okayama_desc: ""
+
+ matsue: "Matsue"
+ matsue_desc: ""
+
+ tomo: "Tomo"
+ tomo_desc: ""
+
+ hamada: "Hamada"
+ hamada_desc: ""
+
+ yamaguchi: "Yamaguchi"
+ yamaguchi_desc: ""
+
+ tokushima: "Tokushima"
+ tokushima_desc: ""
+
+ yuzuki: "Yuzuki"
+ yuzuki_desc: ""
+
+ nakamura: "Nakamura"
+ nakamura_desc: ""
+
+ funai: "Funai"
+ funai_desc: ""
+
+ obi: "Obi"
+ obi_desc: ""
+
+ nagasaki: "Nagasaki"
+ nagasaki_desc: ""
+
+ kumamoto: "Kumamoto"
+ kumamoto_desc: ""
+
+ kagoshima: "Kagoshima"
+ kagoshima_desc: ""
+
+ shuri: "Shuri"
+ shuri_desc: ""
+
+ katsuyama: "Katsuyama"
+ katsuyama_desc: ""
+
+ shiribeshi: "Shiribeshi"
+ shiribeshi_desc: ""
+
+ tokachi: "Tokachi"
+ tokachi_desc: ""
+
+ kamikawa: "Kamikawa"
+ kamikawa_desc: ""
+
+ hakata: "Hakata"
+ hakata_desc: ""
+
+ urban_emden: "Emden"
+ urban_emden_desc: ""
+
+ urban_oldenburg: "Oldenburg"
+ urban_oldenburg_desc: ""

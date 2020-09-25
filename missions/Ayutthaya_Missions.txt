@@ -1,0 +1,352 @@
+ayutthaya_missions_thailand = {
+	slot = 1 #upper left column
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+	potential = {
+		tag = AYU
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	the_sukhothai_throne = {
+		icon = mission_unite_home_region
+		required_missions = {  } #None
+		provinces_to_highlight = {
+			OR = {
+				province_id = 601
+				province_id = 2389
+				province_id = 3370
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			NOT = {
+				exists = SUK
+			}
+			601 = {
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			2389 = {
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			3370 = {
+				is_core = ROOT
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			northern_thai_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	unify_thailand = {
+		icon = mission_conquer_siam
+		required_missions = { the_sukhothai_throne }
+		provinces_to_highlight = {
+			area = northern_thai_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			northern_thai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			malacca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			malaya_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tenasserim_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chermin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kelantan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			pahang_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	defeat_malacca = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { unify_thailand }
+		provinces_to_highlight = {
+			OR = {
+				area = malacca_area
+				area = malaya_area
+				area = tenasserim_area
+				area = chermin_area
+				area = kelantan_area
+				area = pahang_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			malacca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			malaya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			tenasserim_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			chermin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			kelantan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			pahang_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_country_modifier = {
+				name = conquered_the_straits_of_malacca
+				duration = 9125
+			}
+		}
+	}
+}
+
+ayutthaya_missions_east = {
+	slot = 5
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+	potential = {
+		tag = AYU
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	an_old_foe = {
+		icon = mission_conquer_5_states
+		required_missions = {  }
+		trigger = {
+			OR = {
+				AND = {
+					KHM = {
+						exists = yes
+					}
+					is_rival = KHM
+				}
+				war_with = KHM
+				NOT = {
+					exists = KHM
+				}
+			}
+		}
+		effect = {
+			cambodia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			eastern_cambodia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cardomom_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mekong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dong_nam_bo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_casus_belli = {
+				target = KHM
+				type = cb_vassalize_mission
+				months = 300
+			}
+		}
+	}
+
+	subjugation_of_khmer = {
+		icon = mission_a_million_rice_fields
+		required_missions = { an_old_foe }
+		provinces_to_highlight = {
+			OR = {
+				area = cambodia_area
+				area = eastern_cambodia_area
+				area = cardomom_area
+				area = mekong_area
+				area = dong_nam_bo_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			eastern_cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			cardomom_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			mekong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			dong_nam_bo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			north_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chaiyaphum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			khorat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	domination_of_laos = {
+		icon = mission_a_million_elephants
+		required_missions = { subjugation_of_khmer }
+		provinces_to_highlight = {
+			OR = {
+				area = north_laos_area
+				area = south_laos_area
+				area = east_laos_area
+				area = chaiyaphum_area
+				area = khorat_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			north_laos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			south_laos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			east_laos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			chaiyaphum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			khorat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_prestige = 25
+		}
+	}
+}

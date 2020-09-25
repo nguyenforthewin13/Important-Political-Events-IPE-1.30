@@ -1,0 +1,60 @@
+country_decisions = {
+	curtail_mamluks = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = curtailed_mamluks }
+			NOT = {
+				tag = MAM
+			}
+			NOT = {
+				tag = EGY
+			}
+			NOT = {
+				tag = ARB
+			}
+			OR = {
+				primary_culture = turkish
+				NOT = {
+					culture_group = turko_semitic
+				}
+			}
+			any_owned_province = {
+				has_province_modifier = mamluk_influences
+			}
+		}
+		allow = {
+			adm_tech = 22
+			stability = 3
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+		}
+		effect = {
+			set_country_flag = curtailed_mamluks
+			add_stability = -3
+			every_owned_province = {
+				limit = {
+					has_province_modifier = mamluk_influences
+				}
+				remove_province_modifier = mamluk_influences
+			}
+			add_prestige = 25
+			country_event = {
+				id = ottoman_rise.52
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				calc_true_if = {
+					all_owned_province = {
+						region = egypt_region
+					}
+					amount = 10
+				}
+			}
+		}
+	}
+
+}

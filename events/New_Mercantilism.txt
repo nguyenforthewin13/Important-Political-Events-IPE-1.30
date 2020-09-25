@@ -1,0 +1,795 @@
+namespace = new_mercantilism
+
+# The Price Revolution Begins
+country_event = {
+	id = new_mercantilism.1
+	title = new_mercantilism.1.t
+	desc = new_mercantilism.1.d
+	picture = ECONOMY_eventPicture
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		technology_group = western
+		is_colonial_nation = yes
+		gold = 1
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_mercantilism.1.a
+		ai_chance = {
+			factor = 100
+		}
+		overlord = {
+			country_event = {
+				id = new_mercantilism.2
+				days = 1
+			}
+		}
+	}
+}
+
+# The Price Revolution Begins
+country_event = {
+	id = new_mercantilism.2
+	title = new_mercantilism.1.t
+	desc = new_mercantilism.1.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_mercantilism.1.a
+		add_country_modifier = {
+			name = price_revolution
+			duration = 36500
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					technology_group = western
+					NOT = {
+						has_country_flag = price_revolution
+					}
+				}
+				country_event = {
+					id = new_mercantilism.2
+					days = 90
+				}
+				set_country_flag = price_revolution
+			}
+		}
+	}
+}
+
+# The Beginnings of Slavery
+country_event = {
+	id = new_mercantilism.4
+	title = new_mercantilism.4.t
+	desc = new_mercantilism.4.d
+	picture = COLONIZATION_eventPicture
+
+	trigger = {
+		NOT = {
+			has_country_flag = abolished_slavery
+		}
+		NOT = {
+			has_reform = slave_republic
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_flag = slave_event_fired
+			}
+		}
+		primitives = no
+		num_of_ports = 1
+		OR = {
+			any_owned_province = {
+				trade_goods = slaves
+				is_city = yes
+				controlled_by = ROOT
+				is_core = ROOT
+			}
+			1466 = {
+				trade_share = {
+					country = ROOT
+					share = 10
+				}
+			}
+			1448 = {
+				trade_share = {
+					country = ROOT
+					share = 10
+				}
+			}
+			any_owned_province = {
+				has_province_modifier = imported_slave_labor
+				is_city = yes
+				controlled_by = ROOT
+			}
+		}
+		any_owned_province = {
+			OR = {
+				trade_goods = coffee
+				trade_goods = cotton
+				trade_goods = sugar
+				trade_goods = tobacco
+				trade_goods = cocoa
+				trade_goods = tropical_wood
+			}
+			is_city = no
+			controlled_by = ROOT
+			OR = {
+				continent = north_america
+				continent = south_america
+			}
+			NOT = {
+				has_province_flag = slave_event_concluded
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = cocoa
+					trade_goods = tropical_wood
+				}
+				is_city = no
+				controlled_by = ROOT
+				OR = {
+					colonial_region = colonial_alaska
+					colonial_region = colonial_canada
+					colonial_region = colonial_eastern_america
+					colonial_region = colonial_louisiana
+					colonial_region = colonial_california
+					colonial_region = colonial_mexico
+					colonial_region = colonial_the_carribean
+					colonial_region = colonial_cuba
+					colonial_region = colonial_hispaniola
+					colonial_region = colonial_colombia
+					colonial_region = colonial_la_plata
+					colonial_region = colonial_peru
+					colonial_region = colonial_brazil
+				}
+				NOT = {
+					has_province_flag = slave_event_concluded
+				}
+			}
+			set_province_flag = slave_event_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = new_mercantilism.4.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = new_mercantilism.4.a.tooltip
+		random_owned_province = {
+			limit = {
+				has_province_flag = slave_event_fired
+			}
+			clr_province_flag = slave_event_fired
+			set_province_flag = slave_event_concluded
+			add_permanent_province_modifier = {
+				name = imported_slave_labor
+				duration = -1
+			}
+			if = {
+				limit = {
+					OR = {
+						colonial_region = colonial_alaska
+						colonial_region = colonial_canada
+						colonial_region = colonial_eastern_america
+						colonial_region = colonial_louisiana
+						colonial_region = colonial_california
+					}
+				}
+				change_culture = african_american
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_mexico
+				}
+				change_culture = afro_mexican
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_the_carribean
+				}
+				change_culture = afro_antillean
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_cuba
+				}
+				change_culture = afro_cuban
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_hispaniola
+					NOT = {
+						ROOT = {
+							culture_group = iberian
+						}
+					}
+				}
+				change_culture = afro_haitian
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_hispaniola
+					ROOT = {
+						culture_group = iberian
+					}
+				}
+				change_culture = afro_dominican
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_colombia
+				}
+				change_culture = afro_colombian
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_peru
+				}
+				change_culture = afro_peruvian
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_la_plata
+				}
+				change_culture = afro_argentine
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_brazil
+				}
+				change_culture = afro_brazilian
+			}
+			add_base_tax = 3
+			add_base_production = 3
+			add_colonysize = 600
+		}
+		add_treasury = -200
+	}
+
+	option = {
+		name = new_mercantilism.4.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = new_mercantilism.4.b.tooltip
+		random_owned_province = {
+			limit = {
+				has_province_flag = slave_event_fired
+			}
+			clr_province_flag = slave_event_fired
+			set_province_flag = slave_event_concluded
+		}
+	}
+}
+
+# No Slaves
+country_event = {
+	id = new_mercantilism.5
+	title = new_mercantilism.5.t
+	desc = new_mercantilism.5.d
+	picture = COLONIZATION_eventPicture
+
+	trigger = {
+		any_owned_province = {
+			has_province_modifier = imported_slave_labor
+			NOT = {
+				OR = {
+					culture = african_american
+					culture = afro_antillean
+					culture = afro_argentine
+					culture = afro_brazilian
+					culture = afro_colombian
+					culture = afro_cuban
+					culture = afro_dominican
+					culture = afro_haitian
+					culture = afro_mexican
+					culture = afro_peruvian
+				}
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				has_province_modifier = imported_slave_labor
+				NOT = {
+					OR = {
+						culture = african_american
+						culture = afro_antillean
+						culture = afro_argentine
+						culture = afro_brazilian
+						culture = afro_colombian
+						culture = afro_cuban
+						culture = afro_dominican
+						culture = afro_haitian
+						culture = afro_mexican
+						culture = afro_peruvian
+					}
+				}
+			}
+			set_province_flag = remove_slaves
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = new_mercantilism.5.a
+		random_owned_province = {
+			limit = {
+				has_province_flag = remove_slaves
+			}
+			clr_province_flag = remove_slaves
+			remove_province_modifier = imported_slave_labor
+		}
+	}
+}
+
+# Slaves Die
+country_event = {
+	id = new_mercantilism.6
+	title = new_mercantilism.6.t
+	desc = new_mercantilism.6.d
+	picture = COLONIZATION_eventPicture
+
+	trigger = {
+		any_owned_province = {
+			has_province_modifier = imported_slave_labor
+			base_tax = 2
+			base_production = 2
+		}
+		has_climate = tropical
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = new_mercantilism.6.a
+		random_owned_province = {
+			limit = {
+				has_province_modifier = imported_slave_labor
+				base_tax = 2
+				base_production = 2
+			}
+			add_base_tax = -1
+			add_base_production = -1
+		}
+	}
+}
+
+# Importing Slaves
+country_event = {
+	id = new_mercantilism.7
+	title = new_mercantilism.7.t
+	desc = new_mercantilism.7.d
+	picture = COLONIZATION_eventPicture
+
+	trigger = {
+		NOT = {
+			has_country_flag = abolished_slavery
+		}
+		NOT = {
+			has_reform = slave_republic
+		}
+		any_owned_province = {
+			has_province_modifier = imported_slave_labor
+		}
+		has_climate = tropical
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = new_mercantilism.7.a
+		random_owned_province = {
+			limit = {
+				has_province_modifier = imported_slave_labor
+			}
+			add_base_tax = 1
+			add_base_production = 1
+		}
+		add_treasury = -200
+	}
+
+	option = {
+		name = new_mercantilism.7.b
+	}
+}
+
+# Slaves Have Taken Over!
+country_event = {
+	id = new_mercantilism.8
+	title = new_mercantilism.8.t
+	desc = new_mercantilism.8.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_mercantilism.8.a
+		FROM = {
+			every_owned_province = {
+				add_core = ROOT
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = slave_revolt
+		}
+	}
+}
+
+# The Abolition of Slavery
+country_event = {
+	id = new_mercantilism.9
+	title = new_mercantilism.9.t
+	desc = new_mercantilism.9.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_mercantilism.9.a
+		add_country_modifier = {
+			name = innovative_modifier
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = "the_abolish_slavery_act"
+			duration = -1
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = imported_slave_labor
+				}
+				remove_province_modifier = imported_slave_labor
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = slaves
+				}
+				change_trade_goods = unknown
+				remove_building = tradecompany
+				if = {
+					limit = { has_province_modifier = slave_entrepot }
+					remove_province_modifier = slave_entrepot
+				}
+			}
+		}
+		add_liberty_desire = 25
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 5
+				}
+			}
+			add_liberty_desire = 25
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 10
+				}
+			}
+			add_liberty_desire = 25
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 15
+				}
+			}
+			add_liberty_desire = 25
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 20
+				}
+			}
+			add_liberty_desire = 25
+		}
+		set_country_flag = abolished_slavery
+		clr_country_flag = abolishing_slavery
+	}
+}
+
+# Slavery Extinguished
+country_event = {
+	id = new_mercantilism.10
+	title = new_mercantilism.10.t
+	desc = new_mercantilism.10.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+
+	trigger = {
+		has_reform = slave_republic
+		any_owned_province = {
+			OR = {
+				has_province_modifier = imported_slave_labor
+			}
+			trade_goods = slaves
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_mercantilism.10.a
+		every_owned_province = {
+			limit = {
+				has_province_modifier = imported_slave_labor
+			}
+			remove_province_modifier = imported_slave_labor
+			add_base_manpower = 2
+		}
+		every_owned_province = {
+			limit = {
+				trade_goods = slaves
+			}
+			change_trade_goods = unknown
+			remove_building = tradecompany
+			if = {
+				limit = { has_province_modifier = slave_entrepot }
+				remove_province_modifier = slave_entrepot
+			}
+			add_base_manpower = 2
+		}
+	}
+}
+
+# The Conquest of Hispaniola
+country_event = {
+	id = new_mercantilism.11
+	title = new_mercantilism.11.t
+	desc = new_mercantilism.11.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		NOT = {
+			has_country_flag = abolished_slavery
+		}
+		NOT = {
+			has_reform = slave_republic
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_flag = slave_event_fired
+			}
+		}
+		primitives = no
+		num_of_ports = 1
+		OR = {
+			any_owned_province = {
+				trade_goods = slaves
+				is_city = yes
+				controlled_by = ROOT
+				is_core = ROOT
+			}
+			1466 = {
+				trade_share = {
+					country = ROOT
+					share = 10
+				}
+			}
+			1448 = {
+				trade_share = {
+					country = ROOT
+					share = 10
+				}
+			}
+			any_owned_province = {
+				has_province_modifier = imported_slave_labor
+				is_city = yes
+				controlled_by = ROOT
+			}
+			AND = {
+				is_colonial_nation = yes
+				overlord = {
+					any_owned_province = {
+						trade_goods = slaves
+						is_city = yes
+						controlled_by = ROOT
+						is_core = ROOT
+					}
+					1466 = {
+						trade_share = {
+							country = ROOT
+							share = 10
+						}
+					}
+					1448 = {
+						trade_share = {
+							country = ROOT
+							share = 10
+						}
+					}
+					any_owned_province = {
+						has_province_modifier = imported_slave_labor
+						is_city = yes
+						controlled_by = ROOT
+					}
+				}
+			}
+		}
+		OR = {
+			any_owned_province = {
+				area = hispaniola_area
+				is_core = ROOT
+				controlled_by = ROOT
+				NOT = {
+					has_province_modifier = imported_slave_labor
+					trade_goods = sugar
+					has_province_flag = slave_event_concluded
+				}
+			}
+			any_owned_province = {
+				area = dominica_area
+				is_core = ROOT
+				controlled_by = ROOT
+				NOT = {
+					has_province_modifier = imported_slave_labor
+					trade_goods = sugar
+					has_province_flag = slave_event_concluded
+				}
+			}
+			492 = {
+				owned_by = ROOT
+				is_core = ROOT
+				controlled_by = ROOT
+				NOT = {
+					has_province_modifier = imported_slave_labor
+					trade_goods = sugar
+					has_province_flag = slave_event_concluded
+				}
+			}
+		}
+		OR = {
+			slaves = 1
+			any_owned_province = {
+				has_province_modifier = imported_slave_labor
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		every_owned_province = {
+			limit = {
+				area = hispaniola_area
+				is_core = ROOT
+				NOT = {
+					has_province_modifier = imported_slave_labor
+					trade_goods = sugar
+					has_province_flag = slave_event_concluded
+				}
+			}
+			set_province_flag = slave_event_fired
+		}
+		every_owned_province = {
+			limit = {
+				area = dominica_area
+				is_core = ROOT
+				NOT = {
+					has_province_modifier = imported_slave_labor
+					trade_goods = sugar
+					has_province_flag = slave_event_concluded
+				}
+			}
+			set_province_flag = slave_event_fired
+		}
+		if = {
+			limit = {
+				492 = {
+					owned_by = ROOT
+					is_core = ROOT
+					controlled_by = ROOT
+					NOT = {
+						has_province_modifier = imported_slave_labor
+						trade_goods = sugar
+						has_province_flag = slave_event_concluded
+					}
+				}
+			}
+			set_province_flag = slave_event_fired
+		}
+	}
+
+	option = {
+		name = new_mercantilism.11.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = new_mercantilism.4.a.tooltip
+		every_owned_province = {
+			limit = {
+				has_province_flag = slave_event_fired
+			}
+			change_culture = afro_antillean
+			change_religion = root
+			add_base_tax = 3
+			add_base_production = 3
+			clr_province_flag = slave_event_fired
+			add_permanent_province_modifier = {
+				name = imported_slave_labor
+				duration = -1
+			}
+			add_permanent_province_modifier = {
+				name = hispaniola_plantations
+				duration = -1
+			}
+			clr_province_flag = slave_event_fired
+			set_province_flag = slave_event_concluded
+		}
+		add_treasury = -200
+	}
+
+	option = {
+		name = new_mercantilism.11.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = new_mercantilism.4.b.tooltip
+		every_owned_province = {
+			limit = {
+				has_province_flag = slave_event_fired
+			}
+			clr_province_flag = slave_event_fired
+			set_province_flag = slave_event_concluded
+		}
+	}
+}

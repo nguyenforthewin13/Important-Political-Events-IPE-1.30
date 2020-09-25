@@ -1,0 +1,19 @@
+#3335 - Nagato
+
+owner = OUC
+controller = OUC
+culture = japanese
+religion = shinto
+capital = "Shimonoseki"
+trade_goods = fish
+hre = no
+base_tax = 5
+base_manpower = 5
+base_production = 3
+is_city = yes
+add_core = OUC
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG

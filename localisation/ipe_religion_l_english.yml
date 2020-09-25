@@ -1,0 +1,35 @@
+﻿l_english:
+ # Nestorian
+ nestorian: "Nestorian"
+ zamikaelites: "Zamikaelites"
+ stephanites: "Stephanites"
+ eustathians: "Eustathians"
+ nestorian_rebels_demand:0 "Convert $COUNTRYNAME$"
+ nestorian_rebels_demand_desc:0 "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
+ nestorian_rebels_title:0 "Religious"
+ nestorian_rebels_name:0 "$RELIGION$ Zealots"
+ nestorian_rebels_desc:0 "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
+ nestorian_rebels_army:0 "$RELIGION$ Army"
+ nestorian_religion_desc:0 "Nestorianism is a branch of Christianity that emphasizes the disunion between the human and divine natures of Jesus. It was advanced by Nestorius in the early 400s and declared heretical by the Council of Ephesus in 431.\nIn the game, Nestorianism only appears on the island of Socotra and some sparse provinces scattered throughout the Middle East."
+
+ # Ibadi
+ ibadi_school: "Ibadi"
+ ibadi_school_desc: "The Ibadi Madhab is named after Abdallah ibn Ibad, and is particularly prominent in Oman and parts of North Africa. Ibadis believe that it is unnecessary to have one leader of the entire Muslim world, instead electing communal figures for their knowledge and piety, without regard for race and lineage."
+ ibadi_scholar_modifier: "Ibadi Scholars"
+ desc_ibadi_scholar_modifier: "We are currently entertaining Ibadi Scholars to further the theological discussion in our country."
+
+ # Druze
+ druze_group: "Druze"
+ druze: "Druze"
+ druze_fundamentalist: "Druze Fundamentalist"
+ druze_rebels_demand:0 "Convert $COUNTRYNAME$"
+ druze_rebels_demand_desc:0 "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
+ druze_rebels_title:0 "Religious"
+ druze_rebels_name:0 "$RELIGION$ Zealots"
+ druze_rebels_desc:0 "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
+ druze_rebels_army:0 "$RELIGION$ Army"
+ druze_religion_desc:0 "Druze follow a monotheistic Abrahamic religion that split off from Islam several hundred years before the game begins. A unitarian belief, it is not recognisable as Muslim and instead shares beliefs with Greek philosophy, Hinduism, Christianity and Islam. The Druze themselves are fairly isolationist and prefer to be left alone.\nIn the game, the Druze are a religious minority present in the Levant."
+
+ ipe_religion.1.t: "Harmonization of the Druze Faith"
+ ipe_religion.1.d: "The Druze of the Middle East pose a fascinating case for us, as they detached themselves from the Islamic faith while revering figures and philosophies from other cultures and doctrines. With our pluralistic viewpoint towards religions and philosophies, we have found to share much in common with the Druze, and now they have begun noticing it as well. Taking our [Root.GovernmentName] as a role model, their spiritual leaders have called on the Druze faithful to respect our laws and practices and cooperate fully with our government."
+ ipe_religion.1.a: "Submit the people of virtue, assimilate the people with enlightenment."

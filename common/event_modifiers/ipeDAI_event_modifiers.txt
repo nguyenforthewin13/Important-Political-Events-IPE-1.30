@@ -1,0 +1,23 @@
+nam_tien_1 = {
+	culture_conversion_cost = -0.25
+	global_missionary_strength = 0.02
+}
+
+nam_tien_2 = {
+	culture_conversion_cost = -0.25
+	global_missionary_strength = 0.02
+}
+
+vietnamese_claim_to_mandate = {
+	core_creation = -0.25
+	ae_impact = -0.25
+}
+
+conquered_the_straits_of_malacca = {
+	trade_efficiency = 0.15
+}
+
+the_empress_dowager = {
+	legitimacy = -1
+	stability_cost_modifier = 0.50
+}

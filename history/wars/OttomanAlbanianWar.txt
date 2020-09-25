@@ -1,0 +1,15 @@
+name = "Ottoman Reconquest of Lezhë"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 143 # Albania
+}
+
+1444.6.1 = {
+	add_attacker = TUR
+	add_defender = ALB
+}
+
+1444.6.29 = {
+	rem_attacker = TUR
+}

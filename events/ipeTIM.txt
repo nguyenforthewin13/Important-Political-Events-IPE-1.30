@@ -1,0 +1,77 @@
+namespace = ipeTIM
+normal_or_historical_nations = yes
+
+# The Timurid Renaissance (Timurids)
+country_event = {
+	id = ipeTIM.1
+	title = ipeTIM.1.t
+	desc = ipeTIM.1.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIM
+		owns = 446
+		NOT = {
+			is_year = 1470
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = ipeTIM.1.a
+		add_country_modifier = {
+			name = timurid_renaissance
+			duration = 9125
+		}
+		446 = {
+			add_institution_embracement = {
+				which = renaissance
+				value = 100
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					TRS = {
+						owns = 454
+					}
+				}
+				TRS = {
+					country_event = {
+						id = ipeTIM.2
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Timurid Renaissance (Transoxiana)
+country_event = {
+	id = ipeTIM.2
+	title = ipeTIM.1.t
+	desc = ipeTIM.1.d
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = ipeTIM.1.a
+		add_country_modifier = {
+			name = timurid_renaissance
+			duration = 9125
+		}
+		454 = {
+			add_institution_embracement = {
+				which = renaissance
+				value = 100
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+government = monarchy
+add_government_reform = feudal_theocracy
+government_rank = 1
+primary_culture = dagestani
+add_accepted_culture = dagestani
+technology_group = muslim
+religion = shiite
+capital = 425
+religious_school = jafari_school

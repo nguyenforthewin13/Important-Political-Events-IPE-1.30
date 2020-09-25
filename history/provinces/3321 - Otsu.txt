@@ -1,0 +1,25 @@
+#3308 - Omi
+
+owner = RKK
+controller = RKK
+culture = japanese
+religion = shinto
+capital = "Otsu"
+trade_goods = silk
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+add_core = RKK
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = ANU
+
+add_permanent_province_modifier = {
+	name = enryaku_ji
+	duration = -1
+}

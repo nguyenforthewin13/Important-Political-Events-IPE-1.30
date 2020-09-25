@@ -1,0 +1,16 @@
+# 3340 - Bahnar
+
+owner = CHA
+controller = CHA
+add_core = CHA
+culture = bahnar
+religion = animism
+capital = "Bahnar"
+trade_goods = tea
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian

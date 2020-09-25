@@ -1,0 +1,6 @@
+# Habsburg Authority
+habsburg_authority = {
+    diplomatic_reputation = 3
+    improve_relation_modifier = 0.25
+    heir_chance = 0.5
+}

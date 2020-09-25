@@ -1,0 +1,7 @@
+#3628 - Echigo Mountains
+
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG

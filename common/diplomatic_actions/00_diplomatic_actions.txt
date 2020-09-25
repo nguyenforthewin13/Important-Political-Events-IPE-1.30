@@ -1,0 +1,1092 @@
+# INSTRUCTIONS:
+#
+# condition				A diplomatic action can have any number of condition blocks, each with its own
+#						tooltip, potential and allow section
+#
+# 	tooltip					Sets a custom text string similar to the hardcoded limits
+# 							If no tooltip is scripted, the tooltip for the actual trigger will be shown
+#							Note that the custom tooltip is only shown if the allow trigger is NOT met
+#
+# 	potential				Determines if the trigger is applicable or not
+# 	allow					Determines if the action is valid or not
+#
+# effect				A diplomatic action can only have one effect block
+
+# ROOT					actor
+# FROM					target
+
+########################################
+# DIPLOMATIC ACTIONS
+########################################
+# royal_marriage
+# declarewar
+# requestpeace
+# support_independence_action
+# allianceaction
+# embargoaction
+# annexationaction
+# integrationaction
+# vassalaction
+# guaranteeaction
+# warningaction
+# threaten_war
+# milaccess
+# fleet_access
+# offer_fleet_access
+# offermilaccess
+# insultaction
+# giftaction
+# claimaction
+# callaction
+# offerloan
+# warsubsidy
+# sellprov
+# imperial_relations_action
+# imperial_realm_war_action
+# religious_unity_action
+# grant_electorate
+# remove_electorate
+# grant_freecity
+# remove_freecity
+# demand_unlawful_territory_action
+# call_crusade_action
+# excommunicate_action
+# enforce_peace
+# improve_relation
+# fabricate_claim
+# justify_trade_conflict
+# transfer_trade_power
+# infiltrate_administration
+# sabotage_reputation
+# support_rebels
+# sow_discontent
+# agitate_for_liberty
+# form_coalition
+# request_to_join_federation
+# invite_to_federation
+# support_heir
+# break_marriage
+# designate_march
+# ask_for_march
+# sell_ships_action
+# abandon_union
+# takeondebt
+# influence_nation
+# claim_states
+# steer_trade
+# stealmap
+# spy_network
+# invite_to_trade_league
+# request_to_join_trade_league
+# sharemap
+# intervene_in_war
+# break_alliance
+# tributary_state_action
+# ask_for_tributary_state_action
+# knowledge_sharing
+
+
+
+
+royal_marriage = {
+	condition = {
+		tooltip = MARWAR
+		potential = {
+		}
+		allow = {
+			NOT = { war_with = FROM }
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_rivalry
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_outraged
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_hostile
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_threatened
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_domineering
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_disloyal
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_rebellious
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_rivalry
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_hostile
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_threatened
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_outraged
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_domineering
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_disloyal
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_rebellious
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+allianceaction = {
+	condition = {
+		tooltip = CANNOT_ALLY_HISTORICAL_RIVAL
+		potential = {
+			OR = {
+				FROM = {
+					historical_rival_with = ROOT
+				}
+				historical_rival_with = FROM
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = EMPEROR_CHINA_ALLIANCE
+		potential = {
+			is_emperor_of_china = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = EMPEROR_CHINA_ALLIANCE
+		potential = {
+			FROM = {
+				is_emperor_of_china = yes
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_rivalry
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_outraged
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_hostile
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_threatened
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_domineering
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_disloyal
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = FIEF_LIMITED_DIPLOMACY
+		potential = {
+			OR = {
+				is_subject_of_type = fief
+				is_subject_of_type = french_fief
+				is_subject_of_type = ecclesiastical_fief
+				is_subject_of_type = puppet_bishopric
+			}
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					overlord = {
+						ai_attitude = {
+							who = FROM
+							attitude = attitude_rebellious
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_rivalry
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_hostile
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_threatened
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_outraged
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_domineering
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_disloyal
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ALLY_FIEF
+		potential = {
+			FROM = {
+				OR = {
+					is_subject_of_type = fief
+					is_subject_of_type = french_fief
+					is_subject_of_type = ecclesiastical_fief
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						ai_attitude = {
+							who = ROOT
+							attitude = attitude_rebellious
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+annexationaction = {
+	condition = {
+		tooltip = ANNEX_TOO_LOW
+		potential = {
+			FROM = {
+				vassal_of = ROOT
+			}
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX_KANREI
+		potential = {
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = kanrei_vassal
+			}
+		}
+		allow = {
+			ROOT = {
+				all_subject_country = {
+					NOT = {
+						is_subject_of_type = daimyo_vassal
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX_KUBO
+		potential = {
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = kubo_vassal
+			}
+		}
+		allow = {
+			ROOT = {
+				all_subject_country = {
+					NOT = {
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+						}
+					}
+				}
+			}
+		}	
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX_PUPPET_SHOGUNATE
+		potential = {
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = puppet_shogunate
+			}
+		}
+		allow = {
+			ROOT = {
+				all_subject_country = {
+					NOT = {
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = SHOGUNATE_LOW_LEGITIMACY
+		potential = {
+			has_reform = shogunate
+			FROM = {
+				is_subject_of = ROOT
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		allow = {
+			legitimacy = 50
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX_TRIBAL_MARCH
+		potential = {
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = tribal_march
+			}
+		}
+		allow = {
+			ROOT = {
+				government = tribal
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX_NAYAK
+		potential = {
+			has_reform = nayankara_reform
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = princely_state
+			}
+		}
+		allow = {
+			ROOT = {
+				NOT = {
+					has_reform = nayankara_reform
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX_PRINCELY
+		potential = {
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = princely_state
+			}
+		}
+		allow = {
+			ROOT = {
+				adm_tech = 18
+			}
+		}
+	}
+	#condition = {
+	#	tooltip = ANNEXINVALID
+	#	potential = {
+	#		FROM = {
+	#			vassal_of = ROOT
+	#		}
+	#	}
+	#	allow = {
+	#		FROM = {
+	#			years_in_vassalage_under = {
+	#				who = ROOT
+	#				years = 10
+	#			}
+	#		}
+	#	}
+	#}
+}
+
+integrationaction = {
+	condition = {
+		tooltip = INTEGRATETOOLOWDESC
+		potential = {
+			senior_union_with = FROM
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+		}
+	}
+	#condition = {
+	#	tooltip = INTEGRATEINVALID
+	#	potential = {
+	#		senior_union_with = FROM
+	#	}
+	#	allow = {
+	#		FROM = {
+	#			years_in_union_under = {
+	#				who = ROOT
+	#				years = 50
+	#			}
+	#		}
+	#	}
+	#}
+}
+
+vassalaction = {
+	condition = {
+		tooltip = VASSALINVALID
+		potential = {
+		}
+		allow = {
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+			FROM = { is_at_war = no }
+		}
+	}
+}
+
+abandon_union_action = {
+	condition = {
+		potential = {
+		}
+		allow = {
+			ROOT = {
+				senior_union_with = FROM
+				is_at_war = no
+			}
+		}
+	}
+}
+
+form_coalition = {
+	condition = {
+		tooltip = MINAGGRESSIVEEXPANSION
+		potential = {	
+		}
+		allow = {
+			has_opinion_modifier = {
+				modifier = aggressive_expansion
+				who = FROM
+			}		
+			NOT = {
+				has_opinion_modifier = {
+					modifier = aggressive_expansion
+					who = FROM
+					value = -50
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = EMPEROR_CHINA_ALLIANCE
+		potential = {
+			is_emperor_of_china = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+request_to_join_trade_league = {
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION_FROM
+		potential = {
+		}
+		allow = {
+			home_trade_node = {
+				trade_share = {
+					country = from
+					share = 1
+				}
+			}
+		}
+	}
+}
+
+invite_to_trade_league = {
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION
+		potential = {
+		}
+		allow = {
+			from = {
+				home_trade_node = {
+					trade_share = {
+						country = root
+						share = 1
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+#3311 - Sanuki
+
+owner = HSK
+controller = HSK
+culture = japanese
+religion = shinto
+capital = "Takamatsu"
+trade_goods = fish
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+is_city = yes
+add_core = HSK
+add_core = MYI
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = ANU

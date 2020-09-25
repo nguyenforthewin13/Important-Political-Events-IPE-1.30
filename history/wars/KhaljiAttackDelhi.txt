@@ -1,0 +1,22 @@
+name = "Khalji attack on Delhi"
+war_goal = {
+	type = take_border
+	casus_belli = cb_border_war
+	province = 525
+}
+
+1441.1.1 = {
+	add_attacker = MLW
+	add_attacker = BGA
+	add_attacker = GDW
+	add_attacker = BGL
+	add_defender = DLH
+}
+
+1443.1.1 = {
+	rem_attacker = MLW
+	rem_attacker = BGA
+	rem_attacker = GDW
+	rem_attacker = BGL
+	rem_defender = DLH
+}

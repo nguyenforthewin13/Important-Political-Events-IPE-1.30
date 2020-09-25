@@ -1,0 +1,27 @@
+# Waging the Hundred Years' War
+waging_hyw = {
+	reduced_liberty_desire = 50
+	legitimacy = -5
+	stability_cost_modifier = 0.5
+	administrative_efficiency = -0.25
+}
+
+# Inspected Mines
+inspected_mines = {
+	development_cost = -0.1
+}
+
+# Uninspected Mines
+uninspected_mines = {
+	development_cost = 0.1
+}
+
+# Catacombs of Paris
+catacombs_of_paris = {
+	prestige = 0.5
+}
+
+# Reformed the Toll System
+reformed_toll_system = {
+	global_tax_modifier = 0.05
+}

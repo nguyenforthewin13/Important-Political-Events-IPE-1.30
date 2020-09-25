@@ -1,0 +1,101 @@
+vietnamese_civil_war = {
+	potential = {
+		tag = DAI
+		normal_or_historical_nations = yes
+		government = monarchy
+		has_reform = celestial_kingdom
+		is_free_or_tributary_trigger = yes
+		uses_doom = no
+		NOT = {
+			has_global_flag = had_vietnamese_civil_war
+		}
+	}
+
+	can_start = {
+		has_any_disaster = no
+		has_regency = no
+		NOT = {
+			current_age = age_of_discovery
+			adm = 3
+			dip = 3
+			mil = 3
+			stability = 1
+		}
+		owns = 610
+		controls = 610
+		owns = 613
+		controls = 613
+	}
+
+	can_stop = {
+		has_any_disaster = yes
+		OR = {
+			adm = 3
+			dip = 3
+			mil = 3
+		}
+		NOT = {
+			owns = 610
+			owns = 613
+		}
+	}
+
+	progress = {
+		modifier = {
+			factor = 0.5
+			NOT = {
+				adm = 3
+				dip = 3
+				mil = 3
+			}
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				adm = 2
+				dip = 2
+				mil = 2
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				adm = 1
+				dip = 1
+				mil = 1
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				stability = 1
+			}
+		}
+	}
+
+	can_end = {
+		OR = {
+			exists = ANN
+			exists = TOK
+		}
+	}
+
+	modifier = {
+		global_unrest = 5
+	}
+
+	on_start = vietnamese_civil_war.1
+	on_end = vietnamese_civil_war.100
+
+	on_monthly = {
+		events = {
+		}
+		random_events = {
+			1000 = 0
+			100 = vietnamese_civil_war.5
+			100 = vietnamese_civil_war.6
+			100 = vietnamese_civil_war.7
+			100 = vietnamese_civil_war.8
+		}
+	}
+}

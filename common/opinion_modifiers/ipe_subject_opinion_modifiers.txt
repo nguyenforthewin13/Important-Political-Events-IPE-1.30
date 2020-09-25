@@ -1,0 +1,12 @@
+is_fief = {
+    opinion = 50
+}
+
+claimed_fief = {
+    opinion = -50
+    yearly_decay = 1
+}
+
+is_puppet_bishopric = {
+    opinion = 50
+}

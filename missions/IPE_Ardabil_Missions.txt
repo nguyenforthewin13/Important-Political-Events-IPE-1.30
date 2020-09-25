@@ -1,0 +1,1338 @@
+ardabil_annexation_missions = {
+	slot = 1 #upper left column
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+
+	potential = {
+		tag = ARL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	safavid_ascension = {
+		icon = mission_persian_soldiers
+		required_missions = {  }
+		trigger = {
+			OR = {
+				has_country_modifier = rise_of_safavids
+				religion = shiite
+			}
+		}
+		effect = {
+			shirvan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+			azerbaijan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+		}
+	}
+
+	cull_the_shirvanshahs = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { safavid_ascension }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				owned_by = SRV
+				area = shirvan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = SRV
+					is_neighbor_of = SRV
+					SRV = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				shirvan_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				NOT = {
+					exists = SRV
+				}
+			}
+		}
+		effect = {
+			tabriz_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+			armenia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+			ganja_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+			luristan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+			isfahan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ARL
+			}
+			if = {
+				limit = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = SRV
+					is_neighbor_of = SRV
+					SRV = {
+						capital_scope = {
+							controlled_by = ARL
+						}
+					}
+				}
+				country_event = {
+					id = annexation.21
+				}
+			}	
+		}
+	}
+	
+	into_ajam = {
+		icon = mission_persian_soldiers
+		required_missions = { cull_the_shirvanshahs }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				owned_by = QOM
+				area = iraq_e_ajam_area
+				area = isfahan_area
+				area = luristan_area
+				area = farsistan_area
+				area = persian_gulf_coast
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = QOM
+					is_neighbor_of = QOM
+					QOM = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}	
+				}
+				AND = {
+					iraq_e_ajam_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					isfahan_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					luristan_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					farsistan_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					persian_gulf_coast = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				NOT = {
+					exists = QOM
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = QOM
+					is_neighbor_of = QOM
+					QOM = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				country_event = {
+					id = annexation.7
+				}
+			}
+			mashhad_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			birjand_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			herat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bojnord_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yazd_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kerman_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mogostan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			farsistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			persian_gulf_coast = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	persian_khorasan = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { into_ajam }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = mashhad_area
+				area = birjand_area
+				area = herat_area
+				area = bojnord_area
+				area = yazd_area
+				area = kerman_area
+				area = mogostan_area
+				area = sistan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			mashhad_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			birjand_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			herat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bojnord_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yazd_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kerman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mogostan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			446 = {
+				add_province_modifier = {
+					name = "per_pearl_of_khorasan"
+					duration = -1
+				}
+			}
+			ghor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kabulistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			balkh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			makran_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_makran_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kalat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	persian_afghanistan = {
+		icon = mission_central_asian_city
+		required_missions = { persian_khorasan }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = ghor_area
+				area = kabulistan_area
+				area = balkh_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			ghor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kabulistan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			balkh_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "per_pashtun_warriors"
+				duration = 7300
+			}
+			lahore_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			multan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			sind_sagar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			kashmir_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			baltistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			peshawar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			sindh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			northern_sindh_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+}
+
+ardabil_annexation_missions_2 = {
+	slot = 2
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+
+	potential = {
+		tag = ARL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	herd_the_black_sheep = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { cull_the_shirvanshahs }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = tabriz_area
+				area = armenia_area
+				area = ganja_area
+				owned_by = QAR
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = QAR
+					is_neighbor_of = QAR
+					QAR = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				AND = {
+					tabriz_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					armenia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					ganja_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				NOT = {
+					exists = QAR
+				}
+			}
+		}
+		effect = {
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			isfahan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			luristan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			farsistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			persian_gulf_coast = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_arabi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			khuzestan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_kurdistan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			al_jazira_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shahrizor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rakka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = QAR
+					is_neighbor_of = QAR
+					QAR = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				country_event = {
+					id = annexation.4
+				}
+			}
+		}
+	}
+}
+
+ardabil_annexation_missions_3 = {
+	slot = 3
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+
+	potential = {
+		tag = ARL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ottoman_rivalry = {
+		icon = mission_ottoman_harem
+		required_missions = {  }
+		position = 1
+		trigger = {
+			OR = {
+				is_rival = TUR
+				NOT = {
+					exists = TUR
+				}
+				total_development = TUR
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ottoman_opponent
+				duration = 5475
+			}
+			imereti_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			samtskhe_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kartli_kakheti_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	the_fate_of_georgia = {
+		icon = mission_persian_soldiers
+		required_missions = { ottoman_rivalry }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = imereti_area
+				area = samtskhe_area
+				area = kartli_kakheti_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			samtskhe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+
+	herd_the_white_sheep = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { cull_the_shirvanshahs }
+		position = 6
+		provinces_to_highlight = {
+			owned_by = AKK
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = AKK
+					is_neighbor_of = AKK
+					AKK = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				NOT = {
+					exists = AKK
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = AKK
+					is_neighbor_of = AKK
+					AKK = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				country_event = {
+					id = annexation.5
+				}
+			}
+			add_country_modifier = {
+				name = "per_tribal_warriors"
+				duration = 7300
+			}
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			syria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			trans_jordan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			syrian_desert_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			aleppo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lebanon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rakka_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	secure_anatolia = {
+		icon = mission_persian_soldiers
+		required_missions = { herd_the_white_sheep }
+		position = 7
+		provinces_to_highlight = {
+			region = anatolia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			anatolia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			macedonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_greece_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			aegean_archipelago_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	cross_the_bosporus = {
+		icon = mission_early_game_buildings
+		required_missions = { secure_anatolia }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = macedonia_area
+				area = northern_greece_area
+				area = morea_area
+				area = thrace_area
+				area = aegean_archipelago_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_dip_power = 200
+		}
+	}
+}
+
+ardabil_annexation_missions_4 = {
+	slot = 4
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+
+	potential = {
+		tag = ARL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	down_syria = {
+		icon = mission_persian_soldiers
+		required_missions = { herd_the_white_sheep }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = syria_area
+				area = palestine_area
+				area = trans_jordan_area
+				area = syrian_desert_area
+				area = aleppo_area
+				area = lebanon_area
+				area = rakka_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syrian_desert_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lebanon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rakka_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			egypt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tabuk_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			medina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mecca_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	riches_of_egypt = {
+		icon = mission_egyptian_mamluk_soldier
+		required_missions = { down_syria }
+		position = 8
+		provinces_to_highlight = {
+			region = egypt_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			egypt_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 200
+			add_prestige = 25
+		}
+	}
+}
+
+ardabil_religion_missions = {
+	slot = 5
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+
+	potential = {
+		tag = ARL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	destroy_the_mushasha = {
+		icon = mission_mosque
+		required_missions = {  }
+		position = 3
+		provinces_to_highlight = {
+			owned_by = MSY
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = MSY
+					is_neighbor_of = MSY
+					MSY = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				NOT = {
+					exists = MSY
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						is_subject = no
+						is_subject_of_type = tributary_state
+					}
+					war_with = MSY
+					is_neighbor_of = MSY
+					MSY = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				country_event = {
+					id = annexation.15
+				}
+			}
+			iraq_arabi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			basra_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			karbala_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			shahrizor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquest_of_arabian_iraq = {
+		icon = mission_mosque
+		required_missions = { destroy_the_mushasha }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				owned_by = IRQ
+				area = iraq_arabi_area
+				area = basra_area
+				area = karbala_area
+				area = shahrizor_area
+				area = al_jazira_area
+				area = north_kurdistan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			religion = shiite
+			OR = {
+				AND = {
+					iraq_arabi_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					basra_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					karbala_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					al_jazira_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					north_kurdistan_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+				AND = {
+					is_subject = no
+					war_with = IRQ
+					is_neighbor_of = IRQ
+					IRQ = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}	
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			bahrain_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			al_jazira_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			country_event = { id = flavor_per.9 }
+			tooltip = {
+				2311 = {
+					add_province_modifier = {
+						name = "per_najaf"
+						duration = 7300
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_subject = no
+					war_with = IRQ
+					is_neighbor_of = IRQ
+					IRQ = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}	
+				}
+				country_event = {
+					id = annexation.18
+				}
+			}
+		}
+	}
+
+	honor_the_imams = {
+		icon = mission_mosque
+		required_missions = { conquest_of_arabian_iraq }
+		position = 5
+		provinces_to_highlight = {
+			region = persia_region
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				NOT = { religion = shiite }
+			}
+		}
+		trigger = {
+			religion = shiite
+			persia_region = {
+				type = all
+				owned_by = ROOT
+				religion = shiite
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 20
+			}
+			add_country_modifier = {
+				name = cursing_caliphs
+				duration = 5475
+			}
+			add_adm_power = 200
+			country_event = {
+				id = flavor_per.1
+			}
+			tooltip = {
+				if = {
+					limit = {
+						NOT = { government_rank = 3 }
+					}
+					set_government_rank = 3
+				}
+				416 = { #Tabriz
+					add_base_tax = 2
+					add_base_production = 2
+					add_base_manpower = 1
+				}
+				429 = { #Isfahan
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 1
+				}
+				2215 = { #Qazvin
+					add_base_tax = 2
+					add_base_production = 2
+					add_base_manpower = 1
+				}
+				2218 = { #Shiraz
+					add_base_tax = 2
+					add_base_production = 2
+				}
+				428 = { #Teheran
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+				433 = { #Yazd
+					add_base_tax = 1
+					add_base_production = 1
+				}
+				2213 = { #Qom
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+				2212 = { #Zanjan
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+		}
+	}
+
+	shia_mecca_and_medina = {
+		icon = mission_mosque
+		required_missions = { down_syria }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = tabuk_area
+				area = medina_area
+				area = mecca_area
+			}
+		}
+		trigger = {
+			religion = shiite
+			tabuk_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			medina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mecca_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 20
+			}
+		}
+	}
+}

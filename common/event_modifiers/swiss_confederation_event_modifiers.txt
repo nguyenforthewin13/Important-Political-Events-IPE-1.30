@@ -1,0 +1,26 @@
+# Swiss Mercenaries
+swiss_prussia = {
+	discipline = 0.1
+	infantry_power = 0.2
+	land_forcelimit_modifier = 0.25
+}
+
+confederal_unity = {
+	republican_tradition = 0.5
+	global_unrest = -2
+}
+
+fortified_alps = {
+	defensiveness = 0.25
+}
+
+defeated_burgundy = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
+}
+
+peace_of_basel = {
+	development_cost = -0.1
+	enemy_core_creation = 0.5
+	diplomatic_reputation = 1
+}

@@ -1,0 +1,52 @@
+country_decisions = {
+	enact_edict_de_moulins = {
+		potential = {
+			tag = FRA
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = {
+				has_country_flag = edict_of_moulins
+			}
+		}
+		allow = {
+			adm_tech = 12
+			legitimacy = 100
+			custom_trigger_tooltip = {
+				tooltip = edict_of_moulins_weal.tooltip
+				OR = {
+					has_country_flag = beat_league_public_weal
+					all_subject_country = {
+						NOT = {
+							is_subject_of_type = french_fief
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = ipeFRA.3
+			}
+			set_country_flag = edict_of_moulins
+			every_subject_country = {
+				limit = {
+					OR = {
+						is_subject_of_type = french_fief
+						is_subject_of_type = fief
+					}
+				}
+				set_ruler_flag = unifying_france
+				country_event = {
+					id = ipeFRA.3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+}

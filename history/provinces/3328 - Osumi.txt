@@ -1,0 +1,19 @@
+#3328 - Osumi
+
+owner = SMZ
+controller = SMZ
+culture = kyushuan
+religion = shinto
+capital = "Tomita"
+trade_goods = fish
+hre = no
+base_tax = 5
+base_manpower = 5
+base_production = 5
+is_city = yes
+add_core = SMZ
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG

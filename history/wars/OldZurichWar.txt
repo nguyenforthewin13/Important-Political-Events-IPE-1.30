@@ -1,0 +1,25 @@
+name = "Old Zürich War"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 1869
+}
+
+1440.11.2 = {
+	add_attacker = SWI
+	add_defender = ZUR
+	add_defender = FRA
+	add_defender = STY
+	add_defender = TIR
+	add_defender = AUT
+}
+
+1444.5.14 = {
+	rem_defender = STY
+	rem_defender = TIR
+	rem_defender = AUT
+}
+
+1444.10.1 = {
+	rem_defender = FRA
+}

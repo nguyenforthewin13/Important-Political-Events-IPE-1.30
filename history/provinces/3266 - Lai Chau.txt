@@ -1,0 +1,20 @@
+#3266 - Lai Châu
+
+owner = DAI
+controller = DAI
+add_core = DAI
+add_core = LXA
+add_core = LUA
+culture = lao
+religion = buddhism
+capital = "Lai Châu"
+trade_goods = tea
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman

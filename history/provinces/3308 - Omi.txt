@@ -1,0 +1,21 @@
+#3308 - Omi
+
+owner = KGK
+controller = KGK
+culture = japanese
+religion = shinto
+capital = "Koga"
+trade_goods = silk
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+add_core = KGK
+add_core = AZI
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = ANU

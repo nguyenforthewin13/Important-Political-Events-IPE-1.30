@@ -1,0 +1,19 @@
+mongol_masters = {
+	global_tax_modifier = -0.10
+	prestige = -0.5
+}
+
+muscovite_tribute = {
+	global_tax_modifier = 0.10
+	prestige = 0.5
+}
+
+horde_legacy = {
+	global_manpower_modifier = 0.25
+	land_forcelimit_modifier = 0.5
+	land_maintenance_modifier = -0.25
+}
+
+house_of_rurik = {
+	reduced_liberty_desire = 50
+}

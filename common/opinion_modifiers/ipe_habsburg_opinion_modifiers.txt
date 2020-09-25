@@ -1,0 +1,35 @@
+ladislaus_withheld = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+polish_king_in_bohemia = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+no_polish_king_in_bohemia = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+paid_for_black_army = {
+    opinion = 200
+    years = 25
+    yearly_decay = 8
+}
+
+did_not_pay_for_black_army = {
+    opinion = -25
+    years = 25
+    yearly_decay = 1
+}
+
+sigismund_withheld = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

@@ -1,0 +1,19 @@
+#3331 - Hoki
+
+owner = YMN
+controller = YMN
+culture = japanese
+religion = shinto
+capital = "Uchikoshiyama"
+trade_goods = cloth
+hre = no
+base_tax = 5
+base_manpower = 5
+base_production = 5
+is_city = yes
+add_core = YMN
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG

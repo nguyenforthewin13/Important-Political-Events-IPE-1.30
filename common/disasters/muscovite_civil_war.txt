@@ -1,0 +1,117 @@
+muscovite_civil_war = {
+	potential = {
+		tag = MOS
+        government = monarchy
+		NOT = { has_country_flag = had_muscovite_civil_war }
+		is_free_or_tributary_trigger = yes
+        NOT = { is_year = 1450 }
+		NOT = { exists = RUS }
+		KAZ = {
+			exists = yes
+			is_subject = no
+		}
+		normal_or_historical_nations = yes
+		uses_doom = no
+		NOT = { has_country_flag = muscovite_war_concluded }
+	}
+	
+
+	can_start = {
+		current_age = age_of_discovery
+		is_at_war = no
+		has_any_disaster = no
+		is_lesser_in_union = no
+		GLC = {
+			exists = yes
+			is_subject_of = MOS
+			has_ruler = "Dmitry Shemyaka"
+		}
+	}
+
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			is_lesser_in_union = yes
+			NOT = { government = monarchy }
+		}
+	}
+
+
+
+
+	progress = {
+		modifier = {
+			factor = 5
+			NOT = { legitimacy = 90 }
+		}
+        modifier = {
+			factor = 10
+			NOT = { legitimacy = 80 }
+		}
+		modifier = {
+			factor = 2.5
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 2.5
+			NOT = { ADM = 2 }
+		}		
+		modifier = {
+			factor = 2.5
+			NOT = { DIP = 2 }
+		}		
+		modifier = {
+			factor = 2.5
+			NOT = { MIL = 2 }
+		}
+		modifier = {
+			factor = -5
+			stability = 3
+		}
+	}	
+
+	modifier = {
+		global_unrest = 5
+		stability_cost_modifier = 0.5
+	}
+
+
+
+	can_end = {
+		stability = 1
+		NOT = {
+			is_in_war = {
+				casus_belli = cb_muscovite_civil_war
+			}
+		}
+		GLC = {
+			OR = {
+				NOT = {
+					has_ruler = "Dmitry Shemyaka"
+				}
+				exists = no
+			}
+		}
+		NOT = {
+			has_spawned_rebels = noble_rebels
+		}
+		NOT = {
+			has_spawned_rebels = pretender_rebels
+		}
+		has_country_modifier = shemyaka_peace
+	}
+
+
+
+
+
+
+
+	on_start = MOS_civil_war.1
+	on_end = MOS_civil_war.100
+
+	on_monthly = {
+		events = {
+		}
+	}
+}

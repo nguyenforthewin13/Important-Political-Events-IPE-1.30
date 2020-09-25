@@ -1,0 +1,1000 @@
+namespace = new_war_of_the_roses
+
+country_event = {
+	id = new_war_of_the_roses.1
+	title = new_war_of_the_roses.1.t
+	desc = new_war_of_the_roses.1.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.1.a
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = YRK
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = new_war_of_the_roses.1.b
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.2
+	title = new_war_of_the_roses.2.t
+	desc = new_war_of_the_roses.2.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.2.a
+		capital_scope = {
+			add_building = fort_15th
+		}
+		add_country_modifier = {
+			name = waging_war_of_roses
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.3
+	title = new_war_of_the_roses.3.t
+	desc = new_war_of_the_roses.3.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.3.a
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.4
+	title = new_war_of_the_roses.4.t
+	desc = new_war_of_the_roses.4.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.4.a
+		ai_chance = {
+			factor = 100
+		}
+		YRK = {
+			vassalize = ROOT
+		}
+		add_liberty_desire = -50
+	}
+	
+	option = {
+		name = new_war_of_the_roses.4.b
+		ai_chance = {
+			factor = 0
+		}
+		add_opinion = {
+			who = ENG
+			modifier = rejected_york
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.5
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.5.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = YRK
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_war_of_the_roses
+			duration = 1095
+		}
+		ENG = {
+			capital_scope = {
+				controlled_by = YRK
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_war_of_the_roses.5.a
+		ENG = {
+			every_subject_country = {
+				limit = {
+					is_lesser_in_union = no
+				}
+				country_event = {
+					id = new_war_of_the_roses.6
+					days = 1
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+				}
+				YRK = {
+					add_casus_belli = {	
+					    target = PREV
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+				}
+				country_event = {
+					id = new_war_of_the_roses.7
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = ENG
+					}
+					is_in_war = {
+						attacker_leader = ENG
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = ENG
+		if = {
+			limit = {
+				WLS = {
+					is_subject_of = ROOT
+					ai = yes
+				}
+			}
+			inherit = WLS
+		}
+		change_tag = ENG
+		if = {
+			limit = {
+				owns = 236
+			}
+			set_capital = 236
+		}
+		add_government_reform = english_monarchy
+		set_government_rank = 2
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_country_flag = support_for_war_of_the_roses
+				}
+				country_event = {
+					id = new_war_of_the_roses.3
+					days = 1
+				}
+			}
+			every_core_province = {
+				remove_core = YRK
+			}
+			every_owned_province = {
+				remove_core = YRK
+			}
+		}
+		remove_country_modifier = waging_war_of_roses
+		set_country_flag = lancaster_lost
+		every_core_province = {
+			clr_province_flag = english_burghers
+			clr_province_flag = english_church
+			clr_province_flag = english_nobles
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.6
+	title = new_war_of_the_roses.6.t
+	desc = new_war_of_the_roses.6.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.6.a
+		if = {
+			limit = {
+				YRK = {
+					exists = yes
+				}
+			}
+			YRK = {
+				vassalize = ROOT
+			}
+		}
+		if = {
+			limit = {
+				ENG = {
+					exists = yes
+				}
+			}
+			ENG = {
+				vassalize = ROOT
+			}
+		}
+		add_prestige = -25
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.7
+	title = new_war_of_the_roses.7.t
+	desc = new_war_of_the_roses.7.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.7.a
+		add_prestige = -25
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.8
+	title = new_war_of_the_roses.8.t
+	desc = new_war_of_the_roses.8.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_war_of_the_roses
+			duration = 1095
+		}
+		YRK = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = YRK
+			}
+		}
+		YRK = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_war_of_the_roses.8.a
+		hidden_effect = {
+			every_core_province = {
+				remove_core = YRK
+			}
+			every_owned_province = {
+				remove_core = YRK
+			}
+			YRK = {
+				every_subject_country = {
+					country_event = {
+						id = new_war_of_the_roses.9
+						days = 1
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = YRK
+					}
+					is_in_war = {
+						attacker_leader = YRK
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = YRK
+		every_core_province = {
+			clr_province_flag = english_burghers
+			clr_province_flag = english_church
+			clr_province_flag = english_nobles
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.9
+	title = new_war_of_the_roses.9.t
+	desc = new_war_of_the_roses.9.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = new_war_of_the_roses.9.a
+		ENG = {
+			vassalize = ROOT
+		}
+		add_prestige = -25
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.10
+	title = new_war_of_the_roses.10.t
+	desc = new_war_of_the_roses.10.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = YRK
+		ENG = {
+			exists = yes
+		}
+		NOT = {
+			war_with = ENG
+			has_truce = ENG
+		}
+		is_subject = no
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = new_war_of_the_roses.10.a
+		declare_war_with_cb = {
+			who = ENG
+			casus_belli = cb_war_of_the_roses
+		}
+		ENG = {
+			country_event = {
+				id = new_war_of_the_roses.11
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.11
+	title = new_war_of_the_roses.11.t
+	desc = new_war_of_the_roses.11.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.11.a
+		add_manpower = 5
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.12
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.5.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = ENG
+		has_country_modifier = waging_war_of_roses
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_war_of_the_roses.5.a
+		if = {
+			limit = {
+				WLS = {
+					is_subject_of = ROOT
+					ai = yes
+				}
+			}
+			inherit = WLS
+		}
+		add_government_reform = english_monarchy
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_country_flag = support_for_war_of_the_roses
+				}
+				country_event = {
+					id = new_war_of_the_roses.3
+					days = 1
+				}
+			}
+		}
+		remove_country_modifier = waging_war_of_roses
+		set_country_flag = lancaster_lost
+		every_core_province = {
+			clr_province_flag = english_burghers
+			clr_province_flag = english_church
+			clr_province_flag = english_nobles
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.13
+	title = new_war_of_the_roses.13.t
+	desc = new_war_of_the_roses.13.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.13.a
+		capital_scope = {
+			add_building = fort_15th
+		}
+		add_country_modifier = {
+			name = waging_war_of_roses_2
+			duration = -1
+		}		
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.70
+	title = new_war_of_the_roses.70.t
+	desc = new_war_of_the_roses.70.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = LNC
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_war_of_the_roses
+			duration = 1095
+		}
+		ENG = {
+			capital_scope = {
+				controlled_by = LNC
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_war_of_the_roses.5.a
+		ENG = {
+			every_subject_country = {
+				limit = {
+					is_lesser_in_union = no
+				}
+				country_event = {
+					id = new_war_of_the_roses.71
+					days = 1
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+				}
+				LNC = {
+					add_casus_belli = {	
+					    target = PREV
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+				}
+				country_event = {
+					id = new_war_of_the_roses.72
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = ENG
+					}
+					is_in_war = {
+						attacker_leader = ENG
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = ENG
+		change_tag = ENG
+		if = {
+			limit = {
+				owns = 236
+			}
+			set_capital = 236
+		}
+		add_government_reform = english_monarchy
+		set_government_rank = 2
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_country_flag = support_for_war_of_the_roses
+				}
+				country_event = {
+					id = electric_war_of_the_roses.101
+					days = 1
+				}
+			}
+			every_core_province = {
+				remove_core = LNC
+			}
+			every_owned_province = {
+				remove_core = LNC
+			}
+		}
+		every_core_province = {
+			clr_province_flag = english_burghers_2
+			clr_province_flag = english_church_2
+			clr_province_flag = english_nobles_2
+		}
+		remove_country_modifier = waging_war_of_roses_2
+		set_country_flag = end_of_war_of_roses_2
+		set_country_flag = roses_mission
+	}
+}
+
+
+country_event = {
+	id = new_war_of_the_roses.71
+	title = new_war_of_the_roses.71.t
+	desc = new_war_of_the_roses.71.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.71.a
+		if = {
+			limit = {
+				LNC = {
+					exists = yes
+				}
+			}
+			LNC = {
+				vassalize = ROOT
+			}
+		}
+		if = {
+			limit = {
+				ENG = {
+					exists = yes
+				}
+			}
+			ENG = {
+				vassalize = ROOT
+			}
+		}
+		add_prestige = -25
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.72
+	title = new_war_of_the_roses.72.t
+	desc = new_war_of_the_roses.72.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.72.a
+		add_prestige = -25
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.73
+	title = new_war_of_the_roses.73.t
+	desc = new_war_of_the_roses.73.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_war_of_the_roses
+			duration = 1095
+		}
+		LNC = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = LNC
+			}
+		}
+		LNC = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_war_of_the_roses.8.a
+		hidden_effect = {
+			every_core_province = {
+				remove_core = LNC
+			}
+			every_owned_province = {
+				remove_core = LNC
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = LNC
+					}
+					is_in_war = {
+						attacker_leader = LNC
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = LNC
+		every_core_province = {
+			clr_province_flag = english_burghers_2
+			clr_province_flag = english_church_2
+			clr_province_flag = english_nobles_2
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.74
+	title = new_war_of_the_roses.10.t
+	desc = new_war_of_the_roses.10.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = LNC
+		ENG = {
+			exists = yes
+		}
+		NOT = {
+			war_with = ENG
+			has_truce = ENG
+		}
+		is_subject = no
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = new_war_of_the_roses.10.a
+		declare_war_with_cb = {
+			who = ENG
+			casus_belli = cb_war_of_the_roses
+		}
+		ENG = {
+			country_event = {
+				id = new_war_of_the_roses.75
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.75
+	title = new_war_of_the_roses.10.t
+	desc = new_war_of_the_roses.75.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.11.a
+		add_manpower = 5
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.76
+	title = new_war_of_the_roses.76.t
+	desc = new_war_of_the_roses.76.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = ENG
+		has_country_modifier = waging_war_of_roses_2
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_war_of_the_roses.5.a
+		add_government_reform = english_monarchy
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_country_flag = support_for_war_of_the_roses
+				}
+				country_event = {
+					id = electric_war_of_the_roses.101
+					days = 1
+				}
+			}
+		}
+		remove_country_modifier = waging_war_of_roses_2
+		set_country_flag = end_of_war_of_roses_2
+		every_core_province = {
+			clr_province_flag = english_burghers_2
+			clr_province_flag = english_church_2
+			clr_province_flag = english_nobles_2
+		}
+	}
+}
+
+# The Rise of the Tudors
+country_event = { 
+	id = new_war_of_the_roses.77
+	title = new_war_of_the_roses.77.t
+	desc = new_war_of_the_roses.77.d
+	picture = DIPLOMACY_eventPicture
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	trigger = {
+		OR = {
+			AND = {
+				tag = LNC
+				has_country_modifier = waging_war_of_roses_2
+			}
+			AND = {
+				tag = ENG
+				has_country_flag = end_of_war_of_roses_2
+			}
+		}
+	}
+
+	option = {
+	name = flavor_eng.9237.a  # There will never be reconciliation between our two houses
+		ai_chance = { factor = 0 }
+		if = {
+			limit = {
+				tag = ENG
+			}
+			every_owned_province = {
+				add_province_modifier = {
+					name = add_unrest_5_modifier
+					duration = 1825
+				}
+			}
+		}
+		add_prestige = 10
+		clr_country_flag = end_of_war_of_roses_2
+	}
+
+	option = {
+		name = new_war_of_the_roses.77.b
+		ai_chance = { factor = 100 }
+		add_stability_or_adm_power = yes
+		define_heir = {
+			claim = 100
+			name = "Henry #0"
+			dynasty = "Tudor"
+			culture = english
+			adm = 3
+			dip = 4
+			mil = 4
+			age = 24
+		}
+		if = {
+			limit = {
+				tag = LNC
+			}
+			ENG = {
+				country_event = {
+					id = new_war_of_the_roses.79
+					days = 1
+				}
+			}
+		}
+		clr_country_flag = end_of_war_of_roses_2
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.78
+	title = new_war_of_the_roses.78.t
+	desc = new_war_of_the_roses.78.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = LNC
+		}
+		has_ruler = "Henry"
+		dynasty = "Tudor"
+		has_consort = no
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = {
+		name = new_war_of_the_roses.78.a
+		add_stability_or_adm_power = yes
+		define_consort = {
+			name = "Elizabeth"
+			dynasty = "York"
+			adm = 2
+			dip = 5
+			mil = 2
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.79
+	title = new_war_of_the_roses.79.t
+	desc = new_war_of_the_roses.79.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = new_war_of_the_roses.79.a
+		add_stability = -1
+		add_war_exhaustion = 2
+		add_yearly_manpower = -0.2
+		add_country_modifier = {
+			name = tiring_of_roses
+			duration = 1095
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.80
+	title = new_war_of_the_roses.80.t
+	desc = new_war_of_the_roses.80.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = ENG
+		dynasty = "York"
+		has_country_flag = lancaster_lost
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = new_war_of_the_roses.80.a
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = new_war_of_the_roses.81
+	title = new_war_of_the_roses.81.t
+	desc = new_war_of_the_roses.81.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		OR = {
+			tag = YRK
+			tag = LNC
+		}
+		is_subject = yes
+		is_lesser_in_union = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = new_war_of_the_roses.81.a
+		ENG = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+}

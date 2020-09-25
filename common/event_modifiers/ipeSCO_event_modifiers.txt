@@ -1,0 +1,25 @@
+# Scottish Survival
+defense_of_scotland = {
+	land_morale = 0.10
+	manpower_recovery_speed = 0.15
+	war_exhaustion = -0.02
+	defensiveness = 0.25
+}
+
+plantations_of_ireland = {
+	culture_conversion_cost = -0.25
+	local_development_cost = 0.25
+	local_manpower_modifier = -0.5
+	local_missionary_strength = -0.05
+	local_unrest = 10
+}
+
+anglican_holy_war = {
+	land_morale = 0.10
+	naval_morale = 0.10
+	manpower_recovery_speed = 0.15
+}
+
+anglican_colonization = {
+	global_colonial_growth = 20
+}

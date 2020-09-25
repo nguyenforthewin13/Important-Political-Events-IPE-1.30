@@ -1,0 +1,63 @@
+country_decisions = {
+	french_fief_freedom = {
+		potential = {
+			is_subject_of_type = french_fief
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			overlord = {
+				NOT = {
+					has_country_flag = edict_of_moulins
+				}
+			}
+			capital_scope = {
+				region = france_region
+			}
+		}
+		allow = {
+			total_own_and_non_tributary_subject_development = 100
+			is_at_war = no
+			legitimacy = 75
+		}
+		effect = {
+			grant_independence = yes
+			FRA = {
+				add_opinion = {
+					who = ROOT
+					modifier = declared_independence
+				}
+				country_event = {
+					id = ipeFRA.4
+				}
+			}
+			ROOT = {
+				every_owned_province = {
+					limit = {
+						culture_group = french
+					}
+					add_permanent_claim = FRA
+				}
+				every_subject_country = {
+					limit = {
+						NOT = {
+							is_subject_of_type = tributary_state
+						}
+					}
+					every_owned_province = {
+						limit = {
+							culture_group = french
+						}
+						add_permanent_claim = FRA
+					}
+				}
+			}
+			add_prestige = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+}

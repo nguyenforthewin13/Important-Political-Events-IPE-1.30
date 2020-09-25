@@ -1,0 +1,574 @@
+namespace = ipe_jewish
+
+# The Fair Treatment of the Jews
+country_event = {
+	id = ipe_jewish.1
+	title = ipe_jewish.1.t
+	desc = ipe_jewish.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		capital_scope = {
+			continent = europe
+		}
+		NOT = {
+			ruler_has_personality = cruel_personality
+			ruler_has_personality = malevolent_personality
+			ruler_has_personality = zealot_personality
+		}
+		development = 300
+	}
+
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = benevolent_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = just_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = kind_hearted_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = righteous_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = tolerant_personality
+		}
+		modifier = {
+			factor = 0.7
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 1.1
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			jewish = 2
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				jewish = 0
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_country_modifier = jews_in_poland
+		}
+	}
+
+	option = {
+		name = ipe_jewish.1.a
+		capital_scope = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		random_owned_province = {
+			add_base_tax = 1
+		}
+		random_owned_province = {
+			add_base_production = 1
+		}
+		random_owned_province = {
+			add_base_manpower = 1
+		}
+		if = {
+			limit = {
+				religion = confucianism
+			}
+			add_harmony = 10
+		}
+		if = {
+			limit = {
+				religion = shamanism
+			}
+			unlock_cult = jewish_cult
+		}
+		add_karma = 25
+	}
+}
+
+# The Cruel Sufferings of the Jews
+country_event = {
+	id = ipe_jewish.2
+	title = ipe_jewish.2.t
+	desc = ipe_jewish.2.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	trigger = {
+		capital_scope = {
+			continent = europe
+		}
+		NOT = {
+			religion = jewish
+			ruler_has_personality = benevolent_personality
+			ruler_has_personality = just_personality
+			ruler_has_personality = kind_hearted_personality
+			ruler_has_personality = righteous_personality
+			ruler_has_personality = tolerant_personality
+			has_idea_group = humanist_ideas
+			has_country_modifier = jews_in_poland
+		}
+		development = 300
+	}
+
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = cruel_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = malevolent_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = zealot_personality
+		}
+		modifier = {
+			factor = 0.9
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				jewish = 0
+			}
+		}
+		modifier = {
+			factor = 1.1
+			jewish = 2
+		}
+	}
+
+	option = {
+		name = ipe_jewish.2.a
+		capital_scope = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+		}
+		random_owned_province = {
+			add_base_tax = -1
+		}
+		random_owned_province = {
+			add_base_production = -1
+		}
+		random_owned_province = {
+			add_base_manpower = -1
+		}
+		add_years_of_income = 1
+		add_church_power = 25
+		add_papal_influence = 25
+		add_patriarch_authority = 10
+		add_piety = 25
+
+		ROOT = {
+			random_neighbor_country = {
+				limit = {
+					NOT = {
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = malevolent_personality
+						ruler_has_personality = zealot_personality
+					}
+				}
+				country_event = {
+					id = ipe_jewish.3
+					days = 180
+				}
+			}
+		}
+	}
+}
+
+# Jewish Refugees
+country_event = {
+	id = ipe_jewish.3
+	title = ipe_jewish.3.t
+	desc = ipe_jewish.3.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipe_jewish.3.a
+		random_owned_province = {
+			add_base_tax = 1
+		}
+		random_owned_province = {
+			add_base_production = 1
+		}
+		random_owned_province = {
+			add_base_manpower = 1
+		}
+		if = {
+			limit = {
+				NOT = {
+					religion = jewish
+				}
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -10
+			}
+		}
+	}
+
+	option = {
+		name = ipe_jewish.3.b
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+		ROOT = {
+			random_neighbor_country = {
+				limit = {
+					NOT = {
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = malevolent_personality
+						ruler_has_personality = zealot_personality
+						tag = FROM
+					}
+				}
+				country_event = {
+					id = ipe_jewish.3
+					days = 180
+				}
+			}
+		}
+	}
+}
+
+# The Jewish People Arrive in Poland
+country_event = {
+	id = ipe_jewish.4
+	title = ipe_jewish.4.t
+	desc = ipe_jewish.4.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+		}
+		NOT = {
+			ruler_has_personality = cruel_personality
+			ruler_has_personality = malevolent_personality
+			ruler_has_personality = zealot_personality
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = benevolent_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = just_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = kind_hearted_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = righteous_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = tolerant_personality
+		}
+		modifier = {
+			factor = 0.7
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 1.1
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			jewish = 2
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				jewish = 0
+			}
+		}
+	}
+
+	option = {
+		name = ipe_jewish.4.a
+		capital_scope = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		random_owned_province = {
+			add_base_tax = 1
+		}
+		random_owned_province = {
+			add_base_production = 1
+		}
+		random_owned_province = {
+			add_base_manpower = 1
+		}
+		add_country_modifier = {
+			name = jews_in_poland
+			duration = -1
+		}
+	}
+}
+
+# The Jews of Provence
+country_event = {
+	id = ipe_jewish.5
+	title = ipe_jewish.5.t
+	desc = ipe_jewish.5.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		201 = {
+			owned_by = FRA
+		}
+		2991 = {
+			owned_by = FRA
+		}
+		NOT = {
+			religion = jewish
+			ruler_has_personality = benevolent_personality
+			ruler_has_personality = just_personality
+			ruler_has_personality = kind_hearted_personality
+			ruler_has_personality = righteous_personality
+			ruler_has_personality = tolerant_personality
+			has_idea_group = humanist_ideas
+			has_country_modifier = jews_in_poland
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = cruel_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = malevolent_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = zealot_personality
+		}
+		modifier = {
+			factor = 0.9
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				jewish = 0
+			}
+		}
+		modifier = {
+			factor = 1.1
+			jewish = 2
+		}
+	}
+
+	option = {
+		name = ipe_jewish.5.a
+		201 = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1	
+		}
+		2991 = {
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1	
+		}
+		add_years_of_income = 1
+		add_church_power = 25
+		add_papal_influence = 25
+		add_patriarch_authority = 10
+		add_piety = 25
+		ROOT = {
+			random_neighbor_country = {
+				limit = {
+					NOT = {
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = malevolent_personality
+						ruler_has_personality = zealot_personality
+					}
+				}
+				country_event = {
+					id = ipe_jewish.3
+					days = 180
+				}
+			}
+		}
+	}
+}
+
+# Cum Nimis Absurdum
+country_event = {
+	id = ipe_jewish.6
+	title = ipe_jewish.6.t
+	desc = ipe_jewish.6.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = PAP
+		118 = {
+			owned_by = PAP
+		}
+		is_year = 1550
+		NOT = {
+			religion = jewish
+			ruler_has_personality = benevolent_personality
+			ruler_has_personality = just_personality
+			ruler_has_personality = kind_hearted_personality
+			ruler_has_personality = righteous_personality
+			ruler_has_personality = tolerant_personality
+			has_idea_group = humanist_ideas	
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = cruel_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = malevolent_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = zealot_personality
+		}
+		modifier = {
+			factor = 0.9
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				jewish = 0
+			}
+		}
+		modifier = {
+			factor = 1.1
+			jewish = 2
+		}
+	}
+
+	option = {
+		name = ipe_jewish.6.a
+		118 = {
+			add_province_modifier = {
+				name = roman_ghetto
+				duration = -1
+			}
+		}
+	}
+}
+
+# Abolish the Roman Ghetto
+country_event = {
+	id = ipe_jewish.7
+	title = ipe_jewish.7.t
+	desc = ipe_jewish.7.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		NOT = {
+			tag = PAP
+			ruler_has_personality = cruel_personality
+			ruler_has_personality = malevolent_personality
+			ruler_has_personality = zealot_personality
+		}
+		118 = {
+			owned_by = ROOT
+			has_province_modifier = roman_ghetto
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = benevolent_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = just_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = kind_hearted_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = righteous_personality
+		}
+		modifier = {
+			factor = 0.9
+			ruler_has_personality = tolerant_personality
+		}
+		modifier = {
+			factor = 0.7
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 1.1
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 0.9
+			jewish = 2
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				jewish = 0
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_country_modifier = jews_in_poland
+		}
+	}
+
+	option = {
+		name = ipe_jewish.7.a
+		118 = {
+			remove_province_modifier = roman_ghetto
+		}
+		add_prestige = 25
+	}
+}

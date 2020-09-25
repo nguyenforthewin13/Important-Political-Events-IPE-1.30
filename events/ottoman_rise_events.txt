@@ -1,0 +1,2384 @@
+namespace = ottoman_rise
+normal_or_historical_nations = yes
+
+# The Allegiance of Wallachia
+country_event = {
+	id = ottoman_rise.1
+	title = ottoman_rise.1.t
+	desc = ottoman_rise.1.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TUR
+		is_subject = no
+		exists = WAL
+		WAL = {
+			is_subject = no
+			is_neighbor_of = TUR
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = ottoman_rise.1.a
+		WAL = {
+			country_event = {
+				id = ottoman_rise.2
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.1.b
+		add_prestige = -5
+	}
+}
+
+# Demands from the Sublime Porte
+country_event = {
+	id = ottoman_rise.2
+	title = ottoman_rise.2.t
+	desc = ottoman_rise.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = ottoman_rise.2.a
+		ai_chance = {
+			factor = 25
+		}
+		TUR = {
+			create_subject = {
+				subject_type = subject_voivode
+				subject = WAL
+			}
+			add_opinion = {
+				who = WAL
+				modifier = wallachia_submits
+			}
+			country_event = {
+				id = ottoman_rise.3
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = ottoman_rise.2.b
+		ai_chance = {
+			factor = 75
+		}
+		add_mil_power = 100
+		TUR = {
+			add_opinion = {
+				who = WAL
+				modifier = wallachia_impales
+			}
+			country_event = {
+				id = ottoman_rise.4
+				days = 1
+			}
+			add_casus_belli = {
+				target = WAL
+				type = cb_vassalize_mission
+				months = 300
+			}
+		}
+	}
+}
+
+# Wallachia Submits
+country_event = {
+	id = ottoman_rise.3
+	title = ottoman_rise.3.t
+	desc = ottoman_rise.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.3.a
+		add_prestige = 5
+	}
+}
+
+# Wallachia Refuses
+country_event = {
+	id = ottoman_rise.4
+	title = ottoman_rise.4.t
+	desc = ottoman_rise.4.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.4.a
+		tooltip = {
+			add_casus_belli = {
+				target = WAL
+				type = cb_vassalize_mission
+				months = 300
+			}
+		}
+	}
+}
+
+# The Crisis of Moldavia
+country_event = {
+	id = ottoman_rise.5
+	title = ottoman_rise.5.t
+	desc = ottoman_rise.5.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = MOL
+		OR = {
+			is_subject_of = POL
+			is_subject_of = PLC
+		}
+		TUR = {
+			OR = {
+				num_of_cities = POL
+				num_of_cities = PLC
+			}
+			any_owned_province = {
+				is_core = MOL
+			}
+		}
+		is_year = 1485
+		is_neighbor_of = TUR
+	}
+
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 0.5
+			TUR = {
+				any_owned_province = {
+					is_core = POL
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			TUR = {
+				any_owned_province = {
+					is_core = PLC
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				OR = {
+					is_neighbor_of = POL
+					is_neighbor_of = PLC
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.5.a
+		ai_chance = {
+			factor = 75
+		}
+		grant_independence = yes
+		TUR = {
+			country_event = {
+				id = ottoman_rise.6
+				days = 1
+			}
+		}
+		POL = {
+			add_opinion = {
+				who = MOL
+				modifier = betrayed_poland
+			}
+			add_casus_belli = {
+				target = MOL
+				type = cb_vassalize_mission
+				months = 300
+			}
+			country_event = {
+				id = ottoman_rise.7
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.5.b
+		ai_chance = {
+			factor = 25
+		}
+		add_prestige = 5
+	}
+}
+
+# Moldavia Offers its Submission
+country_event = {
+	id = ottoman_rise.6
+	title = ottoman_rise.6.t
+	desc = ottoman_rise.6.d
+	picture = DIPLOMACY_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.6.a
+		ai_chance = {
+			factor = 100
+		}
+		add_prestige = 5
+		create_subject = {
+			subject_type = subject_voivode
+			subject = MOL
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					is_core = MOL
+					NOT = {
+						province_id = 1756
+					}
+				}
+				cede_province = MOL
+				remove_core = TUR
+			}
+		}
+		custom_tooltip = ottoman_rise.6.a.tooltip
+		add_opinion = {
+			who = MOL
+			modifier = moldavia_submits
+		}
+		MOL = {
+			add_opinion = {
+				who = TUR
+				modifier = moldavia_accepted
+			}
+			country_event = {
+				id = ottoman_rise.16
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.6.b
+		ai_chance = {
+			factor = 0
+		}
+		MOL = {
+			add_opinion = {
+				who = TUR
+				modifier = moldavia_rejected
+			}
+			country_event = {
+				id = ottoman_rise.17
+				days = 1
+			}
+		}
+	}
+}
+
+# The Moldavian Betrayal
+country_event = {
+	id = ottoman_rise.7
+	title = ottoman_rise.7.t
+	desc = ottoman_rise.7.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.7.a
+		tooltip = {
+			add_casus_belli = {
+				target = MOL
+				type = cb_vassalize_mission
+				months = 300
+			}
+		}
+	}
+}
+
+# A Venetian Queen of Cyprus
+country_event = {
+	id = ottoman_rise.8
+	title = ottoman_rise.8.t
+	desc = ottoman_rise.8.d
+	picture = KING_DOING_GREAT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CYP
+		is_subject = no
+		government = monarchy
+		is_female = no
+		VEN = {
+			is_subject = no
+			exists = yes
+		}
+		has_consort = no
+		is_year = 1460
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			alliance_with = VEN
+		}
+	}
+
+	option = {
+		name = ottoman_rise.8.a
+		set_ruler_flag = venetian_queen_of_cyprus
+		set_country_flag = venetian_inheritance
+		define_consort = {
+			name = "Catarina"
+			dynasty = "Corner"
+			culture = venetian
+			max_random_adm = 3
+			max_random_dip = 3
+			max_random_mil = 3
+		}
+		VEN = {
+			add_opinion = {
+				who = CYP
+				modifier = accepted_venetian_queen
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.8.b
+		VEN = {
+			add_opinion = {
+				who = CYP
+				modifier = denied_venetian_queen
+			}
+		}
+	}
+}
+
+# The Inheritance of Cyprus
+country_event = {
+	id = ottoman_rise.9
+	title = ottoman_rise.9.t
+	desc = ottoman_rise.9.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = CYP
+		NOT = {
+			has_ruler_flag = venetian_queen_of_cyprus
+		}
+		has_country_flag = venetian_inheritance
+		is_subject = no
+		VEN = {
+			is_subject = no
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.5
+			NOT = {
+				has_consort = "Catarina"
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.9.a
+		ai_chance = {
+			factor = 100
+		}
+		clr_country_flag = venetian_inheritance
+		VEN = {
+			inherit = ROOT
+			country_event = {
+				id = ottoman_rise.10
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.9.b
+		ai_chance = {
+			factor = 0
+		}
+		clr_country_flag = venetian_inheritance
+		VEN = {
+			add_opinion = {
+				who = CYP
+				modifier = venetian_claim_to_cyprus
+			}
+			remove_opinion = {
+				who = CYP
+				modifier = accepted_venetian_queen
+			}
+			add_casus_belli = {
+				target = CYP
+				type = cb_insult
+				months = 120
+			}
+			country_event = {
+				id = ottoman_rise.11
+				days = 1
+			}
+		}
+		remove_opinion = {
+			who = VEN
+			modifier = benevolent_gifts
+		}
+	}
+}
+
+# The Venetian Takeover of Cyprus
+country_event = {
+	id = ottoman_rise.10
+	title = ottoman_rise.10.t
+	desc = ottoman_rise.10.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.10.a
+		add_prestige = 5
+	}
+}
+
+# The Cypriots Declare Independence
+country_event = {
+	id = ottoman_rise.11
+	title = ottoman_rise.11.t
+	desc = ottoman_rise.11.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.11.a
+		tooltip = {
+			add_casus_belli = {
+				target = CYP
+				type = cb_insult
+				months = 60
+			}
+		}
+	}
+}
+
+# Venice and the Aq Qoyunlu
+country_event = {
+	id = ottoman_rise.12
+	title = ottoman_rise.12.t
+	desc = ottoman_rise.12.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = VEN
+		is_subject = no
+		NOT = {
+			alliance_with = TUR
+		}
+		AKK = {
+			exists = yes
+			is_subject = no
+			total_development = 100
+			NOT = {
+				alliance_with = TUR
+			}
+			NOT = {
+				is_rival = VEN
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		ai_chance = {
+			factor = 100
+		}
+		name = ottoman_rise.12.a
+		AKK = {
+			country_event = {
+				id = ottoman_rise.13
+				days = 90
+			}
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = ottoman_rise.12.b
+	}
+}
+
+# Ambassadors from Venice
+country_event = {
+	id = ottoman_rise.13
+	title = ottoman_rise.13.t
+	desc = ottoman_rise.13.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.13.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				is_rival = TUR
+			}
+		}
+		create_alliance = VEN
+		VEN = {
+			add_opinion = {
+				who = AKK
+				modifier = turkish_enemies
+			}
+			country_event = {
+				id = ottoman_rise.14
+				days = 1
+			}
+		}
+		add_opinion = {
+			who = VEN
+			modifier = turkish_enemies
+		}
+	}
+
+	option = {
+		name = ottoman_rise.13.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_rival = TUR
+			}
+		}
+		VEN = {
+			add_opinion = {
+				who = AKK
+				modifier = not_turkish_enemies
+			}
+			country_event = {
+				id = ottoman_rise.15
+				days = 1
+			}
+		}
+	}
+}
+
+# Aq Qoyunlu Accepts the Alliance with Venice
+country_event = {
+	id = ottoman_rise.14
+	title = ottoman_rise.14.t
+	desc = ottoman_rise.14.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.14.a
+		add_prestige = 5
+	}
+}
+
+# Aq Qoyunlu Rejects the Alliance with Venice
+country_event = {
+	id = ottoman_rise.15
+	title = ottoman_rise.15.t
+	desc = ottoman_rise.15.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.15.a
+		add_prestige = -5
+	}
+}
+
+# The Ottomans Accept Moldavian Suzerainty
+country_event = {
+	id = ottoman_rise.16
+	title = ottoman_rise.16.t
+	desc = ottoman_rise.16.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.16.a
+		add_prestige = 5
+	}
+}
+
+# The Ottomans Reject Moldavian Suzerainty
+country_event = {
+	id = ottoman_rise.17
+	title = ottoman_rise.17.t
+	desc = ottoman_rise.17.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.17.a
+		add_prestige = -25
+	}
+}
+
+# Venetian Aid
+country_event = {
+	id = ottoman_rise.18
+	title = ottoman_rise.18.t
+	desc = ottoman_rise.18.d
+	picture = KING_DOING_GREAT_eventPicture
+
+	trigger = {
+		tag = CYP
+		VEN = {
+			exists = yes
+		}
+		has_ruler_flag = venetian_queen_of_cyprus
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = {
+		name = ottoman_rise.18.a
+		add_years_of_income = 0.5
+		add_opinion = {
+			who = VEN
+			modifier = benevolent_gifts
+		}
+	}
+}
+
+# The Ottoman Invasion of Wallachia
+country_event = {
+	id = ottoman_rise.19
+	title = ottoman_rise.19.t
+	desc = ottoman_rise.19.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = WAL
+		HUN = {
+			exists = yes
+			is_subject = no
+			num_of_cities = WAL
+			NOT = {
+				war_with = TUR
+				is_rival = WAL
+			}
+		}
+		TUR = {
+			num_of_cities = WAL
+		}
+		is_in_war = {
+			attacker_leader = TUR
+			defender_leader = WAL
+			duration = 1
+		}
+		war_with = TUR
+		NOT = {
+			is_rival = HUN
+			alliance_with = HUN
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ottoman_rise.19.a
+		ai_chance = {
+			factor = 90
+		}
+		custom_tooltip = ottoman_rise.19.a.tooltip
+		HUN = {
+			country_event = {
+				id = ottoman_rise.20
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.19.b
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+# The Wallachians Plead for Help
+country_event = {
+	id = ottoman_rise.20
+	title = ottoman_rise.20.t
+	desc = ottoman_rise.20.d
+	picture = BORDER_TENSION_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = {
+			factor = 90
+		}
+		name = ottoman_rise.20.a
+		custom_tooltip = ottoman_rise.20.a.tooltip
+		create_alliance = WAL
+		WAL = {
+			country_event = {
+				id = ottoman_rise.21
+				days = 1
+			}
+			add_opinion = {
+				who = HUN
+				modifier = defended_wallachia
+			}
+		}
+		hidden_effect = {
+			TUR = {
+				country_event = {
+					id = ottoman_rise.23
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 10
+		}
+		name = ottoman_rise.20.b
+		add_prestige = -5
+		WAL = {
+			country_event = {
+				id = ottoman_rise.22
+				days = 1
+			}
+			add_opinion = {
+				who = HUN
+				modifier = abandoned_wallachia
+			}
+		}
+	}
+}
+
+# Hungary Defends Wallachia
+country_event = {
+	id = ottoman_rise.21
+	title = ottoman_rise.21.t
+	desc = ottoman_rise.21.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.21.a
+		tooltip = {
+			add_opinion = {
+				who = HUN
+				modifier = defended_wallachia
+			}
+		}
+	}
+}
+
+# Hungary Abandons Wallachia
+country_event = {
+	id = ottoman_rise.22
+	title = ottoman_rise.22.t
+	desc = ottoman_rise.22.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.22.a
+		tooltip = {
+			add_opinion = {
+				who = HUN
+				modifier = abandoned_wallachia
+			}
+		}
+	}
+}
+
+# Hungary Intervenes in Wallachia
+country_event = {
+	id = ottoman_rise.23
+	title = ottoman_rise.23.t
+	desc = ottoman_rise.23.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.23.a
+		HUN = {
+			add_casus_belli = {
+				target = HUN
+				type = cb_insult
+				months = 120
+			}
+		}
+	}
+}
+
+# Fear in the Wallachian Ranks
+country_event = {
+	id = ottoman_rise.24
+	title = ottoman_rise.24.t
+	desc = ottoman_rise.24.d
+	picture = MILITARY_CAMP_eventPicture
+
+	trigger = {
+		tag = WAL
+		war_with = TUR
+		NOT = {
+			ruler_has_personality = just_personality
+			ruler_has_personality = righteous_personality
+			ruler_has_personality = kind_hearted_personality
+			ruler_has_personality = benevolent_personality
+			has_country_modifier = fear_in_the_ranks
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = ottoman_rise.24.a
+		add_country_modifier = {
+			name = fear_in_the_ranks
+			duration = 3600
+		}
+		add_yearly_manpower = -0.1
+	}
+}
+
+# Moldavian Support to Wallachia
+country_event = {
+	id = ottoman_rise.25
+	title = ottoman_rise.25.t
+	desc = ottoman_rise.25.d
+	picture = BORDER_TENSION_eventPicture
+
+	trigger = {
+		tag = MOL
+		NOT = {
+			war_with = TUR
+		}
+		WAL = {
+			war_with = TUR
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = ottoman_rise.25.a
+		add_yearly_manpower = -1
+		add_mil_power = -50
+		WAL = {
+			country_event = {
+				id = ottoman_rise.26
+				days = 1
+			}
+			add_opinion = {
+				who = MOL
+				modifier = moldavia_sent_aid
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.25.b
+	}
+}
+
+# Moldavia Sends Aid
+country_event = {
+	id = ottoman_rise.26
+	title = ottoman_rise.26.t
+	desc = ottoman_rise.26.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.26.a
+		add_yearly_manpower = 1
+		add_mil_power = 50
+		tooltip = {
+			add_opinion = {
+				who = MOL
+				modifier = moldavia_sent_aid
+			}
+		}
+	}
+}
+
+# The Lands of Wallachia
+country_event = {
+	id = ottoman_rise.27
+	title = ottoman_rise.27.t
+	desc = ottoman_rise.27.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		WAL = {
+			is_subject_of = TUR
+			NOT = {
+				liberty_desire = 50
+			}
+		}
+		any_owned_province = {
+			culture = romanian
+			is_core = WAL
+		}
+		is_at_war = no
+		num_of_cities = WAL
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = ottoman_rise.27.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = romanian
+					is_core = WAL
+				}
+				cede_province = WAL
+				remove_core = TUR
+			}
+		}
+		custom_tooltip = ottoman_rise.27.a.tooltip
+		WAL = {
+			add_liberty_desire = -25
+			add_opinion = {
+				who = TUR
+				modifier = returned_wallachia
+			}
+			country_event = {
+				id = ottoman_rise.28
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.27.b
+		ai_chance = {
+			factor = 0
+		}
+		WAL = {
+			add_liberty_desire = 25
+			add_opinion = {
+				who = TUR
+				modifier = kept_wallachia
+			}
+			country_event = {
+				id = ottoman_rise.29
+				days = 1
+			}
+		}
+	}
+}
+
+# Ottomans Return Wallachian Lands
+country_event = {
+	id = ottoman_rise.28
+	title = ottoman_rise.28.t
+	desc = ottoman_rise.28.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.28.a
+		tooltip = {
+			add_liberty_desire = -25
+			WAL = {
+				add_opinion = {
+					who = TUR
+					modifier = returned_wallachia
+				}
+			}
+		}
+		add_prestige = 5
+	}
+}
+
+# Ottomans Keep Wallachian Lands
+country_event = {
+	id = ottoman_rise.29
+	title = ottoman_rise.29.t
+	desc = ottoman_rise.29.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.29.a
+		tooltip = {
+			add_liberty_desire = 25
+			WAL = {
+				add_opinion = {
+					who = TUR
+					modifier = kept_wallachia
+				}
+			}
+		}
+		add_prestige = -5
+	}
+}
+
+# Venetian Casino
+country_event = {
+	id = ottoman_rise.30
+	title = ottoman_rise.30.t
+	desc = ottoman_rise.30.d
+	picture = GREAT_BUILDING_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = VEN
+		owns_core_province = 112
+		is_year = 1600
+		government = merchant_republic
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = {
+		name = ottoman_rise.30.a
+		add_years_of_income = 1
+		add_prestige = 5
+	}
+}
+
+# Conflict with the Transylvanian Saxons
+country_event = {
+	id = ottoman_rise.31
+	title = ottoman_rise.31.t
+	desc = ottoman_rise.31.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = WAL
+		dynasty = "Draculesti"
+		KLY = {
+			is_subject_of = HUN
+		}
+		4128 = {
+			culture = moselle
+			owned_by = KLY
+		}
+		is_neighbor_of = KLY
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = ottoman_rise.31.a
+		ai_chance = {
+			factor = 25
+		}
+		add_legitimacy = -5
+	}
+
+	option = {
+		name = ottoman_rise.31.b
+		ai_chance = {
+			factor = 75
+		}
+		add_mil_power = 100
+		HUN = {
+			add_opinion = {
+				who = TRA
+				modifier = impaled_saxons
+			}
+			country_event = {
+				id = ottoman_rise.32
+				days = 1
+			}	
+		}
+		KLY = {
+			add_opinion = {
+				who = TRA
+				modifier = impaled_saxons
+			}
+			country_event = {
+				id = ottoman_rise.32
+				days = 1
+			}
+		}
+		4128 = {
+			add_devastation = 50
+		}
+	}
+}
+
+country_event = {
+	id = ottoman_rise.32
+	title = ottoman_rise.32.t
+	desc = ottoman_rise.32.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.32.a
+		add_casus_belli = {
+			target = WAL
+			type = cb_insult
+			months = 300
+		}
+	}
+}
+
+country_event = {
+	id = ottoman_rise.33
+	title = ottoman_rise.33.t
+	desc = ottoman_rise.33.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MOR
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ottoman_rise.33.a
+		custom_tooltip = ottoman_rise.33.a.tooltip
+		add_prestige = 25
+	}
+}
+
+# Constantinople Earthquake
+country_event = {
+	id = ottoman_rise.34
+	title = ottoman_rise.34.t
+	desc = ottoman_rise.34.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		is_year = 1480
+		NOT = {
+			is_year = 1600
+		}
+		owns = 151
+		151 = {
+			is_capital = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = ottoman_rise.34.a
+		ai_chance = {
+			factor = 75
+		}
+		add_legitimacy = -25
+		151 = {
+			add_base_production = -1
+		}
+		add_years_of_income = -0.5
+	}
+
+	option = {
+		name = ottoman_rise.34.b
+		ai_chance = {
+			factor = 25
+		}
+		random = {
+			chance = 50
+			kill_ruler = yes
+		}
+		151 = {
+			add_base_production = -1
+		}
+		add_years_of_income = -0.5
+	}
+}
+
+# Manuel Palaiologos
+country_event = {
+	id = ottoman_rise.35
+	title = ottoman_rise.35.t
+	desc = ottoman_rise.35.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		is_year = 1480
+		NOT = {
+			is_year = 1600
+		}
+		BYZ = {
+			exists = no
+		}
+		owns = 151
+		151 = {
+			is_capital = yes
+			is_core = BYZ
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = ottoman_rise.35.a
+		151 = {
+			remove_core = BYZ
+		}
+		add_legitimacy = 10
+		add_years_of_income = -0.1
+	}
+
+	option = {
+		name = ottoman_rise.35.b
+		add_prestige = -5
+	}
+}
+
+# Cem Osmanoglu
+country_event = {
+	id = ottoman_rise.36
+	title = ottoman_rise.36.t
+	desc = ottoman_rise.36.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TUR
+		NOT = {
+			has_ruler_flag = cem_rebellion
+			has_disaster = ottoman_civil_war
+			is_year = 1500
+		}
+		owns = 1846
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = cem_rebels
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					area = rum_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = ankara_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = cukurova_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = dulkadir_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = erzurum_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = karaman_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = north_kurdistan_area
+				}
+				add_core = AMS
+			}
+			release = AMS
+			AMS = {
+				set_capital = 1846
+				1846 = {
+					add_building = fort_15th
+				}
+				change_government = monarchy
+				add_government_reform = ottoman_government
+				adopt_reform_progress = ROOT
+				add_historical_rival = MAM
+				add_historical_rival = BYZ
+				add_historical_rival = HAB
+				add_historical_rival = SPA
+				add_historical_rival = ARA
+				add_historical_rival = POL
+				add_historical_rival = PLC
+				add_historical_rival = RUS
+				add_historical_rival = HUN
+				add_historical_rival = STY
+				add_historical_rival = RME
+				add_historical_rival = TEK
+				add_historical_rival = TUR
+				define_ruler = {
+					name = "Cem"
+					dynasty = "Osmanoglu"
+					adm = 2
+					dip = 4
+					mil = 4
+					fixed = yes
+					age = 20
+				}
+				define_ruler_to_general = {
+					fire = 1
+					shock = 4
+					manuever = 3
+					siege = 0
+				}
+				if = {
+					limit = {
+						has_dlc = "Rights of Man" 
+					}
+					hidden_effect = { add_ruler_personality = bold_fighter_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 2.4
+						cavalry = 0.6
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 0.5
+						galley = 2
+						transport = 0.5
+					}
+				}
+				add_manpower = 15
+				add_treasury = 500
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.36.a
+		hidden_effect = {
+			every_owned_province = {
+				add_core = AMS
+			}
+		}
+		add_historical_rival = AMS
+		declare_war_with_cb = {
+			who = AMS
+			casus_belli = cb_ottoman_civil_war
+		}
+		custom_tooltip = ottoman_rise.36.a.tooltip
+	}
+}
+
+# The Defeat of Cem
+country_event = {
+	id = ottoman_rise.37
+	title = ottoman_rise.37.t
+	desc = ottoman_rise.37.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		OR = {
+			AND = {
+				OR = {
+					is_in_war = {
+						attacker_leader = TUR
+						defender_leader = AMS
+						duration = 365
+					}
+					is_in_war = {
+						attacker_leader = AMS
+						defender_leader = TUR
+						duration = 365
+					}
+				}
+				AMS = {
+					capital_scope = {
+						controlled_by = ROOT
+					}
+				}
+			}
+			AMS = {
+				exists = no
+			}
+		}
+		has_global_flag = cem_rebels
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Good riddance!
+		name = ottoman_rise.37.a
+		if = {
+			limit = {
+				exists = AMS
+			}
+			inherit = AMS
+		}
+		hidden_effect = {
+			every_core_province = {
+				remove_core = AMS
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		clr_global_flag = cem_rebels
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						war_with = KNI
+					}
+				}
+				KNI = {
+					country_event = {
+						id = ottoman_rise.39
+						days = 180
+					}
+				}
+			}
+		}
+	}
+}
+
+# Cem Takes Constantinople
+country_event = {
+	id = ottoman_rise.38
+	title = ottoman_rise.38.t
+	desc = ottoman_rise.38.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AMS
+		TUR = {
+			capital_scope = {
+				controlled_by = ROOT
+			}
+		}
+		is_subject = no
+		has_global_flag = cem_rebels
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ottoman_rise.38.a
+		inherit = TUR
+		change_tag = TUR
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		set_government_rank = 3
+		hidden_effect = {
+			every_core_province = {
+				remove_core = AMS
+			}
+		}
+		clr_global_flag = cem_rebels
+	}
+}
+
+# Cem Arrives in Rhodes
+country_event = {
+	id = ottoman_rise.39
+	title = ottoman_rise.39.t
+	desc = ottoman_rise.39.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.39.a
+		TUR = {
+			country_event = {
+				id = ottoman_rise.40
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.39.b
+		add_prestige = 10
+		TUR = {
+			add_opinion = {
+				who = KNI
+				modifier = executed_cem
+			}
+		}
+	}
+}
+
+# Cem and the Knights Hospitaller
+country_event = {
+	id = ottoman_rise.40
+	title = ottoman_rise.40.t
+	desc = ottoman_rise.40.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.40.a
+		add_years_of_income = -1
+		add_prestige = -25
+		KNI = {
+			country_event = {
+				id = ottoman_rise.41
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.40.b
+		add_prestige = 5
+		KNI = {
+			country_event = {
+				id = ottoman_rise.42
+				days = 1
+			}
+		}
+	}
+}
+
+# The Ottomans Pay the Knights
+country_event = {
+	id = ottoman_rise.41
+	title = ottoman_rise.41.t
+	desc = ottoman_rise.41.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.41
+		add_years_of_income = 5
+		add_prestige = 25
+		add_truce_with = TUR
+		TUR = {
+			add_truce_with = KNI
+		}
+	}
+}
+
+# The Ottomans Deny the Knights
+country_event = {
+	id = ottoman_rise.42
+	title = ottoman_rise.42.t
+	desc = ottoman_rise.42.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.42.a
+		add_prestige = 5
+		set_global_flag = cem_comeback
+	}
+}
+
+# The Return of Cem
+country_event = {
+	id = ottoman_rise.43
+	title = ottoman_rise.43.t
+	desc = ottoman_rise.43.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TUR
+		has_global_flag = cem_comeback
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = ottoman_rise.43.a
+		clr_global_flag = cem_comeback
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Cem Osmanoglu"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# The Ottoman Throne
+country_event = {
+	id = ottoman_rise.44
+	title = ottoman_rise.44.t
+	desc = ottoman_rise.44.d
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		tag = AMS
+		TUR = {
+			exists = yes
+		}
+		is_subject = no
+		NOT = {
+			war_with = TUR
+			has_truce = TUR
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_core_province = {
+				remove_core = AMS
+			}
+		}
+	}
+
+	option = {
+		name = ottoman_rise.44.a
+		declare_war_with_cb = {
+			who = TUR
+			casus_belli = cb_ottoman_civil_war
+		}
+		TUR = {
+			country_event = {
+				id = ottoman_rise.45
+				days = 1
+			}
+		}
+	}
+}
+
+# The Pretenders Declare War!
+country_event = {
+	id = ottoman_rise.45
+	title = ottoman_rise.45.t
+	desc = ottoman_rise.45.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.45.a
+		add_manpower = 5
+	}
+}
+
+# The Ottoman Succession
+country_event = {
+	id = ottoman_rise.46
+	title = ottoman_rise.46.t
+	desc = ottoman_rise.46.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		ruler_age = 40
+		MAM = {
+			exists = yes
+		}
+		NOT = {
+			has_ruler_flag = cem_rebellion
+		}
+		NOT = {
+			exists = AMS
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = ottoman_rise.46.a
+		ai_chance = {
+			factor = 10
+		}
+		add_stability_or_adm_power = yes
+	}
+
+	option = {
+		name = ottoman_rise.46.b
+		ai_chance = {
+			factor = 90
+		}
+		add_stability = -1
+		add_country_modifier = {
+			name = ottoman_succession_crisis
+			duration = 730
+		}
+		custom_tooltip = ottoman_rise.46.b.tooltip
+	}
+}
+
+# Greece
+country_event = {
+	id = ottoman_rise.47
+	title = flavor_gre.1.t
+	desc = flavor_gre.1.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				tag = GRE
+				NOT = { exists = BYZ }
+			}
+			AND = {
+				NOT = { exists = GRE }
+				NOT = { exists = BYZ }
+				NOT = { has_global_flag = greek_cores }
+				NOT = { primary_culture = greek }
+				NOT = { primary_culture = pontic_greek }
+				adm_tech = 20
+				any_owned_province = {
+					culture = greek
+					OR = {
+						area = morea_area
+						area = northern_greece_area
+						area = macedonia_area
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = flavor_gre.1.a
+		set_global_flag = greek_cores
+		every_province = {
+			limit = {
+				culture = greek
+				OR = {
+					continent = europe
+					continent = asia
+					continent = africa
+				}
+			}
+			add_core = ROOT
+		}
+		every_province = {
+			limit = {
+				is_core = BYZ
+			}
+			remove_core = BYZ
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					any_owned_province = {
+						OR = {
+							area = northern_greece_area
+							area = morea_area
+							area = macedonia_area
+						}
+					}
+				}
+				set_country_flag = greek_information
+				country_event = { id = flavor_gre.1 }
+			}
+		}
+	}
+}
+
+# Hain Ahmed Pasha
+country_event = {
+	id = ottoman_rise.48
+	title = ottoman_rise.48.t
+	desc = ottoman_rise.48.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		NOT = {
+			exists = MAM
+		}
+		calc_true_if = {
+			all_province = {
+				region = egypt_region
+				owned_by = TUR
+				is_core = TUR
+				controlled_by = TUR
+			}
+			amount = 20
+		}
+		capital_scope = {
+			NOT = {
+				region = egypt_region
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = {
+		name = ottoman_rise.48.a
+		custom_tooltip = ottoman_rise.48.a.tooltip
+		every_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_core = MAM
+					}
+				}
+				add_core = MAM
+			}
+			cede_province = MAM
+		}
+		hidden_effect = {
+			MAM = {
+				set_capital = 361
+				set_country_flag = ipe_egyptian_rebellion
+				change_government = monarchy
+				add_government_reform = mamluk_government
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 2.4
+						cavalry = 0.6
+					}
+				}
+				358 = {
+					build_to_forcelimit = {
+						heavy_ship = 0.2
+						galley = 0.8
+						light_ship = 0.5
+						transport = 0.5
+					}
+				}
+				add_treasury = 500
+			}
+		}
+		declare_war_with_cb = {
+			who = MAM
+			casus_belli = cb_core
+			war_goal_province = 361
+		}
+	}
+}
+
+# The Fall of Egypt
+country_event = {
+	id = ottoman_rise.49
+	title = ottoman_rise.49.t
+	desc = ottoman_rise.49.d
+	picture = SIEGE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		MAM = {
+			has_country_flag = ipe_egyptian_rebellion
+			capital_scope = {
+				controlled_by = TUR
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = MAM
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ottoman_rise.49.a
+		MAM = {
+			kill_ruler = yes
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				kill_heir = yes
+			}
+			every_owned_province = {
+				cede_province = TUR
+			}
+		}
+		add_prestige = 25
+	}
+}
+
+# Mamluk Influences
+country_event = {
+	id = ottoman_rise.50
+	title = ottoman_rise.50.t
+	desc = ottoman_rise.50.d
+	picture = CITY_VIEW_eventPicture
+
+	trigger = {
+		NOT = {
+			tag = EGY
+		}
+		NOT = {
+			tag = MAM
+		}
+		NOT = {
+			tag = ARB
+		}
+		NOT = {
+			primary_culture = al_misr_arabic
+		}
+		OR = {
+			primary_culture = turkish
+			NOT = {
+				culture_group = turko_semitic
+			}
+		}
+		any_owned_province = {
+			region = egypt_region
+			NOT = {
+				has_province_modifier = mamluk_influences
+			}
+		}
+		NOT = {
+			has_country_flag = curtailed_mamluks
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ottoman_rise.50.a
+		every_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			add_permanent_province_modifier = {
+				name = mamluk_influences
+				duration = -1
+			}
+		}
+	}
+}
+
+# Mamluk Influences Eliminated
+country_event = {
+	id = ottoman_rise.51
+	title = ottoman_rise.51.t
+	desc = ottoman_rise.51.d
+	picture = CITY_VIEW_eventPicture
+
+	trigger = {
+		OR = {
+			tag = ARB
+			tag = MAM
+			tag = EGY
+			primary_culture = al_misr_arabic
+			AND = {
+				culture_group = turko_semitic
+				NOT = {
+					primary_culture = turkish
+				}
+			}
+			has_country_flag = curtailed_mamluks
+		}
+		any_owned_province = {
+			region = egypt_region
+			has_province_modifier = mamluk_influences
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ottoman_rise.51.a
+		every_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			remove_province_modifier = mamluk_influences
+		}
+	}
+}
+
+# Curtailed Mamluks
+country_event = {
+	id = ottoman_rise.52
+	title = ottoman_rise.52.t
+	desc = ottoman_rise.52.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ottoman_rise.52.a
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = egypt_region
+				}
+				if = {
+					limit = {
+						NOT = {
+							is_core = MAM
+						}
+					}
+					add_core = MAM
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+				friend = MAM
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+				friend = MAM
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+				friend = MAM
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+				friend = MAM
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				friend = MAM
+			}
+		}
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 3
+				friend = MAM
+			}
+		}
+	}
+}
+
+# The Great Plague of Egypt
+country_event = {
+	id = ottoman_rise.53
+	title = ottoman_rise.53.t
+	desc = ottoman_rise.53.d
+	picture = PLAGUE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAM
+		NOT = {
+			is_year = 1470
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.1
+			is_year = 1460
+		}
+	}
+
+	option = {
+		name = ottoman_rise.53.a
+		add_stability = -1
+		361 = {
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+			add_permanent_province_modifier = {
+				name = plague
+				duration = 1095
+			}
+		}
+		random_owned_province = {
+			limit = {
+				culture = al_misr_arabic
+				region = egypt_region
+				base_tax = 2
+				base_production = 2
+				base_manpower = 2
+			}
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			add_permanent_province_modifier = {
+				name = plague
+				duration = 1095
+			}
+		}
+		random_owned_province = {
+			limit = {
+				culture = al_misr_arabic
+				region = egypt_region
+				base_tax = 2
+				base_production = 2
+				base_manpower = 2
+			}
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			add_permanent_province_modifier = {
+				name = plague
+				duration = 1095
+			}
+		}
+		every_owned_province = {
+			limit = {
+				region = egypt_region
+				culture = al_misr_arabic
+			}
+			add_permanent_province_modifier = {
+				name = the_decline_of_egypt
+				duration = 27375
+			}
+		}
+	}
+}
+
+# The Plague Continues in Egypt
+country_event = {
+	id = ottoman_rise.54
+	title = ottoman_rise.54.t
+	desc = ottoman_rise.54.d
+	picture = PLAGUE_eventPicture
+
+	trigger = {
+		any_owned_province = {
+			region = egypt_region
+			culture = al_misr_arabic
+			has_province_modifier = the_decline_of_egypt
+			base_tax = 2
+			base_production = 2
+			base_manpower = 2
+			NOT = {
+				has_province_modifier = plague
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1825
+	}
+
+	option = {
+		name = ottoman_rise.54.a
+		random_owned_province = {
+			limit = {
+				region = egypt_region
+				culture = al_misr_arabic
+				has_province_modifier = the_decline_of_egypt
+				base_tax = 2
+				base_production = 2
+				base_manpower = 2
+				NOT = {
+					has_province_modifier = plague
+				}
+			}
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			add_permanent_province_modifier = {
+				name = plague
+				duration = 1095
+			}
+		}
+	}
+}

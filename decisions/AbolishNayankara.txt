@@ -1,0 +1,35 @@
+country_decisions = {
+	abolish_nayankara = {
+		major = yes
+		potential = {
+			has_reform = nayankara_reform
+		}
+		allow = {
+			is_at_war = no
+			adm_tech = 18
+			stability = 3
+			all_subject_country = {
+				NOT = {
+					liberty_desire = 50
+				}
+			}
+		}
+		effect = {
+			add_stability = -6
+			add_government_reform = autocracy_reform
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = princely_state
+				}
+				add_liberty_desire = 100
+				add_opinion = {
+					who = ROOT
+					modifier = abolished_nayankara
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

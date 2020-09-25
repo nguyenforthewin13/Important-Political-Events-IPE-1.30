@@ -1,0 +1,27 @@
+vassal = {
+	first = MOR
+	second = TFL
+	start_date = 1444.1.1
+	end_date = 1472.1.1
+}
+
+vassal = {
+	first = MOR
+	second = SOS
+	start_date = 1444.1.1
+	end_date = 1472.1.1
+}
+
+vassal = {
+	first = MOR
+	second = MRK
+	start_date = 1444.1.1
+	end_date = 1472.1.1
+}
+
+march = {
+	first = TUN
+	second = TLC
+	start_date = 1424.1.1
+	end_date = 1500.1.1
+}

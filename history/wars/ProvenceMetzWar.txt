@@ -1,0 +1,17 @@
+name = "Provençal Conquest of Metz"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 188
+}
+
+1444.9.10 = {
+	add_attacker = PRO
+	add_attacker = LOR
+	add_defender = MTZ
+}
+
+1445.3.1 = {
+	rem_attacker = PRO
+	rem_attacker = LOR
+}

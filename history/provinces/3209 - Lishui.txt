@@ -1,0 +1,17 @@
+#3209 - Lishui
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = wu
+religion = confucianism
+capital = "Lishui"
+trade_goods = tea
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = WUU

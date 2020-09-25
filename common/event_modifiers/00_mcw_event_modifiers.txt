@@ -1,0 +1,25 @@
+denied_qasim_khan = {
+	local_unrest = 5
+	local_tax_modifier = -0.25
+	local_autonomy = -0.03
+}
+
+MOS_civil_war_ravaged = {
+	local_tax_modifier = -0.10
+	local_manpower_modifier = -0.25
+	province_trade_power_modifier = -0.10
+}
+
+MOS_inefficient_spies = {
+	global_spy_defence = -0.2
+	spy_offence = -0.25
+}
+
+true_prince_of_rus = {
+	land_forcelimit = 20
+	land_maintenance_modifier = -0.25
+}
+
+shemyaka_peace = {
+	stability_cost_modifier = -0.50
+}

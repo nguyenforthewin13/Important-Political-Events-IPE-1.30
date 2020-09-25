@@ -1,0 +1,112 @@
+namespace = ipeKOL
+normal_or_historical_nations = yes
+
+# The Soest Feud
+country_event = {
+	id = ipeKOL.1
+	title = ipeKOL.1.t
+	desc = ipeKOL.1.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = KOL
+		KLE = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = ipeKOL.1.a
+		ai_chance = {
+			factor = 25
+		}
+		KLE = {
+			add_opinion = {
+				who = ROOT
+				modifier = soest_feud_ends
+			}
+			add_truce_with = KOL
+			country_event = {
+				id = ipeKOL.2
+				days = 1
+			}
+		}
+		add_truce_with = KLE
+		add_prestige = -5
+	}
+
+	option = {
+		name = ipeKOL.1.b
+		ai_chance = {
+			factor = 75
+		}
+		add_historical_rival = KLE
+		KLE = {
+			add_historical_rival = KOL
+			add_opinion = {
+				who = KOL
+				modifier = soest_feud_continues
+			}
+			country_event = {
+				id = ipeKOL.3
+				days = 1
+			}
+		}
+		2975 = {
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The Soest Feud Ends
+country_event = {
+	id = ipeKOL.2
+	title = ipeKOL.2.t
+	desc = ipeKOL.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeKOL.2.a
+		tooltip = {
+			add_opinion = {
+				who = KOL
+				modifier = soest_feud_ends
+			}
+		}
+	}
+}
+
+# The Soest Feud Continues
+country_event = {
+	id = ipeKOL.3
+	title = ipeKOL.3.t
+	desc = ipeKOL.3.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeKOL.3.a
+		tooltip = {
+			add_historical_rival = KOL
+			KOL = {
+				add_historical_rival = KLE
+			}
+			add_opinion = {
+				who = KOL
+				modifier = soest_feud_continues
+			}
+			2975 = {
+				add_permanent_claim = KOL
+			}
+		}
+	}
+}

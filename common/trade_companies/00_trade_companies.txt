@@ -1,0 +1,424 @@
+trade_company_west_africa = {
+	color = { 50 0 200 }
+	
+	provinces = {
+		1164 1165 1166 1096 1793 2241 1466 1097 1098 1118 1119 1151 1163 2242 1168 1306 4078 4079 4080 
+		1111
+		1126 1139 1141 2257 2258 #West Africa Coast
+		1147 2289 2290 2294 #Benin
+		1112 1113 1116 2239 #Jolof
+		1114 1117 2238 #Futa Jalon
+		1167 1171 1172 1174 #Angola
+	}
+	# Specific
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_WEST_AFRICA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_WEST_AFRICA_Africa_Trade_Company"
+	}
+}
+
+trade_company_south_africa = {
+	color = { 0 175 0 }
+	
+	provinces = {
+		789 833 1175 1176 1177 1178 1179 1180 1181 1182 1801 1173 1800 2856 2864 2880 
+	}
+	
+	# Specific
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_SOUTH_AFRICA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_SOUTH_AFRICA_Africa_Trade_Company"
+	}
+}
+
+trade_company_east_africa = {
+	color = { 200 0 0 }
+	
+	provinces = {
+		788 1100 1102 1103 1183 1186 1192 1193 1194 1195 1196 1197 1198 1199 1200 1201 1202 1203 1204 1792 2796 2774 4020 4021 4022 4023 4024 4025 4026 4027 4028 4029 4030 4031 4032 4049 
+	}
+	
+	# Specific
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_EAST_AFRICA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_EAST_AFRICA_Africa_Trade_Company"
+	}
+}
+
+trade_company_west_india = {
+	color = { 135 104 85 }
+	
+	provinces = {
+		518 2058 2087 4501 4462 #mewar_area
+		512 4502 4507 2066 #jangladesh_area
+		513 514 2067 4506 #marwar_area
+		504 2088 4503 4504 #sindh_area
+		505 2072 4505 #northern_sindh_area
+		529 530 2089 4429 #konkan_area
+		515 521 2052 4454 4455 #saurashtra_area
+		517 4430 #tapti_area
+		503 2053 4456 4480 #patan_area
+		516 2051 2054 4512 4457 #ahmedabad_area
+		3450 3452 2086 4508 506 4513 2079 3431 4509 2078 3433
+		4411 3461 2077 3429 4510 4511 507 2076 3428 2075 3478
+		2056 3479 3472 3471 3474 3473 3434 3475 3476 3436 3470 3435
+		3469 3477 4463 3132 3423 3425 3430 510 2065
+	}
+	
+	# Generic
+	names = {
+		trigger = {
+			OR = {
+				tag = GBR
+				tag = ENG
+			}
+			primary_culture = english
+		}
+		name = "TRADE_COMPANY_INDIA_British_trade_company_south_india"
+	}
+	names = {
+		name = "TRADE_COMPANY_WEST_INDIA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_WEST_INDIA_India_Trade_Company"
+	}
+}
+
+trade_company_east_india = {
+	color = { 230 0 0 }
+	
+	provinces = {
+		553 2082 4447 4451 4452 #upper_mahanadi_area
+		547 2048 4445 4446 4448 #garjat_area
+		561 2081 4476 4477 #west_bengal_area
+		564 2039 4474 4475 4478 #east_bengal_area
+		552 2038 2043 2049 4441 #orissa_area
+		560 2096 4450 4470 4471 #jharkhand_area
+		562 2045 2046 4486 #north_bengal_area
+		563 2044 4479 #gaur_area
+		568 579 2402 #arakan_area
+		586 590 1815 2403 4399 #lower_burma_area
+		558 4469 4472 4489 #bihar_area
+		2047 4487 4488 #mithila_area
+		3391 3390 3386 3385 3393 3389 3394 3387 3384 3446 3413 3414 3454 3453 2042
+		3481 3440 3480 3099 3100 3095 3096 3097 3101 3102 3103 3133
+	}
+	
+	# Specific
+	names = {
+		trigger = {
+			OR = {
+				tag = GBR
+				tag = ENG
+			}
+			primary_culture = english
+		}
+		name = "TRADE_COMPANY_INDIA_British_East_India_Company"
+	}
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_EAST_INDIA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_EAST_INDIA_India_Trade_Company"
+	}
+}
+
+trade_company_burma = {
+	color = { 135 150 0 }
+	
+	provinces = {
+		570 573 2041 #naga_hills_area
+		584 2399 581 #upper_burma_area
+		2398 580 4393 2397 #chindwin_area
+		566 571 2040 4440 #assam_area
+		4394 4396 585 4395 #central_burma_area
+		583 588 2400 4397 4406 #shan_hill_area
+		587 2401 4398 #karenni_area 
+		582 2395 2396 4404 4405 #kachin_area
+		567 2091 4473 #tripura_area
+		3379 3380 3382 3383 3381 3098
+	}
+	
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_BURMA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_BURMA_India_Trade_Company"
+	}
+}
+
+trade_company_coromandel = {
+	color = { 50 30 210 }
+	
+	provinces = {
+		2083 4418 4419 4420 #north_carnatic_area
+		539 540 1947 2027 4417 #south_carnatic_area
+		536 2101 4412 #madura_area
+		2100 4408 4409 #lanka_area
+		572 2099 4407 #south_lanka_area
+		574 1101 1248 1998 1999 #indian_ocean_islands_area
+		538 2085 4414 #kongu_area
+		2026 4415 4416 #tanjore_area
+		533 2031 4421 4422 4426 #mysore_area
+		541 1949 2090 4423 4424 #rayalaseema_area
+		534 535 537 4410 4413 #malabar_area
+		531 2029 2030 2032 4427 #kanara_area
+		543 549 2084 2080 4425 #andhra_area
+		3482 3439 3483 3438 3445 3412 3401 3402 3400 3399 3406 3408 3405 3404 3411 3410 3409 3407
+	}
+	# Generic
+	names = {
+		trigger = {
+			OR = {
+				tag = GBR
+				tag = ENG
+			}
+			primary_culture = english
+		}
+		name = "TRADE_COMPANY_INDIA_British_trade_company_coromandel"
+	}
+	names = {
+		name = "TRADE_COMPANY_COROMANDEL_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_COROMANDEL_India_Trade_Company"
+	}
+}
+
+trade_company_deccan = {
+	color = { 175 27 217 }
+	
+	provinces = {
+		526 2057 2093 4461 #malwa_area
+		550 551 2092 4458 4460 #gondwana_area
+		532 2033 4428 #raichur_doab_area
+		2028 4438 4444 #telingana_area
+		542 2037 4436 4439 #golconda_area
+		527 4434 4453 #khandesh_area
+		569 1948 2035 4435 #maidan_area
+		546 548 2050 4442 4443 #berar_area
+		1946 2034 4431 #desh_area
+		544 545 4432 4433 4437 #ahmednagar_area
+		2036 3443 3444 3449 3441 3437 3442 3447
+	}
+	
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_DECCAN_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_DECCAN_India_Trade_Company"
+	}
+}
+
+trade_company_north_india = {
+	color = { 220 150 10 }
+	
+	provinces = {
+		522 2060 2062 #upper_doab_area
+		2061 4498 4499 #katehar_area
+		519 520 2064 4500 #jaipur_area
+		523 2094 4494 4495 4497 #oudh_area
+		555 2055 2095 4490 #purvanchal_area
+		524 556 2063 4496 #lower_doab_area
+		525 528 740 4464 4465 #gird_area
+		559 2059 4459 4466 4467 #bundelkhand_area
+		2097 2098 4468 #baghelkhand_area
+		3395 3415 3484 3485 3416 3486 3419 3418 3489 3488 3487 3420 3421 3422 3424 3522 3417 3448
+		3131 3130
+	}
+	
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_NORTH_INDIA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_NORTH_INDIA_India_Trade_Company"
+	}
+}
+
+trade_company_indonesia = {
+	color = { 0 240 0 }
+	
+	provinces = {
+		593 594 595 596 597 598 599 617 618 619 620 621 622 623 636 637 638 639 640 659 1361 2390 2391 2392 2393 2394 2673 2674 2675 2676 2677 2678 2679 2680 2681 2682 2683 2684 2685 2686 2703 2704 2705 2706 2707 2708 2709 2710 2711 2712 2740
+		3376 3377 3031 3030 3029 3028 3027 3032 3025 3026 3033 3058 3059 3060 3061 3062 3050 3051 3052 3055 3054 3053 3057 3056 3034 3035 3047 3048 3049 3036 3039 3040 3042 3043 3046 3045 3044 3041 3038
+	}
+
+	# Specific (Removed for potential confusion)
+	#names = {
+	#	trigger = {
+	#		primary_culture = dutch
+	#	}
+	#	name = "TRADE_COMPANY_INDONESIA_Dutch_East_Indies_Company"
+	#}
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_INDONESIA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_INDONESIA_Indonesia_Trade_Company"
+	}
+}
+
+trade_company_philippines = {
+	color = { 0 200 150 }
+	
+	provinces = {
+		2701 2702 4355 #mindanao_area
+		652 653 4354 #west_mindanao_area
+		654 2700 4351 4352 4353 #visayas_area
+		651 655 4356 #palawan_area
+		657 658 2698 4348 #luzon_area
+		656 2697 2699 4349 4350 #southern_luzon_area
+		1235 1995 1996 #west_micronesia_area
+		1243 1989 1990 1992 #polynesia_area
+		1241 1991 1993 1994 #micronesia_area
+	}
+
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_PHILIPPINES_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_PHILIPPINES_Indonesia_Trade_Company"
+	}
+}
+
+trade_company_moluccas = {
+	color = { 196 191 61 }
+	
+	provinces = {
+		646 2687 2688 2689 2690 2718 2724 1357 1245 647 645 2717 648 649 650 2725 2696 2695 635 633 634 643 2713 2714 642 2715 641 2716 632 627 2691 631 2693 629 2692 628 626 625 630 624 644 2723
+		3582 3583 3584 3585 3586 3588 3022 3589 3023 3021 3024 3587 3071 3072 3073 3074 3075 3076 3077 3078 3079 3080 3063 3064 3065 3066 3067 3068 3069 3070 3081 3082 3083 3084 3085 3086 3087
+	}
+
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_MOLUCCAS_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_MOLUCCAS_Indonesia_Trade_Company"
+	}
+}
+
+trade_company_indochina = {
+	color = { 84 152 93 }
+	
+	provinces = {
+		589 592 600 601 602 603 604 605 606 609 607 608 611 612 614 615 1817 1823 1844 2374 2375 2376 2377 2378 2379 2380 2381 2382 2383 2384 2385 2386 2387 2388 2389 591 2404 3280 3279 3345 3338 3337 3339 3346 3340 3341 3342 3343 3344
+		3347 3354 3355 3353 3356 3348 3349 3352 3351 3350 3357 3358 3378 3359 3361 3360 3362 3363 3364 3368 3372 3370 3365 3367 3369 3371 3373 3374 3375 3094
+	}
+	
+	# Specific
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_INDOCHINA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_INDOCHINA_China_Trade_Company"
+	}
+}
+
+trade_company_south_china = {
+	color = { 100 230 20 }
+	
+	provinces = {
+		2161 1371 610 613 616 664 665 666 667 668 672 1016 1840 2156 2157 2158 2159 2160 2162 2163 2164 2173 2174 2372 671 2373 3270 3269 3268 3267 3263 3261 3262 3265 3264 3284 3285 3289 3256 3255 3254 3257 2168 3272 3250 3248 3247 3237 3238 3271 3239 3240 3232 3220 3230 3231 3260 3249 3292 3291 3293 3336 1022
+		662 663 673 674 4199 2371 3266
+	}
+	
+	# Specific
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_SOUTH_CHINA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_SOUTH_CHINA_China_Trade_Company"
+	}
+}
+
+trade_company_east_china = {
+	color = { 178 34 34 }
+	
+	provinces = {
+		669 670 683 684 685 686 1821 1822 1824 1829 1833 1838 1897 2143 2144 2145 2146 2147 2148 2149 2150 2151 2152 2153 3218 3219 3200 3243 3242 3241 3199 3246 3245 3244 3204 3205 3206 3207 3201 3202 3203 3208 3209 3210 2154 2155 738 3294 3295 3296 3323 3324
+		2141 2142 4196 #North Jiangsu
+		3366 3388
+	}
+	
+	# Specific
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_EAST_CHINA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_EAST_CHINA_China_Trade_Company"
+	}
+}
+
+trade_company_north_china = {
+	color = { 60 60 255 }
+	
+	provinces = {
+		690 691 2138 2139 2140
+		1816 4194 #North Hebei
+		695 696 2137 4195 #South Hebei
+		704 726 2112 2113 4652  #Liaoning
+		693 694 697 2177 2178 #Shanxi	
+		3253 3190 3191 3212 3213 3214 3196 3197 3192 3194 3195 3282 3283 3281 3193 3215 3217 3216 3211 3093 3128
+	}
+	
+	# Specific
+	# Generic
+	names = {
+		name = "TRADE_COMPANY_NORTH_CHINA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_NORTH_CHINA_China_Trade_Company"
+	}
+}
+
+trade_company_persian_gulf = {
+	color = { 78 215 14 }
+
+	provinces = {
+		2231 576 2232 575 434 2233 4327 431 2999 2219 4332 430 412 408 2340
+		394 2347 395 396 2333 397 398 404 399 400 4286 4285 403 4287 4288
+		3548 3506 2312 4290 4289 3512 4342 2217 3510 3511 577 2068 3451
+	}
+
+	names = {
+		name = "TRADE_COMPANY_PERSIAN_GULF_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_PERSIAN_GULF_Persian_Gulf_Trade_Company"
+	}
+}
+
+trade_company_south_arabia = {
+	color = { 98 21 57 }
+
+	provinces = {
+		2341 2342 401 4284 402 2343 4283 389 2344 2345 388 390 4281 4280 4279 387 2346
+		1215 1212 2793 1209 2790 2789 2786 2788 1206 2784 2783 2785 2795 2780 2782 1205
+		2781 2776 2775 2794 1099 2024 2765 2764 2768 2792 2773 1211
+	}
+	names = {
+		name = "TRADE_COMPANY_SOUTH_ARABIA_Root_Culture_GetName"
+	}
+	names = {
+		name = "TRADE_COMPANY_SOUTH_ARABIA_South_Arabia_Trade_Company"
+	}
+}

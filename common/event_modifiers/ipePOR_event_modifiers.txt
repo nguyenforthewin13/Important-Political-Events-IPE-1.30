@@ -1,0 +1,4 @@
+# Plantations of Madeira
+plantations_of_madeira = {
+	trade_goods_size = 1
+}

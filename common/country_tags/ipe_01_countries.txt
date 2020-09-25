@@ -1,0 +1,163 @@
+# Anatolia
+ALN = "countries/Alanya.txt"
+AMS = "countries/Rum_Revolt.txt"
+ASY = "countries/Assyria.txt"
+CIK = "countries/Canik.txt"
+HAK = "countries/Hakkari.txt"
+RME = "countries/Rumelia.txt"
+TEK = "countries/Tekke.txt"
+
+# Austria and Hungary
+AUT = "countries/Austria2.txt"
+KLY = "countries/Kiralyfold.txt"
+SZK = "countries/Szekelyfold.txt"
+
+# Bavaria
+BAS = "countries/BavariaStraubing.txt"
+
+# British Isles
+LNC = "countries/Lancaster.txt"
+YRK = "countries/York.txt"
+
+# Caucasus
+ABK = "countries/Abkhazia.txt"
+DRB = "countries/Derbent.txt"
+GNJ = "countries/Ganja.txt"
+KAH = "countries/Kakheti.txt"
+KBR = "countries/Kabardia.txt"
+LAZ = "countries/Lazeti.txt"
+QUB = "countries/Quba.txt"
+OSS = "countries/Ossetia.txt"
+TAL = "countries/Talysh.txt"
+
+# Central Asia
+BDK = "countries/Badakhshan.txt"
+FGH = "countries/Ferghana.txt"
+SGD = "countries/Sogdiana.txt"
+YKD = "countries/IPE_Yarkand.txt"
+
+# France
+ANG = "countries/Angoumois.txt"
+ANJ = "countries/Anjou.txt"
+CMB = "countries/Cambrai.txt"
+LMO = "countries/Limoges.txt"
+MNE = "countries/Maine.txt"
+MTZ = "countries/Metz.txt"
+NEM = "countries/Nemours.txt"
+NRB = "countries/Narbonne.txt"
+PGD = "countries/Perigord.txt"
+
+# Hispaniola
+BOR = "countries/Boriken.txt"
+HIT = "countries/Higuey.txt"
+JRT = "countries/Jaragua.txt"
+MGT = "countries/Magua.txt"
+MNT = "countries/Maguana.txt"
+MRT = "countries/Marien.txt"
+
+# India
+BID = "countries/Bidar.txt"
+KNK = "countries/Konkan.txt"
+MIZ = "countries/Mizoram.txt"
+
+# Italy
+ANC = "countries/Ancona.txt"
+TRN = "countries/Taranto.txt"
+
+# Japan
+ANO = "countries/Asano.txt"
+ASN = "countries/Ashina.txt"
+AZI = "countries/Azai.txt"
+HNM = "countries/Honma.txt"
+IWA = "countries/Iwaki.txt"
+KGK = "countries/Kyogoku.txt"
+KMK = "countries/Kamakura.txt"
+KSI = "countries/Kasai.txt"
+MDR = "countries/Matsudaira.txt"
+MGM = "countries/Mogami.txt"
+MSU = "countries/Matsumae.txt"
+MYI = "countries/Miyoshi.txt"
+RKK = "countries/Rokkaku.txt"
+SGR	= "countries/Sagara.txt"
+STO = "countries/Saito.txt"
+SUW = "countries/Suwa.txt"
+TNA	= "countries/Tanegashima.txt"
+TOG = "countries/Togashi.txt"
+TOY = "countries/Toyotomi.txt"
+
+# Levant
+JBD = "countries/JabalDruze.txt"
+
+# Livonia
+DRP = "countries/Dorpat.txt"
+OSW = "countries/OselWiek.txt"
+
+# Low Countries
+BEL = "countries/Belgium.txt"
+
+# Macaronesia
+CNI = "countries/Canaries.txt"
+GNC = "countries/Guanche.txt"
+
+# Malay Archipelago
+ARU = "countries/Aru.txt"
+BAC = "countries/Bacan.txt"
+BAU = "countries/Berau.txt"
+BMA = "countries/Bima.txt"
+BNE = "countries/Bone.txt"
+BRS = "countries/Barus.txt"
+DLI = "countries/Deli.txt"
+IDG = "countries/Indragiri.txt"
+IFG = "countries/Ifugao.txt"
+JLO = "countries/Jailolo.txt"
+JMB = "countries/Jambi.txt"
+KEL = "countries/Kelantan.txt"
+LDA = "countries/Landak.txt"
+LMI = "countries/Lamuri.txt"
+PAH = "countries/Pahang.txt"
+PNT = "countries/Pontianak.txt"
+SMB = "countries/Sumbawa.txt"
+SMS = "countries/Sambas.txt"
+SPP = "countries/Soppeng.txt"
+SRB = "countries/Surabaya.txt"
+SUD = "countries/Sukadana.txt"
+SWK = "countries/Sarawak.txt"
+WJO = "countries/Wajo.txt"
+YGK = "countries/Yogyakarta.txt"
+
+# Pomerania
+KSB = "countries/Kashubia.txt"
+STP = "countries/Stolp.txt"
+
+# Prussia
+WRM = "countries/Warmia.txt"
+
+# Russia
+CVA = "countries/Chuvashia.txt"
+GLC = "countries/Galich.txt"
+GPM = "countries/GreatPerm.txt"
+KHY = "countries/Khlynov.txt"
+MOV = "countries/Mordovia.txt"
+MOZ = "countries/Mozhaysk.txt"
+RMI = "countries/Mari.txt"
+TRB = "countries/Trubetsk.txt"
+UDM = "countries/Udmurtia.txt"
+
+# Saxony
+VOG = "countries/Vogtland.txt"
+
+# Scandinavia
+SCN = "countries/Scania.txt"
+
+# Silesia
+BRL = "countries/Breslau.txt"
+LGN = "countries/Legnica.txt"
+RTB = "countries/Raciborz.txt"
+
+# Switzerland
+SGA = "countries/StGallen.txt"
+VLS = "countries/Valais.txt"
+ZUR = "countries/Zurich.txt"
+
+# Westphalia
+HOY = "countries/Hoya.txt"

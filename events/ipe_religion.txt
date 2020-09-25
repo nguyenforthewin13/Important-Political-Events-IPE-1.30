@@ -1,0 +1,30 @@
+namespace = ipe_religion
+
+# Harmonization of the Druze Faith
+country_event = {
+	id = ipe_religion.1
+	title = ipe_religion.1.t
+	desc = ipe_religion.1.d
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = ipe_religion.1.a
+		tooltip = {
+			add_country_modifier = {
+				name = harmonized_druze
+				duration = -1
+			}
+		}
+	}
+}

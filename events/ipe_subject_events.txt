@@ -1,0 +1,341 @@
+namespace = ipe_subject
+
+# $FROMCOUNTRY$ Reclaims the Fief of $COUNTRY$
+country_event = {
+	id = ipe_subject.1
+	title = ipe_subject.1.t
+	desc = ipe_subject.1.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = this_fief_will_die
+	}
+
+	option = { # We cannot bow to these tyrants!
+		name = ipe_subject.1.a
+		custom_tooltip = ipe_subject.1.a.tooltip
+	}
+}
+
+# The Inheritance of $COUNTRY$
+country_event = {
+	id = ipe_subject.2
+	title = ipe_subject.2.t
+	desc = ipe_subject.2.d
+	picture = CITY_VIEW_eventPicture
+
+	major = yes
+
+	trigger = {
+		OR = {
+			is_subject_of_type = fief
+			is_subject_of_type = french_fief
+		}
+		has_country_flag = this_fief_will_die
+		NOT = {
+			has_ruler_flag = inheritable_fief
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # These lands no longer belong to us.
+		name = ipe_subject.1.a
+		overlord = {
+			inherit = ROOT
+			country_event = {
+				id = ipe_subject.3
+				days = 1
+			}
+		}
+	}
+}
+
+# The Inheritance of $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.3
+	title = ipe_subject.3.t
+	desc = ipe_subject.3.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # My rule is absolute.
+		name = ipe_subject.3.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# The Secularization of $COUNTRY$
+country_event = {
+	id = ipe_subject.4
+	title = ipe_subject.4.t
+	desc = ipe_subject.4.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipe_subject.4.a
+		FROM = {
+			inherit = ROOT
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.5
+				days = 1
+			}
+		}
+	}
+}
+
+# The Secularization of $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.5
+	title = ipe_subject.5.t
+	desc = ipe_subject.5.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The church is subservient to the state.
+		name = ipe_subject.5.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# The Deposition of the Republic of $COUNTRY$
+country_event = {
+	id = ipe_subject.6
+	title = ipe_subject.6.t
+	desc = ipe_subject.6.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # And so, democracy dies.
+		name = ipe_subject.6.a
+		FROM = {
+			inherit = ROOT
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.7
+				days = 1
+			}
+		}
+	}
+}
+
+# The Deposition of the Republic of $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.7
+	title = ipe_subject.7.t
+	desc = ipe_subject.7.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Only an enlightened ruler will solve their woes.
+		name = ipe_subject.7.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# Papal Interdict Imposed
+country_event = {
+	id = ipe_subject.8
+	title = ipe_subject.8.t
+	desc = ipe_subject.8.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is not infallible!
+		name = ipe_subject.8.a
+		FROM = {
+			inherit = ROOT
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.9
+				days = 1
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Reclaimed for the Papacy
+country_event = {
+	id = ipe_subject.9
+	title = ipe_subject.9.t
+	desc = ipe_subject.9.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Great spiritual power relies on great temporal power.
+		name = ipe_subject.9.a
+		add_prestige = 5
+	}
+}
+
+# $FROMCOUNTRY$ Appoints a Bishop of $COUNTRY$
+country_event = {
+	id = ipe_subject.10
+	title = ipe_subject.10.t
+	desc = ipe_subject.10.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # This cannot be good for Christianity.
+		name = ipe_subject.10.a
+		define_ruler = {
+			dynasty = FROM
+			culture = FROM
+			religion = catholic
+		}
+		set_ruler_flag = puppeted_bishopric
+		clr_country_flag = puppeting_bishopric
+		add_devotion = -25
+		add_corruption = 2
+		add_treasury = 200
+		custom_tooltip = ipe_subject.10.a.tooltip
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject_type = puppet_bishopric
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Puppet Bishopric
+country_event = {
+	id = ipe_subject.11
+	title = ipe_subject.11.t
+	desc = ipe_subject.11.d
+	picture = POPE_PREACHING_eventPicture
+
+	trigger = {
+		NOT = {
+			has_country_flag = pb_fate
+			has_country_flag = puppeting_bishopric
+			has_ruler_flag = puppeted_bishopric
+		}
+		is_subject_of_type = puppet_bishopric
+		is_at_war = no
+	}
+
+	immediate = {
+		set_country_flag = pb_fate
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # We still need the protection of a greater power.
+		name = ipe_subject.11.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 25
+				ruler_has_personality = pious_personality
+			}
+			modifier = {
+				factor = 0
+				total_development = 100
+			}
+			modifier = {
+				factor = 0
+				liberty_desire = 50
+			}
+		}
+		add_devotion = -10
+		add_reform_desire = 0.005
+		overlord = {
+			country_event = {
+				id = ipe_subject.12
+				days = 1
+			}
+		}
+		clr_country_flag = pb_fate
+		set_ruler_flag = puppeted_bishopric
+	}
+
+	option = { # Let us avoid foreign entanglements.
+		name = ipe_subject.11.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 75
+				ruler_has_personality = pious_personality
+			}
+			modifier = {
+				factor = 100
+				total_development = 100
+			}
+			modifier = {
+				factor = 100
+				liberty_desire = 50
+			}
+		}
+		overlord = {
+			country_event = {
+				id = ipe_subject.13
+				days = 1
+			}
+		}
+		grant_independence = yes
+		clr_country_flag = pb_fate
+	}
+}
+
+# $FROMCOUNTRY$ Remains Allegiant!
+country_event = {
+	id = ipe_subject.12
+	title = ipe_subject.12.t
+	desc = ipe_subject.12.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very good.
+		name = ipe_subject.12.a
+		add_papal_influence = 10
+	}
+}
+
+# $FROMCOUNTRY$ Becomes Independent!
+country_event = {
+	id = ipe_subject.13
+	title = ipe_subject.13.t
+	desc = ipe_subject.13.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They can be bribed once again.
+		name = ipe_subject.13.a
+		add_prestige = -5
+	}
+}

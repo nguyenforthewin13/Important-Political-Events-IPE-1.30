@@ -1,0 +1,21 @@
+#3325 - Koga
+
+owner = ASK
+controller = ASK
+culture = togoku
+religion = shinto
+capital = "Koga"
+trade_goods = silk
+hre = no
+base_tax = 7
+base_manpower = 7
+base_production = 6
+is_city = yes
+add_core = ASK
+add_core = KMK
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = ANU

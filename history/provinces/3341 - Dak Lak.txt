@@ -1,0 +1,16 @@
+# 3341 - Dak Lak
+
+owner = CHA
+controller = CHA
+add_core = CHA
+culture = bahnar
+religion = animism
+capital = "Buon Ma Thuôt"
+trade_goods = tea
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian

@@ -1,0 +1,81 @@
+namespace = ipeNED
+normal_or_historical_nations = yes
+
+# The Spread of the Dutch Language
+country_event = {
+    id = ipeNED.1
+    title = ipeNED.1.t
+    desc = ipeNED.1.d
+    picture = CITY_VIEW_eventPicture
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = NED
+        99 = {
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        4381 = {
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        4382 = {
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        OR = {
+            99 = {
+                culture = low_saxon
+            }
+            4381 = {
+                culture = low_saxon
+            }
+            4382 = {
+                culture = low_saxon
+            }
+        }
+        is_at_war = no
+    }
+
+    mean_time_to_happen = {
+        months = 240
+    }
+
+    option = {
+        name = ipeNED.1.a
+        if = {
+            limit = {
+                99 = {
+                    culture = low_saxon
+                }
+            }
+            99 = {
+                change_culture = dutch
+            }
+        }
+        if = {
+            limit = {
+                4381 = {
+                    culture = low_saxon
+                }
+            }
+            4381 = {
+               change_culture = dutch
+            }
+        }
+        if = {
+            limit = {
+                4382 = {
+                    culture = low_saxon
+                }
+            }
+            4382 = {
+                change_culture = dutch
+            }
+        }
+    }
+}

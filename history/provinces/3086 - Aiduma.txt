@@ -1,0 +1,29 @@
+#3086 - Aiduma
+
+culture = papuan
+religion = animism
+capital = "Aiduma"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 40
+native_ferocity = 5
+native_hostileness = 6
+
+discovered_by = MKS
+discovered_by = TER
+discovered_by = TID
+discovered_by = JLO
+discovered_by = BAC
+discovered_by = WJO
+discovered_by = SPP
+discovered_by = BNE
+discovered_by = BTN
+discovered_by = BMA
+discovered_by = SMB
+discovered_by = LUW
+
+1526.1.1 = { discovered_by = POR } # Don Jorge de Mneses
+1770.2.27 = { discovered_by = GBR } # William Dampier

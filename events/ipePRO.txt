@@ -1,0 +1,122 @@
+namespace = ipePRO
+normal_or_historical_nations = yes
+
+#The Inheritance of Provence (France)
+country_event = {
+	id = ipePRO.1
+	title = ipePRO.1.t
+	desc = ipePRO.1.d
+	picture = CITY_VIEW_eventPicture
+	
+	major = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		NOT = { war_with = PRO }
+		PRO = {
+			exists = yes
+			ai = yes
+			is_subject = no
+			is_neighbor_of = ROOT
+			is_at_war = no
+		}
+		is_subject = no
+		num_of_cities = 10
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.5
+			PRO = {
+				has_heir = no
+			}
+		}
+		modifier = {
+			factor = 0.9
+			PRO = {
+				dynasty = FRA
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1470
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1480
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1490
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1500
+		}
+	}
+	
+	option = { # Provence is ours again!
+		name = ipePRO.1.a
+		if = {
+			limit = {
+				PRO = {
+					owns_core_province = 187
+				}
+				LOR = {
+					exists = yes
+				}
+			}
+			187 = {
+				add_core = LOR
+				cede_province = LOR
+			}
+		}
+		if = {
+			limit = {
+				PRO = {
+					owns_core_province = 4766
+				}
+				LOR = {
+					exists = yes
+				}
+			}
+			4766 = {
+				add_core = LOR
+				cede_province = LOR
+			}
+		}
+		PRO = {
+			set_in_empire = no
+		}
+		inherit = PRO
+		LOR = {
+			country_event = { id = ipePRO.2 days = 1 }
+		}
+	}
+}
+
+# The Inheritance of Provence (Lorraine)
+country_event = {
+	id = ipePRO.2
+	title = ipePRO.1.t
+	desc = ipePRO.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # Excellent.
+		name = ipePRO.2.a
+		tooltip = {
+			187 = {
+				add_core = LOR
+				cede_province = LOR
+				add_local_autonomy = 10
+			}
+		}
+		add_legitimacy = 5
+		add_prestige = 5
+	}
+}

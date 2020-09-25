@@ -1,0 +1,467 @@
+namespace = ipeCAS
+normal_or_historical_nations = yes
+
+# The Kingdom of the Canaries
+country_event = {
+	id = ipeCAS.1
+	title = ipeCAS.1.t
+	desc = ipeCAS.1.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CNI
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Sell the islands to Portugal.
+		name = ipeCAS.1.a
+		ai_chance = {
+			factor = 50
+		}
+		every_owned_province = {
+			add_core = CAS
+		}
+		POR = {
+			inherit = ROOT
+			country_event = {
+				id = ipeCAS.2
+				days = 1
+			}
+		}
+	}
+
+	option = { # Sell the islands to Castile.
+		name = ipeCAS.1.b
+		ai_chance = {
+			factor = 25
+		}
+		CAS = {
+			inherit = ROOT
+			country_event = {
+				id = ipeCAS.3
+				days = 1
+			}
+		}
+	}
+
+	option = { # Maintain independence.
+		name = ipeCAS.1.c
+		ai_chance = {
+			factor = 25
+		}
+		every_owned_province = {
+			add_core = CAS
+			add_core = POR
+		}
+		CAS = {
+			country_event = {
+				id = ipeCAS.4
+				days = 1
+			}
+		}
+		POR = {
+			country_event = {
+				id = ipeCAS.4
+				days = 1
+			}
+		}
+	}
+}
+
+# The Fate of the Canary Islands (Sold to Portugal)
+country_event = {
+	id = ipeCAS.2
+	title = ipeCAS.2.t
+	desc = ipeCAS.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Let us keep this new possession!
+		name = ipeCAS.2.a
+		ai_chance = {
+			factor = 50
+		}
+		tooltip = {
+			inherit = CNI
+		}
+		add_prestige = 10
+		CAS = {
+			add_opinion = {
+				who = POR
+				modifier = stole_the_canaries
+			}
+			country_event = {
+				id = ipeCAS.5
+				days = 1
+			}
+		}
+	}
+
+	option = { # We do not wish to anger Castile.
+		name = ipeCAS.2.b
+		ai_chance = {
+			factor = 50
+		}
+		tooltip = {
+			inherit = CNI
+		}
+		366 = {
+			cede_province = CAS
+			remove_core = POR
+		}
+		if = {
+			limit = {
+				owns = 4565
+			}
+			4565 = {
+				cede_province = CAS
+				remove_core = POR
+			}
+		}
+		add_prestige = -10
+		CAS = {
+			add_opinion = {
+				who = POR
+				modifier = returned_the_canaries
+			}
+			country_event = {
+				id = ipeCAS.12
+				days = 1
+			}
+		}
+	}
+}
+
+# The Fate of the Canary Islands (Sold to Castile)
+country_event = {
+	id = ipeCAS.3
+	title = ipeCAS.2.t
+	desc = ipeCAS.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A welcome surprise.
+		name = ipeCAS.3.a
+		tooltip = {
+			inherit = CNI
+		}
+		add_prestige = 10
+	}
+}
+
+# The Fate of the Canary Islands (Independence)
+country_event = {
+	id = ipeCAS.4
+	title = ipeCAS.2.t
+	desc = ipeCAS.4.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Interesting.
+		name = ipeCAS.4.a
+		tooltip = {
+			CNI = {
+				every_owned_province = {
+					add_core = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Fate of the Canary Islands (Stolen from Castile)
+country_event = {
+	id = ipeCAS.5
+	title = ipeCAS.2.t
+	desc = ipeCAS.5.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeCAS.5.a
+		tooltip = {
+			add_opinion = {
+				who = POR
+				modifier = stole_the_canaries
+			}
+		}
+	}
+}
+
+# Rebellion on the Canary Islands!
+country_event = {
+	id = ipeCAS.6
+	title = ipeCAS.6.t
+	desc = ipeCAS.6.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		owns = 366
+		CAS = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = stole_the_canaries
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Crush them!
+		name = ipeCAS.6.a
+		set_country_flag = canaries_rebel
+		366 = {
+			spawn_rebels = {
+				size = 1
+				friend = CAS
+				type = nationalist_rebels
+			}
+		}
+	}
+}
+
+# The Treaty of Aláçovas
+country_event = {
+	id = ipeCAS.7
+	title = ipeCAS.7.t
+	desc = ipeCAS.7.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		has_country_flag = canaries_rebel
+		owns = 366
+		controls = 366
+		CAS = {
+			exists = yes
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = ipeCAS.7.a
+		ai_chance = {
+			factor = 95
+		}
+		366 = {
+			cede_province = CAS
+			remove_core = POR
+		}
+		if = {
+			limit = {
+				owns = 4565
+			}
+			4565 = {
+				cede_province = CAS
+				remove_core = POR
+			}
+		}
+		CAS = {
+			add_opinion = {
+				who = POR
+				modifier = treaty_of_alacovas
+			}
+			country_event = {
+				id = ipeCAS.8
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = ipeCAS.7.b
+		ai_chance = {
+			factor = 5
+		}
+		if = {
+			limit = {
+				owns = 4565
+				4565 = {
+					NOT = {
+						is_core = CAS
+					}
+				}
+			}
+			4565 = {
+				add_core = CAS
+			}
+		}
+		add_casus_belli = {
+			target = CAS
+			type = cb_restore_personal_union
+			months = 300
+		}
+		remove_historical_friend = CAS
+		CAS = {
+			remove_historical_friend = POR
+			add_casus_belli = {
+				target = POR
+				type = cb_restore_personal_union
+				months = 300
+			}
+			country_event = {
+				id = ipeCAS.9
+				days = 1
+			}
+		}
+	}
+}
+
+# Portugal Signs the Treaty of Aláçovas
+country_event = {
+	id = ipeCAS.8
+	title = ipeCAS.8.t
+	desc = ipeCAS.8.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May our friendship come to last.
+		name = ipeCAS.8.a
+		tooltip = {
+			add_opinion = {
+				who = POR
+				modifier = treaty_of_alacovas
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Portugal Rejects the Treaty of Aláçovas!
+country_event = {
+	id = ipeCAS.9
+	title = ipeCAS.9.t
+	desc = ipeCAS.9.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeCAS.9.a
+		tooltip = {
+			remove_historical_friend = POR
+			POR = {
+				remove_historical_friend = CAS
+				add_casus_belli = {
+					target = CAS
+					type = cb_restore_personal_union
+					months = 300
+				}
+			}
+			add_casus_belli = {
+				target = POR
+				type = cb_restore_personal_union
+				months = 300
+			}
+		}
+	}
+}
+
+# Sugar in Tenerife
+country_event = {
+	id = ipeCAS.10
+	title = ipeCAS.10.t
+	desc = ipeCAS.10.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion_group = christian
+		owns = 4565
+		is_core = 4565
+		controls = 4565
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Money is a sweetness in itself.
+		name = ipeCAS.10.a
+		4565 = {
+			change_trade_goods = sugar
+		}
+	}
+}
+
+# The Disappearance of the Guanches
+country_event = {
+	id = ipeCAS.11
+	title = ipeCAS.11.t
+	desc = ipeCAS.11.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAS
+		owns = 4565
+		is_core = 4565
+		controls = 4565
+		owns = 366
+		is_core = 366
+		controls = 366
+		366 = {
+			culture = canarian
+			has_owner_religion = yes
+		}
+		4565 = {
+			culture = canarian
+			has_owner_religion = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Tragic, but unavoidable.
+		name = ipeCAS.11.a
+		366 = {
+			change_culture = castillian
+			remove_core = GNC
+		}
+		4565 = {
+			change_culture = castillian
+			remove_core = GNC
+		}
+	}
+}
+
+# The Fate of the Canary Islands (Returned to Castile)
+country_event = {
+	id = ipeCAS.12
+	title = ipeCAS.2.t
+	desc = ipeCAS.12.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May our friendship come to last.
+		name = ipeCAS.8.a
+		add_prestige = 10
+	}
+}

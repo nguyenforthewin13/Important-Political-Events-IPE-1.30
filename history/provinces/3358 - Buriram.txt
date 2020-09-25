@@ -1,0 +1,19 @@
+#3358 - Buriram
+
+owner = AYU
+controller = AYU
+culture = khmer
+religion = buddhism
+capital = "Buriram"
+trade_goods = grain
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = AYU
+
+
+
+discovered_by = chinese
+discovered_by = indian

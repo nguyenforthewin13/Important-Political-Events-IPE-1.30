@@ -1,0 +1,18 @@
+#3189 - Mezetsk
+
+owner = LIT
+controller = LIT
+culture = ryazanian
+religion = orthodox
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = naval_supplies
+base_manpower = 1
+capital = "Mezetsk"
+is_city = yes
+add_core = LIT
+add_local_autonomy = 80
+discovered_by = eastern
+discovered_by = western
+discovered_by = nomad_group

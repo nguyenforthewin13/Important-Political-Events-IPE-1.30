@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+technology_group = western
+primary_culture = umbrian
+religion = catholic
+historical_friend = RAG
+capital = 119 # Ancona
+fixed_capital = 119 # Cannot move capital away from this province & no power cost to move to it
+
+1444.11.11 = {
+	monarch = {
+		name = "Consiglio Generale"
+		adm = 0
+		mil = 0
+		dip = 0
+		regent = yes
+	}
+}

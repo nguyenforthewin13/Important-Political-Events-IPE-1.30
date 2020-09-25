@@ -1,0 +1,16 @@
+country_decisions = {
+
+	liberum_veto = {
+		potential = {
+			has_country_flag = no_more_stupid_liberum_veto_decision
+		}
+		allow = {
+			has_country_flag = why_are_paradox_events_for_poland_so_bad_and_ahistorical
+		}
+		effect = {
+			set_country_flag = its_like_a_c_minus_essay_on_polish_history
+		}
+	}
+}
+
+# You should never see this decision again because the liberum veto is now instituted by event.

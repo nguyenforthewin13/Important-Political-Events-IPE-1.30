@@ -1,0 +1,34 @@
+﻿l_english:
+ # Trade Nodes
+ okhotsk: "Okhotsk"
+ mongolia: "Mongolia"
+ yarkand: "Yarkand"
+ caribbean: "Caribbean"
+ acapulco: "Acapulco"
+
+ # Technology Groups
+ macronesian: "Macaronesian"
+
+ # Rebels
+ slave_rebels_demand: "Abolish Slavery"
+ slave_rebels_demand_desc: "Slave rebels fight for the sake of freedom. They will burn down plantation infrastructure and free their fellow slaves whereever they go. Should they succeed entirely, slave rebels will transform the country into a republic governed by former slaves."
+ slave_rebels_title: "Slave"
+ slave_rebels_name: "Slave Rebels"
+ slave_rebels_desc: "Rebellious slaves fight to the death as a result of having nothing to lose. They tire of being dehumanized as the chattel of their masters, and suffering from every indignity including rape, torture, and murder. Slave rebels will free their fellow slaves, seeking to overthrow the government so that they may one day be able to rule over themselves as free men."
+ slave_rebels_army: "$PROVINCE$ Freedom Army"
+
+ # Limitations
+ CANNOT_JOIN_LEAGUE_AT_WAR_IPE: "We cannot join a League if we are not Catholic, Protestant, Reformed, or Anglican."
+ NO_SLAVE_CONVERSION: "You cannot culture convert a province that uses slave labor."
+ EMPEROR_CHINA_ALLIANCE: "The Emperor of China is too esteemed and powerful to accept alliances with petty barbarians."
+ NOT_CONTROLLED_CANT_SCORCH: "You cannot scorch the earth of a province you do not control."
+ CANNOT_ALLY_HISTORICAL_RIVAL: "You cannot ally a nation that you are a historical rival with."
+
+ # Triggered Modifiers
+ an_english_faith: "An English Faith"
+ opposing_crusade: "Opposing Crusade"
+ the_riches_of_china: "The Riches of China"
+ chinese_tributary_system: "Chinese Tributary System"
+ weakness_of_the_shogunate: "Weakness of the Shogunate"
+ the_kingdom_of_jerusalem: "The Liberation of Jerusalem"
+ emerging_colonial_power: "Emerging Colonial Power"

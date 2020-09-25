@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = timurid_emirate
+government_rank = 1
+primary_culture = pamir
+religion = sunni
+technology_group = muslim
+capital = 452 # Badakhshan
+religious_school = hanafi_school

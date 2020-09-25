@@ -1,0 +1,368 @@
+dai_viet_missions_south = {
+	slot = 1 #upper left column
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+	potential = {
+		OR = {
+			tag = DAI
+			tag = TOK
+			tag = ANN
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	ancient_rivalry = {
+		icon = mission_conquer_5_states
+		required_missions = {  } #None
+		trigger = {
+			OR = {
+				AND = {
+					CHA = {
+						exists = yes
+					}
+					is_rival = CHA
+				}
+				war_with = CHA
+				NOT = {
+					exists = CHA
+				}
+			}
+		}
+		effect = {
+			champa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			southern_champa_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tay_nguyen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	nam_tien = {
+		icon = mission_unite_home_region
+		required_missions = { ancient_rivalry }
+		provinces_to_highlight = {
+			OR = {
+				area = champa_area
+				area = southern_champa_area
+				area = tay_nguyen_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			champa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			southern_champa_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			tay_nguyen_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = nam_tien_1
+				duration = 9125
+			}
+			mekong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dong_nam_bo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	the_mekong_delta = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { nam_tien }
+		provinces_to_highlight = {
+			OR = {
+				area = mekong_area
+				area = dong_nam_bo_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			mekong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			dong_nam_bo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = nam_tien_2
+				duration = 9125
+			}
+			cambodia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			eastern_cambodia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			cardomom_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_casus_belli = {
+				target = KHM
+				type = cb_vassalize_mission
+				months = 300
+			}
+		}
+	}
+
+	decline_of_khmer = {
+		icon = mission_a_million_rice_fields
+		required_missions = { the_mekong_delta }
+		provinces_to_highlight = {
+			OR = {
+				area = cambodia_area
+				area = eastern_cambodia_area
+				area = cardomom_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			eastern_cambodia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			cardomom_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_prestige = 25
+		}
+	}
+}
+
+dai_viet_missions_north = {
+	slot = 5
+	generic = no #if a mission without generic = yes wants this slot then it overrides this.
+	ai = yes
+	potential = {
+		OR = {
+			tag = DAI
+			tag = TOK
+			tag = ANN
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	the_lao_threat = {
+		icon = mission_conquer_50_development
+		required_missions = {  }
+		trigger = {
+			OR = {
+				AND = {
+					LXA = {
+						exists = yes
+					}
+					is_rival = LXA
+				}
+				war_with = LXA
+				NOT = {
+					exists = LXA
+				}
+			}
+		}
+		effect = {
+			east_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquest_of_laos = {
+		icon = mission_a_million_elephants
+		required_missions = { the_lao_threat }
+		provinces_to_highlight = {
+			area = east_laos_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			east_laos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			north_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_laos_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	rebel_from_china = {
+		icon = mission_kowtow
+		required_missions = { conquest_of_laos }
+		trigger = {
+			is_subject = no
+		}
+		effect = {
+			guangdong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_guangdong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guangxi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_guangxi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hainan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	restore_nanyue = {
+		icon = mission_chinese_general_riding
+		required_missions = { rebel_from_china }
+		provinces_to_highlight = {
+			OR = {
+				area = guangdong_area
+				area = west_guangdong_area
+				area = guangxi_area
+				area = south_guangxi_area
+				area = hainan_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			west_guangdong_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			guangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			south_guangxi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			hainan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			add_prestige = 25
+			south_china_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = vietnamese_claim_to_mandate
+				duration = 9125
+			}
+		}
+	}
+}

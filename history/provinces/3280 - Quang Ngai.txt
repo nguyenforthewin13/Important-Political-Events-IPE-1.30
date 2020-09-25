@@ -1,0 +1,18 @@
+#3280 - Quang Ngai
+
+owner = CHA
+controller = CHA
+culture = cham
+religion = hinduism
+capital = "Quang Ngai"
+trade_goods = fish
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = CHA
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman

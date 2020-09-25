@@ -1,0 +1,13 @@
+﻿l_english:
+ ipeKOL1.t: "The Soest Feud"
+ ipeKOL1.d: "On June 5, 1444, the city of Soest attempted to resist the expansionist aims of the Archbishop of Cologne, Dietrich von Mörs, declaring themselves under the protection of John I, the Duke of Cleves-Mark. The Archbishop did not take kindly to Soest's declaration, and a five-year war ultimately ensued over possession of the city of Soest, which Cleves eventually won.\n\nNow, the city of Soest is declaring its independence from our own authority, and is aligning itself with Cleves. How should we respond to this transgression?"
+ ipeKOL1.a: "Allow the feud to die."
+ ipeKOL1.b: "They will pay for their petulance!"
+ ipeKOL2.t: "The Soest Feud Ends"
+ ipeKOL2.d: "On June 5, 1444, the city of Soest attempted to resist the expansionist aims of the Archbishop of Cologne, Dietrich von Mörs, declaring themselves under the protection of John I, the Duke of Cleves-Mark. The Archbishop did not take kindly to Soest's declaration, and a five-year war ultimately ensued over possession of the city of Soest, which Cleves eventually won.\n\nWisely, the Archbishop has declined to press further claims to the city of Soest, respecting the choice made by the citizens of the city."
+ ipeKOL2.a: "All is well."
+ ipeKOL3.t: "The Soest Feud Begins"
+ ipeKOL3.d: "On June 5, 1444, the city of Soest attempted to resist the expansionist aims of the Archbishop of Cologne, Dietrich von Mörs, declaring themselves under the protection of John I, the Duke of Cleves-Mark. The Archbishop did not take kindly to Soest's declaration, and a five-year war ultimately ensued over possession of the city of Soest, which Cleves eventually won.\n\nThe belligerent Archbishop has refused to allow Soest's actions to go unanswered, insisting that a state of war will soon exist between the Archbishopric of Cologne and the Duchy of Cleves over this incident."
+ ipeKOL3.a: "What an impious Archbishop!"
+ soest_feud_ends: "Ended Feud"
+ soest_feud_continues: "Continued Feud"

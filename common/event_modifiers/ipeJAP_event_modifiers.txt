@@ -1,0 +1,20 @@
+enryaku_ji = {
+	local_defensiveness = 0.25
+	local_tax_modifier = -0.1
+	local_missionary_strength = -0.05
+}
+
+tendai_influences = {
+	tolerance_own = 1
+	tolerance_heretic = 1
+	global_missionary_strength = 0.02
+}
+
+sohei_traditions = {
+	discipline = 0.025
+}
+
+treaty_of_gyehae = {
+	trade_efficiency = 0.20
+	trade_steering = 0.20
+}

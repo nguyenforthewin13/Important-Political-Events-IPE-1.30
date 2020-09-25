@@ -1,0 +1,283 @@
+namespace = ipeSCO
+normal_or_historical_nations = yes
+
+# The Scottish Defense Against England
+country_event = {
+	id = ipeSCO.1
+	title = ipeSCO.1.t
+	desc = ipeSCO.1.d
+	picture = LAND_MILITARY_eventPicture
+	
+	trigger = {
+		tag = SCO
+		war_with = ENG
+		NOT = {
+			total_development = 300
+			has_country_modifier = defense_of_scotland
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = ipeSCO.1.a
+		add_country_modifier = { 
+			name = defense_of_scotland
+			duration = -1
+		}
+		custom_tooltip = ipeSCO.1.tooltip
+		add_manpower = 5
+	}
+}
+
+# End of the Scottish Defense Against England
+country_event = {
+	id = ipeSCO.2
+	title = ipeSCO.2.t
+	desc = ipeSCO.2.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	
+	trigger = {
+		tag = SCO
+		has_country_modifier = defense_of_scotland
+		NOT = {
+			war_with = ENG
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = ipeSCO.2.a
+		remove_country_modifier = defense_of_scotland
+	}
+}
+
+# The Rough Wooing
+country_event = {
+	id = ipeSCO.3
+	title = ipeSCO.3.t
+	desc = ipeSCO.3.d
+	picture = ACCUSATION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		government = monarchy
+		NOT = { war_with = SCO }
+		SCO = {
+			exists = yes
+			is_subject = no
+			is_neighbor_of = ROOT
+			government = monarchy
+		}
+		is_subject = no
+		num_of_cities = SCO
+		OR = {
+			AND = {
+				ENG = { is_female = yes }
+				SCO = { is_female = no }
+			}
+			AND = {
+				ENG = { is_female = no }
+				SCO = { is_female = yes }
+			}
+			SCO = {
+				has_regency = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	
+	option = {		# England gains Restoration of Union casus belli on Scotland
+		name = "ipeSCO.3.a"
+		ai_chance = { factor = 90 }
+		ENG = {
+			add_casus_belli = {	
+				target = SCO
+				type = cb_restore_personal_union
+				months = 300
+			}
+		}
+		SCO = {
+			add_opinion = {
+				who = ENG
+				modifier = laid_claim_to_scotland
+			}
+			hidden_effect = {
+				country_event = { id = ipeSCO.4 days = 1 }
+			}
+		}
+		every_known_country = {
+			limit = {
+				marriage_with = SCO
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = laid_claim_to_scotland_rm
+			}
+		}
+	}
+	option = {		# England rejects a personal union over Scotland
+		name = "ipeSCO.3.b"
+		ai_chance = { factor = 10 }
+		add_prestige = -5
+	}
+}
+
+country_event = {
+	id = ipeSCO.4
+	title = ipeSCO.4.t
+	desc = ipeSCO.4.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeSCO.4.a
+		tooltip = {
+			add_opinion = {
+				who = ENG
+				modifier = laid_claim_to_scotland
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ipeSCO.5
+	title = ipeSCO.5.t
+	desc = ipeSCO.5.d
+	picture = DIPLOMACY_eventPicture
+
+	trigger = {
+		tag = ENG
+		is_subject = no
+		government = monarchy
+		SCO = {
+			exists = yes
+			is_subject = no
+			government = monarchy
+			NOT = {
+				is_rival = ENG
+			}
+			ai = yes
+		}
+		num_of_cities = SCO
+		NOT = {
+			war_with = SCO
+			is_rival = SCO
+		}
+		is_year = 1600
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			ruler_age = 40
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 50
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 60
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 70
+		}
+		modifier = {
+			factor = 0.5
+			ruler_age = 80
+		}
+	}
+
+	option = {
+		name = ipeSCO.5.a
+		define_heir = {
+			culture = scottish
+			age = 36
+		}
+		kill_ruler = yes
+		set_dynasty = SCO
+		create_union = SCO
+		SCO = {
+			add_opinion = {
+				who = ENG
+				modifier = union_of_the_crowns
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ipeSCO.6
+	title = ipeSCO.6.t
+	desc = ipeSCO.6.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = ENG
+		primary_culture = english
+		372 = {
+			owned_by = ENG
+			culture = irish
+		}
+		4121 = {
+			owned_by = ENG
+			culture = irish
+		}
+		is_year = 1550
+		NOT = {
+			exists = IRE
+		}
+	}
+
+	option = {
+		name = ipeSCO.6.a
+		ai_chance = {
+			factor = 75
+		}
+		372 = {
+			change_culture = english
+			change_religion = root
+		}
+		4121 = {
+			change_culture = english
+			change_religion = root
+		}
+		every_owned_province = {
+			limit = {
+				culture = irish
+			}
+			add_province_modifier = {
+				name = plantations_of_ireland
+				duration = 36500
+			}
+		}
+	}
+
+	option = {
+		name = ipeSCO.6.b
+		ai_chance = {
+			factor = 25
+		}
+		add_stability_or_adm_power = yes
+	}
+}

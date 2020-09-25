@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = principality
+primary_culture = ryazanian
+religion = orthodox
+technology_group = eastern
+capital = 4244
+fixed_capital = 4244 # Cannot move capital away from this province & no power cost to move to it
+government_rank = 1
+
+1444.1.1 = {
+    monarch = {
+        name = "Ivan Yuryevich"
+        dynasty = "Trubetskoy"
+        birth_date = 1400.1.1
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+	clear_scripted_personalities = yes
+	add_ruler_personality = careful_personality
+}

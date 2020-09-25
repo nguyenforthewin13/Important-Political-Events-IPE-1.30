@@ -1,0 +1,52 @@
+namespace = ipe_ChineseEmpire
+normal_or_historical_nations = yes
+
+# The Empire of China
+country_event = {
+	id = ipe_ChineseEmpire.1
+	title = ipe_ChineseEmpire.1.t
+	desc = ipe_ChineseEmpire.1.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_ally = {
+				country_event = {
+					id = ipe_ChineseEmpire.2
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { # The Emperor of China knows no allies, and only subjects.
+		name = ipe_ChineseEmpire.1.a
+		custom_tooltip = ipe_ChineseEmpire.1.a.tooltip
+	}
+}
+
+# $FROMCOUNTRY$ Declares the Mandate of Heaven!
+country_event = {
+	id = ipe_ChineseEmpire.2
+	title = ipe_ChineseEmpire.2.t
+	desc = ipe_ChineseEmpire.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				declare_war = ROOT
+				white_peace = ROOT
+			}
+		}
+	}
+
+	option = { # We will not kowtow to these new emperors!
+		name = ipe_ChineseEmpire.2.a
+		custom_tooltip = ipe_ChineseEmpire.2.a.tooltip
+	}
+}

@@ -1,0 +1,20 @@
+#3310 - Izumi
+
+owner = HSK
+controller = HSK
+culture = japanese
+religion = shinto
+capital = "Sakai"
+trade_goods = cloth
+hre = no
+base_tax = 6
+base_production = 9
+base_manpower = 6
+is_city = yes
+add_core = HSK
+discovered_by = chinese
+discovered_by = MCH
+discovered_by = KHA
+discovered_by = OIR
+discovered_by = QNG
+discovered_by = ANU

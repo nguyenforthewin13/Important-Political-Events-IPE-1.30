@@ -1,0 +1,384 @@
+namespace = ipeALB
+
+# The Treaty of Gaeta (Aragon)
+country_event = {
+    id = ipeALB.1
+    title = ipeALB.1.t
+    desc = ipeALB.1.d
+    picture = DIPLOMACY_eventPicture
+
+    fire_only_once = yes
+
+    trigger = {
+        OR = {
+            tag = ARA
+            tag = NAP
+        }
+        is_subject = no
+        if = {
+            limit = {
+                tag = ARA
+            }
+            OR = {
+                senior_union_with = NAP
+                121 = {
+                    owned_by = ARA
+                }
+            }
+        }
+        ALB = {
+            exists = yes
+            is_subject = no
+        }
+        NOT = { is_year = 1500 }
+        OR = {
+            4174 = {
+                owned_by = TUR
+            }
+            4175 = {
+                owned_by = TUR
+            }
+            143 = {
+                owned_by = TUR
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+		months = 60
+	}
+
+    option = { # Yes, send diplomats to make this offer.
+        name = ipeALB.1.a
+        ai_chance = {
+            factor = 80
+            modifier = {
+                factor = 100
+                OR = {
+                    is_rival = TUR
+                    historical_rival_with = TUR
+                }
+            }
+        }
+        ALB = {
+            country_event = {
+                id = ipeALB.2
+                days = 30
+            }
+        }
+    }
+
+    option = { # No, it is unnecessary to our interests.
+        name = ipeALB.1.b
+        ai_chance = {
+            factor = 20
+        }
+        add_prestige = -5
+    }
+}
+
+# The Treaty of Gaeta (Albania)
+country_event = {
+    id = ipeALB.2
+    title = ipeALB.2.t
+    desc = ipeALB.2.d
+    picture = DIPLOMACY_eventPicture
+
+    is_triggered_only = yes
+
+    option = {
+        name = ipeALB.2.a
+        ai_chance = {
+            factor = 80
+            modifier = {
+                factor = 100
+                war_with = TUR
+            }
+        }
+        create_alliance = FROM
+        add_country_modifier = {
+            name = treaty_of_gaeta
+            duration = 9125
+        }
+        FROM = {
+			add_opinion = {
+				who = ALB
+				modifier = accepted_treaty_of_gaeta
+			}
+            country_event = {
+                id = ipeALB.3
+                days = 1
+            }
+        }
+    }
+
+    option = { # Accept the treaty.
+        name = ipeALB.2.b
+        ai_chance = {
+            factor = 20
+            modifier = {
+                factor = 0
+                war_with = TUR
+            }
+        }
+        FROM = { # We do not need help from foreigners.
+			add_opinion = {
+				who = ALB
+				modifier = refused_treaty_of_gaeta
+			}
+            country_event = {
+                id = ipeALB.4
+                days = 1
+            }	
+		}
+    }
+}
+
+# Albania Accepts the Treaty of Gaeta
+country_event = {
+    id = ipeALB.3
+    title = ipeALB.3.t
+    desc = ipeALB.3.d
+    picture = DIPLOMACY_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # We will protect this new friend!
+        name = ipeALB.3.a
+        add_prestige = 10
+        set_country_flag = treaty_of_gaeta_successful
+    }
+}
+
+# Albania Refuses the Treaty of Gaeta
+country_event = {
+    id = ipeALB.4
+    title = ipeALB.4.t
+    desc = ipeALB.4.d
+    picture = DIPLOMACY_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # They are defenseless before the Turks.
+        name = ipeALB.4.a
+        add_prestige = -10
+    }
+}
+
+# The Treaty of Gaeta (Albania)
+country_event = {
+    id = ipeALB.5
+    title = ipeALB.5.t
+    desc = ipeALB.5.d
+    picture = DIPLOMACY_eventPicture
+
+    fire_only_once = yes
+
+    major = yes
+
+    trigger = {
+        tag = ALB
+        is_subject = no
+        NOT = {
+            war_with = TUR
+        }
+        AND = {
+            143 = {
+                NOT = {
+                    controlled_by = TUR
+                    owned_by = TUR
+                }
+            }
+            4174 = {
+                NOT = {
+                    controlled_by = TUR
+                    owned_by = TUR
+                }
+            }
+            4175 = {
+                owned_by = ALB
+                NOT = {
+                    controlled_by = TUR
+                }
+            }
+        }
+        OR = {
+            ARA = {
+                has_country_flag = treaty_of_gaeta_successful
+                is_subject = no
+            }
+            NAP = {
+                has_country_flag = treaty_of_gaeta_successful
+                is_subject = no
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+		days = 30
+	}
+
+    option = { # Let us make good on our promises.
+        name = ipeALB.5.a
+        ai_chance = {
+            factor = 50
+            modifier = {
+                factor = 70
+                alliance_with = ARA
+                ARA = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+            modifier = {
+                factor = 70
+                alliance_with = NAP
+                NAP = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+        }
+
+        if = {
+            limit = {
+                ARA = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+            ARA = {
+                create_march = ALB
+                add_opinion = {
+				    who = ALB
+				    modifier = honored_treaty_of_gaeta
+			    }
+                country_event = {
+                    id = ipeALB.6
+                    days = 1
+                }
+            }
+        }
+        if = {
+            limit = {
+                NAP = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+            NAP = {
+                create_march = ALB
+                add_opinion = {
+				    who = ALB
+				    modifier = honored_treaty_of_gaeta
+			    }
+                country_event = {
+                    id = ipeALB.6
+                    days = 1
+                }
+            }
+        }
+    }
+
+    option = { # Albania shall know no foreign rulers.
+        name = ipeALB.5.b
+        ai_chance = {
+            factor = 50
+            modifier = {
+                factor = 30
+                alliance_with = ARA
+                ARA = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+            modifier = {
+                factor = 30
+                alliance_with = NAP
+                NAP = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+        }
+
+        remove_country_modifier = treaty_of_gaeta
+        add_country_modifier = {
+            name = broke_treaty_of_gaeta
+            duration = 3650
+        }
+        if = {
+            limit = {
+                ARA = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+            ARA = {
+                add_opinion = {
+				    who = ALB
+				    modifier = dishonored_treaty_of_gaeta
+			    }
+                remove_opinion = {
+                    who = ALB
+                    modifier = accepted_treaty_of_gaeta
+                }
+                country_event = {
+                    id = ipeALB.7
+                    days = 1
+                }	
+            }
+        }
+        if = {
+            limit = {
+                NAP = {
+                    has_country_flag = treaty_of_gaeta_successful
+                }
+            }
+            NAP = {
+                add_opinion = {
+				    who = ALB
+				    modifier = dishonored_treaty_of_gaeta
+			    }
+                remove_opinion = {
+                    who = ALB
+                    modifier = accepted_treaty_of_gaeta
+                }
+                country_event = {
+                    id = ipeALB.7
+                    days = 1
+                }	
+            }
+        }
+    }
+}
+
+# Treaty of Gaeta Honored
+country_event = {
+    id = ipeALB.6
+    title = ipeALB.6.t
+    desc = ipeALB.6.d
+    picture = DIPLOMACY_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # All is well.
+        name = ipeALB.6.a
+        add_prestige = 25
+        clr_country_flag = treaty_of_gaeta_successful
+    }
+}
+
+# Treaty of Gaeta Dishonored
+country_event = {
+    id = ipeALB.7
+    title = ipeALB.7.t
+    desc = ipeALB.7.d
+    picture = DIPLOMACY_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # Their transgressions will not go unpunished.
+        name = ipeALB.7.a
+        add_prestige = -25
+        add_casus_belli = {
+            target = ALB
+            type = cb_vassalize_mission
+            months = 300
+        }
+        clr_country_flag = treaty_of_gaeta_successful
+    }
+}

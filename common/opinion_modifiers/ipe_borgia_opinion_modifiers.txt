@@ -1,0 +1,47 @@
+refused_to_join_pope = {
+    opinion = -200
+    years = 50
+    yearly_decay = 4
+}
+
+agreed_to_join_pope = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+supported_borgia_invasion = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+sanctioned_church_taxes = {
+    opinion = 25
+    years = 20
+}
+
+blessed_monarch = {
+    opinion = 25
+    years = 20
+}
+
+granted_indulgence = {
+    opinion = 25
+    years = 20
+}
+
+forgave_usury = {
+    opinion = 25
+    years = 20
+}
+
+proclaimed_holy_war = {
+    opinion = 25
+    years = 20
+}
+
+sent_papal_legate = {
+    opinion = 25
+    years = 20
+}

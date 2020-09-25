@@ -1,0 +1,18 @@
+discovered_by = MKS
+discovered_by = TER
+discovered_by = TID
+discovered_by = JLO
+discovered_by = BAC
+discovered_by = WJO
+discovered_by = SPP
+discovered_by = BNE
+discovered_by = BTN
+discovered_by = BMA
+discovered_by = SMB
+discovered_by = LUW
+
+
+
+
+1511.1.1 = { discovered_by = POR }
+

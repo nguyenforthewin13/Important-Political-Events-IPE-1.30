@@ -1,0 +1,10 @@
+showed_mercy = {
+    opinion = 50
+    yearly_decay = 1
+}
+
+supported_sampiero_corso = {
+	opinion = -100
+	years = 25
+	yearly_decay = 4
+}

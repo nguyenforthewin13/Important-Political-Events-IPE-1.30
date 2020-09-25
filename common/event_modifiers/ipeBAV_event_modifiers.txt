@@ -1,0 +1,8 @@
+ipe_fought_robber_barons = {
+	global_unrest = -5
+	global_autonomy = -0.10
+}
+
+recently_elected_king = {
+	reduced_liberty_desire = 30
+}

@@ -1,0 +1,11 @@
+honored_the_treaty_of_gyehae = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+dishonored_the_treaty_of_gyehae = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

@@ -1,0 +1,23 @@
+price_revolution = {
+	inflation_reduction = -0.05
+}
+
+imported_slave_labor = {
+	trade_goods_size = 1
+	local_production_efficiency = 0.25
+	local_unrest = 2
+	local_tax_modifier = -0.50
+	local_institution_spread = -0.50
+	local_development_cost = 0.50
+}
+
+hispaniola_plantations = {
+	trade_goods_size = 2
+	local_production_efficiency = 0.25
+}
+
+slave_uprising = {
+	trade_goods_size = -1.5
+	local_production_efficiency = -0.25
+	local_autonomy = 0.05
+}

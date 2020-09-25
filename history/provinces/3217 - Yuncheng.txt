@@ -1,0 +1,17 @@
+#3217 - Yuncheng
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = zhongyuan
+religion = confucianism
+capital = "Yuncheng"
+trade_goods = livestock
+hre = no
+base_tax = 8
+base_production = 8
+base_manpower = 7
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = LNG

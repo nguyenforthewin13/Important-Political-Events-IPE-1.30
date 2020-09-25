@@ -1,0 +1,194 @@
+country_decisions = {
+	puppet_the_shogunate = {
+		major = yes
+		potential = {
+			OR = {
+				has_reform = daimyo
+				has_reform = indep_daimyo
+			}
+			any_country = {
+				has_reform = shogunate
+				owns = 1020
+			}
+			has_global_flag = puppet_shogunate_enabled
+		}
+		provinces_to_highlight = {
+			province_id = 1020 # Kyoto
+		}
+		allow = {
+			controls = 1020
+			1020 = {
+				owner = {
+					has_reform = shogunate
+					overlord = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					1020 = {
+						owner = {
+							is_subject = yes
+						}
+					}
+				}
+				1020 = {
+					owner = {
+						overlord = {
+							white_peace = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					1020 = {
+						owner = {
+							is_subject = no
+						}
+					}
+				}
+				1020 = {
+					owner = {
+						white_peace = ROOT
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				grant_independence = yes
+			}
+			tooltip = {
+				1020 = {
+					owner = {
+						kill_ruler = yes
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						1020 = {
+							owner = {
+								is_subject = no
+							}
+						}
+					}
+					1020 = {
+						owner = {
+							every_subject_country = {
+								limit = {
+									is_subject_of_type = daimyo_vassal
+								}
+								grant_independence = yes
+								country_event = {
+									id = ipeJAP.74
+									days = 1
+								}
+							}
+							every_subject_country = {
+								limit = {
+									is_subject_of_type = kanrei_vassal
+								}
+								grant_independence = yes
+								country_event = {
+									id = ipeJAP.75
+									days = 1
+								}
+							}
+							every_subject_country = {
+								limit = {
+									is_subject_of_type = kubo_vassal
+								}
+								grant_independence = yes
+								country_event = {
+									id = ipeJAP.76
+									days = 1
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						1020 = {
+							owner = {
+								is_subject = yes
+							}
+						}
+					}
+					1020 = {
+						owner = {
+							overlord = {
+								country_event = {
+									id = ipeJAP.74
+									days = 1
+								}
+							}
+							overlord = {
+								every_subject_country = {
+									limit = {
+										is_subject_of_type = daimyo_vassal
+									}
+									grant_independence = yes
+									country_event = {
+										id = ipeJAP.74
+										days = 1
+									}
+								}
+								every_subject_country = {
+									limit = {
+										is_subject_of_type = kanrei_vassal
+									}
+									grant_independence = yes
+									country_event = {
+										id = ipeJAP.75
+										days = 1
+									}
+								}
+								every_subject_country = {
+									limit = {
+										is_subject_of_type = kubo_vassal
+									}
+									grant_independence = yes
+									country_event = {
+										id = ipeJAP.76
+										days = 1
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			1020 = {
+				owner = {
+					country_event = {
+						id = ipeJAP.77
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_reform = daimyo
+				}
+				add_government_reform = indep_daimyo
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				total_development = 300
+			}
+		}
+	}
+}

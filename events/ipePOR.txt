@@ -1,0 +1,35 @@
+namespace = ipePOR
+normal_or_historical_nations = yes
+
+# Wine in Madeira
+country_event = {
+	id = ipePOR.1
+	title = ipePOR.1.t
+	desc = ipePOR.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		is_year = 1600
+		owns = 368
+		is_core = 368
+		controls = 368
+		368 = {
+			trade_goods = sugar
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Wonderful.
+		name = ipePOR.1.a
+		368 = {
+			remove_province_modifier = plantations_of_madeira
+			change_trade_goods = wine
+		}
+	}
+}

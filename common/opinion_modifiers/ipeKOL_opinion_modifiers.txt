@@ -1,0 +1,9 @@
+soest_feud_ends = {
+    opinion = 25
+    yearly_decay = 1
+}
+
+soest_feud_continues = {
+    opinion = -100
+    yearly_decay = 2
+}

@@ -1,0 +1,199 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 129  126  7 } 
+
+historical_score = 100
+
+historical_idea_groups = {
+	maritime_ideas
+	defensive_ideas
+	religious_ideas
+	expansion_ideas
+	administrative_ideas
+	offensive_ideas
+	trade_ideas
+	economic_ideas
+}
+
+historical_units = {
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_mass_infantry
+	muslim_dragoon
+	ali_bey_reformed_infantry
+}
+
+monarch_names = {
+	Acaymo Adjona Añaterve Bencomo Beneharo Pelicar Pelinor Romen Tegueste
+	Abentahar
+	Acaymo
+	Ache
+	Adargoma
+	Aday
+	Afahe
+	Afur
+	Agoney
+	Airam
+	Ancor
+	Arago
+	Arico
+	Armiche
+	Artamy
+	Asano
+	Augerón
+	Axer
+	Ayoze
+	Aythami
+	Badel
+	Baeta
+	Baute
+	Beimaco
+	Bentagay
+	Besay
+	Chede
+	Chevender
+	Chimboyo
+	Chinconayro
+	Doramas
+	Echendey
+	Egonayga
+	Eiunche
+	Gaineto
+	Gaitafa
+	Ganache
+	Gaumet
+	Geneto
+	Gerad
+	Geronte
+	Guaire
+	Guanareme
+	Guayasen
+	Himar
+	Nauzet
+	Oto
+	Pico
+	Rayco
+	Tahod
+	Tigorte
+	Tinerfe
+	Ventor
+	Xitama
+}
+
+leader_names = {
+	Acaymo Adjona Añaterve Bencomo Beneharo Pelicar Pelinor Romen Tegueste
+	Abentahar
+	Acaymo
+	Ache
+	Adargoma
+	Aday
+	Afahe
+	Afur
+	Agoney
+	Airam
+	Ancor
+	Arago
+	Arico
+	Armiche
+	Artamy
+	Asano
+	Augerón
+	Axer
+	Ayoze
+	Aythami
+	Badel
+	Baeta
+	Baute
+	Beimaco
+	Bentagay
+	Besay
+	Chede
+	Chevender
+	Chimboyo
+	Chinconayro
+	Doramas
+	Echendey
+	Egonayga
+	Eiunche
+	Gaineto
+	Gaitafa
+	Ganache
+	Gaumet
+	Geneto
+	Gerad
+	Geronte
+	Guaire
+	Guanareme
+	Guayasen
+	Himar
+	Nauzet
+	Oto
+	Pico
+	Rayco
+	Tahod
+	Tigorte
+	Tinerfe
+	Ventor
+	Xitama
+}
+
+ship_names = {
+	Acaymo Adjona Añaterve Bencomo Beneharo Pelicar Pelinor Romen Tegueste
+	Abentahar
+	Acaymo
+	Ache
+	Adargoma
+	Aday
+	Afahe
+	Afur
+	Agoney
+	Airam
+	Ancor
+	Arago
+	Arico
+	Armiche
+	Artamy
+	Asano
+	Augerón
+	Axer
+	Ayoze
+	Aythami
+	Badel
+	Baeta
+	Baute
+	Beimaco
+	Bentagay
+	Besay
+	Chede
+	Chevender
+	Chimboyo
+	Chinconayro
+	Doramas
+	Echendey
+	Egonayga
+	Eiunche
+	Gaineto
+	Gaitafa
+	Ganache
+	Gaumet
+	Geneto
+	Gerad
+	Geronte
+	Guaire
+	Guanareme
+	Guayasen
+	Himar
+	Nauzet
+	Oto
+	Pico
+	Rayco
+	Tahod
+	Tigorte
+	Tinerfe
+	Ventor
+	Xitama
+}

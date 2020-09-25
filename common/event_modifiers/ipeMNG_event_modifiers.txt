@@ -1,0 +1,66 @@
+guard_battalion_system = {
+	discipline = -0.25
+	imperial_mandate = -0.1
+	defensiveness = -0.25
+	army_tradition = -1
+	reinforce_speed = -0.25
+	yearly_corruption = 0.1
+}
+
+secured_the_northern_frontier = {
+	discipline = 0.05
+	imperial_mandate = 0.1
+}
+
+upgraded_fortifications = {
+	discipline = 0.05
+	defensiveness = 0.25
+}
+
+projected_chinese_power = {
+	discipline = 0.05
+	army_tradition = 1
+}
+
+professionalized_the_army = {
+	discipline = 0.05
+	reinforce_speed = 0.25
+}
+
+stamped_out_corruption = {
+	discipline = 0.05
+	yearly_corruption = -0.1
+}
+
+reestablished_the_silk_road = {
+	trade_efficiency = 0.10
+	trade_steering = 0.10
+}
+
+zheng_he_repressed = {
+	navy_tradition = -2
+	heavy_ship_cost = 1
+	light_ship_cost = 1
+	galley_cost = 1
+	transport_cost = 1
+	naval_morale = -0.10
+	stability_cost_modifier = -0.50
+	diplomatic_reputation = -1
+	trade_efficiency = -0.10
+}
+
+zheng_he_legacy = {
+	navy_tradition = 1
+	naval_morale = 0.10
+	stability_cost_modifier = 0.50
+	diplomatic_reputation = 1
+	trade_efficiency = 0.10
+}
+
+zheng_he_balanced = {
+	navy_tradition = -0.5
+	heavy_ship_cost = 0.5
+	light_ship_cost = 0.5
+	galley_cost = 0.5
+	transport_cost = 0.5
+}
